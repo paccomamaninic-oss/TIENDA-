@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/review-photos",
+	"title": "Customer Photos",
+	"category": "envo-blocks",
+	"icon": "format-gallery",
+	"description": "The photos customers added to their reviews, as a gallery: a click opens the photo with the stars and the words of the review. For the current product, a chosen product or the whole shop.",
+	"keywords": [ "reviews", "photos", "customer photos", "user generated", "ugc", "gallery", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"source": { "type": "string", "default": "current" },
+		"productId": { "type": "integer", "default": 0 },
+		"heading": { "type": "string", "default": "" },
+		"limit": { "type": "integer", "default": 8 },
+		"columns": { "type": "integer", "default": 4 },
+		"aspect": { "type": "string", "default": "square" },
+		"radius": { "type": "integer", "default": 10 },
+		"showRating": { "type": "boolean", "default": true },
+		"showProduct": { "type": "boolean", "default": true },
+		"hideEmpty": { "type": "boolean", "default": false },
+		"emptyText": { "type": "string", "default": "" },
+		"starColor": { "type": "string", "default": "" },
+		"textColor": { "type": "string", "default": "" },
+		"background": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": [ "envo-blocks-blocks", "envo-blocks-review-photos" ],
+	"viewScript": "envo-blocks-review-photos",
+	"render": "file:./render.php"
+}

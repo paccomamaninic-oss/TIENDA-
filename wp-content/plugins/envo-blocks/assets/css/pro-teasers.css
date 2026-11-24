@@ -1,0 +1,76 @@
+/* Locked Envo Blocks PRO blocks in the inserter and their placeholder. */
+.envo-blocks-pro-teaser-icon {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+}
+
+.envo-blocks-pro-teaser-icon .dashicon {
+	opacity: 0.55;
+}
+
+/*
+ * The lock in the corner of the icon. Core gives every SVG in block icons and toolbars a size, margins and
+ * position: relative (inserter, block toolbar, block card, list view), so the selector is stronger.
+ */
+.envo-blocks-pro-teaser-icon.envo-blocks-pro-teaser-icon svg.envo-blocks-pro-teaser-icon__lock.envo-blocks-pro-teaser-icon__lock {
+	position: absolute;
+	right: -7px;
+	bottom: -5px;
+	box-sizing: border-box;
+	width: 14px;
+	height: 14px;
+	min-width: 0;
+	min-height: 0;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: 2px;
+	border-radius: 50%;
+	background: #6d28d9;
+	color: #fff;
+	box-shadow: 0 0 0 2px #fff;
+}
+
+.envo-blocks-pro-teaser-icon.envo-blocks-pro-teaser-icon .dashicon {
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	font-size: 20px;
+}
+
+.envo-blocks-pro-teaser__placeholder.components-placeholder {
+	border: 1px dashed #c4b5fd;
+	background: #faf5ff;
+	box-shadow: none;
+}
+
+.envo-blocks-pro-teaser__placeholder .components-placeholder__label .envo-blocks-pro-teaser-icon {
+	margin-right: 10px;
+}
+
+.envo-blocks-pro-teaser__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.envo-blocks-pro-teaser__get.components-button.is-primary {
+	background: linear-gradient(135deg, #4338ca, #6d28d9 55%, #a21caf);
+	color: #fff;
+}
+
+.envo-blocks-pro-teaser__get.components-button.is-primary:hover:not(:disabled) {
+	filter: brightness(1.1);
+	color: #fff;
+}
+
+.envo-blocks-pro-teaser__note {
+	flex-basis: 100%;
+	margin: 12px 0 0;
+	color: #646970;
+	font-size: 12px;
+}

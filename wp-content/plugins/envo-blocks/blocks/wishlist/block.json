@@ -1,0 +1,91 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/wishlist",
+	"title": "Wishlist",
+	"category": "envo-blocks",
+	"icon": "list-view",
+	"description": "The visitor's wishlist for the wishlist page: products with price, stock, Add to cart and remove. A published page with this block becomes the wishlist page.",
+	"keywords": [
+		"wishlist",
+		"favorites",
+		"saved products",
+		"list",
+		"woocommerce"
+	],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "grid"
+		},
+		"columns": {
+			"type": "integer",
+			"default": 4
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		},
+		"showStock": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAddToCart": {
+			"type": "boolean",
+			"default": true
+		},
+		"removeOnAdd": {
+			"type": "boolean",
+			"default": false
+		},
+		"emptyTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"emptyText": {
+			"type": "string",
+			"default": ""
+		},
+		"emptyButtonText": {
+			"type": "string",
+			"default": ""
+		},
+		"cardBackground": {
+			"type": "string",
+			"default": ""
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
+		},
+		"accentColor": {
+			"type": "string",
+			"default": ""
+		},
+		"accentTextColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true
+		}
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-wishlist",
+	"viewScript": "envo-blocks-wishlist",
+	"render": "file:./render.php"
+}

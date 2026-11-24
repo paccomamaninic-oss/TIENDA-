@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/product-tab",
+	"title": "Product Tab",
+	"category": "envo-blocks",
+	"icon": "excerpt-view",
+	"description": "One tab of the Product Tabs block: a part of WooCommerce (description, additional information, reviews), own content made of blocks, the product's own tabs or the tabs of other plugins.",
+	"keywords": [ "tab", "product tab", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"parent": [ "envo-blocks/product-tabs" ],
+	"attributes": {
+		"source": { "type": "string", "default": "custom" },
+		"title": { "type": "string", "default": "" },
+		"icon": { "type": "string", "default": "" },
+		"categories": { "type": "array", "default": [], "items": { "type": "integer" } }
+	},
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"render": "file:./render.php"
+}

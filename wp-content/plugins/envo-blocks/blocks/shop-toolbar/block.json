@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/shop-toolbar",
+	"title": "Shop Toolbar",
+	"category": "envo-blocks",
+	"icon": "sort",
+	"description": "The number of products found and the sorting menu of the shop and the product categories, for shop layouts.",
+	"keywords": [ "sorting", "order by", "result count", "shop", "toolbar", "woocommerce", "layout" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"showCount": { "type": "boolean", "default": true },
+		"showSorting": { "type": "boolean", "default": true },
+		"barStyle": { "type": "string", "default": "plain" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true },
+		"color": { "text": true, "background": true },
+		"__experimentalBorder": { "color": true, "radius": true, "width": true, "style": true }
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-layouts",
+	"render": "file:./render.php"
+}

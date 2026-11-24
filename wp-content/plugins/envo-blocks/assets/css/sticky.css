@@ -1,0 +1,24 @@
+/* Sticky Column: sticks inside its parent (sticky-view.js adds the header height and moves tall content). */
+.sb-sticky {
+	position: sticky;
+	top: calc(var(--sb-sticky-auto, 0px) + var(--sb-sticky-top, 24px));
+	/* In a flex row (columns of a group) the block must not stretch to the row height, or there is nothing to stick. */
+	align-self: flex-start;
+	box-sizing: border-box;
+	z-index: 1;
+}
+.sb-sticky > :first-child { margin-top: 0; }
+.sb-sticky > :last-child { margin-bottom: 0; }
+
+/* Columns under each other on phones (and tablets, when set): no sticking. */
+@media (max-width: 781px) {
+	.sb-sticky.sb-sticky--until-mobile,
+	.sb-sticky.sb-sticky--until-tablet { position: relative; top: auto !important; }
+}
+@media (max-width: 1024px) {
+	.sb-sticky.sb-sticky--until-tablet { position: relative; top: auto !important; }
+}
+
+/* Editor: no sticking, a thin outline shows the block. */
+.editor-styles-wrapper .sb-sticky { position: relative; top: auto; }
+.editor-styles-wrapper .sb-sticky.sb-sticky--editor { outline: 1px dashed rgba(124, 58, 237, .45); outline-offset: 4px; }

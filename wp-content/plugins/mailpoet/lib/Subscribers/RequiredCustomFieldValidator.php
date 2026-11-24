@@ -1,0 +1,99 @@
+<?php // phpcs:ignore SlevomatCodingStandard.TypeHints.DeclareStrictTypes.DeclareStrictTypesMissing
+
+namespace MailPoet\Subscribers;
+
+if (!defined('ABSPATH')) exit;
+
+
+use Exception;
+use MailPoet\CustomFields\CustomFieldsRepository;
+use MailPoet\Entities\FormEntity;
+
+class RequiredCustomFieldValidator {
+  /** @var CustomFieldsRepository */
+  private $customFieldRepository;
+
+  public function __construct(
+    CustomFieldsRepository $customFieldRepository
+  ) {
+    $this->customFieldRepository = $customFieldRepository;
+  }
+
+  /**
+   * @param array $data
+   * @param FormEntity|null $form
+   * @param bool $skipUnsentFields
+   *
+   * @throws Exception
+   */
+  public function validate(array $data, ?FormEntity $form = null, bool $skipUnsentFields = false) {
+    $allCustomFields = $this->getCustomFields($form);
+    foreach ($allCustomFields as $customFieldId => $customFieldName) {
+      if ($skipUnsentFields && !$this->isCustomFieldSent($customFieldId, $data)) {
+        continue;
+      }
+      if ($this->isCustomFieldMissing($customFieldId, $data)) {
+        throw new Exception(
+          // translators: %s is the name of the custom field.
+          sprintf(__('Missing value for custom field "%s"', 'mailpoet'), $customFieldName)
+        );
+      }
+    }
+  }
+
+  private function isCustomFieldSent(int $customFieldId, array $data): bool {
+    return array_key_exists($customFieldId, $data) || array_key_exists('cf_' . $customFieldId, $data);
+  }
+
+  private function isCustomFieldMissing(int $customFieldId, array $data): bool {
+    if (!$this->isCustomFieldSent($customFieldId, $data)) {
+      return true;
+    }
+    // Keep isset(), not array_key_exists(): it lets a null value pass. Integrations send null
+    // for fields their own form doesn't have, and rejecting it would block those signups.
+    if (isset($data[$customFieldId]) && !$data[$customFieldId]) {
+      return true;
+    }
+    if (isset($data['cf_' . $customFieldId]) && !$data['cf_' . $customFieldId]) {
+      return true;
+    }
+    return false;
+  }
+
+  private function getCustomFields(?FormEntity $form = null): array {
+    $result = [];
+
+    if ($form) {
+      $ids = $this->getFormCustomFieldIds($form);
+      if (!$ids) {
+        return [];
+      }
+      $requiredCustomFields = $this->customFieldRepository->findBy(['id' => $ids, 'deletedAt' => null]);
+    } else {
+      $requiredCustomFields = $this->customFieldRepository->findAllActive();
+    }
+
+    foreach ($requiredCustomFields as $customField) {
+      $params = $customField->getParams();
+      if (is_array($params) && isset($params['required']) && $params['required']) {
+        $result[$customField->getId()] = $customField->getName();
+      }
+    }
+
+    return $result;
+  }
+
+  /**
+   * @return int[]
+   */
+  private function getFormCustomFieldIds(FormEntity $form): array {
+    $formFields = $form->getBlocksByTypes(FormEntity::FORM_FIELD_TYPES);
+    $customFieldIds = [];
+    foreach ($formFields as $formField) {
+      if (isset($formField['id']) && is_numeric($formField['id'])) {
+        $customFieldIds[] = (int)$formField['id'];
+      }
+    }
+    return $customFieldIds;
+  }
+}

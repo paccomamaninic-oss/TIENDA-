@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/cart-summary",
+	"title": "Cart Summary",
+	"category": "envo-blocks",
+	"icon": "money-alt",
+	"description": "The subtotal, a coupon field and the View cart and Checkout buttons, for side cart layouts. Loaded in the browser, so cached pages stay right.",
+	"keywords": [ "cart", "side cart", "subtotal", "checkout", "coupon", "woocommerce", "layout" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"showSavings": { "type": "boolean", "default": true },
+		"showCoupon": { "type": "boolean", "default": false },
+		"showNote": { "type": "boolean", "default": true },
+		"note": { "type": "string", "default": "" },
+		"showViewCart": { "type": "boolean", "default": true },
+		"showCheckout": { "type": "boolean", "default": true },
+		"checkoutLabel": { "type": "string", "default": "" },
+		"buttons": { "type": "string", "default": "stacked" },
+		"sticky": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"html": false,
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true },
+		"color": { "text": true, "background": true },
+		"__experimentalBorder": { "color": true, "radius": true, "width": true, "style": true }
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-side-cart",
+	"render": "file:./render.php"
+}

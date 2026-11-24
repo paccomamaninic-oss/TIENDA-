@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/announcement-bar",
+	"title": "Announcement Bar",
+	"category": "envo-blocks",
+	"icon": "megaphone",
+	"description": "A thin bar for shipping offers, sales and news: messages that take turns, scroll as a ticker or sit side by side, with links, icons and a close button that the browser remembers.",
+	"keywords": [ "announcement", "notice", "top bar", "marquee", "ticker", "banner", "promo" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"messages": { "type": "array", "default": [] },
+		"mode": { "type": "string", "default": "rotate" },
+		"interval": { "type": "integer", "default": 5 },
+		"speed": { "type": "integer", "default": 60 },
+		"arrows": { "type": "boolean", "default": true },
+		"dismissible": { "type": "boolean", "default": false },
+		"dismissDays": { "type": "integer", "default": 7 },
+		"textAlign": { "type": "string", "default": "center" },
+		"background": { "type": "string", "default": "" },
+		"textColor": { "type": "string", "default": "" },
+		"iconColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"viewScript": "envo-blocks-announcement",
+	"render": "file:./render.php"
+}

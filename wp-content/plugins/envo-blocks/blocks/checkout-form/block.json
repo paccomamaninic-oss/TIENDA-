@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/checkout-form",
+	"title": "Checkout Form",
+	"category": "envo-blocks",
+	"icon": "cart",
+	"description": "The WooCommerce checkout of your store (the Checkout block or the classic checkout) with its payment methods, shipping and coupons, for checkout layouts. Choose two columns, one column or the summary on top.",
+	"keywords": [
+		"checkout",
+		"payment",
+		"order",
+		"woocommerce",
+		"layout"
+	],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"formLayout": {
+			"type": "string",
+			"default": "two-columns"
+		},
+		"stickySummary": {
+			"type": "boolean",
+			"default": true
+		},
+		"summaryBox": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true
+		}
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-layouts",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,21 @@
+2026-11-20T15:36:13+00:00 DEBUG #4996 - [New Request] GET /TIENDA%202/wp-admin/admin.php @ 15:36:01.019
+2026-11-20T15:36:13+00:00 DEBUG #4996 - GET https://api.woocommerce.com/integrations/ppc/v1/customer/partners/K8SKZ36LQBWXJ/merchant-integrations/
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+
+2026-11-20T15:36:13+00:00 WARNING #4996 - [Error] Not Found CONTEXT: {"args":{"method":"GET","headers":{"Authorization":"Bearer token","Content-Type":"application/json"}},"response":{"headers":{},"body":"{\"statusCode\":404,\"error\":\"Not Found\",\"message\":\"Not Found\"}","response":{"code":404,"message":"Not Found"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}}
+2026-11-20T17:02:32+00:00 DEBUG #7445.WC - [New Request] POST /TIENDA%202/ @ 17:02:30.069
+2026-11-20T17:02:32+00:00 ERROR #7445.WC - SDK v6 client token runtime error: Cannot request a PayPal client token without a client ID and secret.
+2026-11-20T17:10:42+00:00 DEBUG #8594.WC - [New Request] POST /TIENDA%202/ @ 17:10:39.524
+2026-11-20T17:10:42+00:00 ERROR #8594.WC - SDK v6 client token runtime error: Cannot request a PayPal client token without a client ID and secret.
+2026-11-20T17:37:16+00:00 DEBUG #6429.WC - [New Request] POST /TIENDA%202/ @ 17:37:13.683
+2026-11-20T17:37:16+00:00 ERROR #6429.WC - SDK v6 client token runtime error: Cannot request a PayPal client token without a client ID and secret.
+2026-11-20T17:43:04+00:00 DEBUG #7233.WC - [New Request] POST /TIENDA%202/ @ 17:43:01.368
+2026-11-20T17:43:04+00:00 ERROR #7233.WC - SDK v6 client token runtime error: Cannot request a PayPal client token without a client ID and secret.
+2026-11-20T17:49:19+00:00 DEBUG #4759.WC - [New Request] POST /TIENDA%202/ @ 17:49:17.145
+2026-11-20T17:49:19+00:00 ERROR #4759.WC - SDK v6 client token runtime error: Cannot request a PayPal client token without a client ID and secret.

@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/trust-badges",
+	"title": "Trust Badges",
+	"category": "envo-blocks",
+	"icon": "shield",
+	"description": "Payment method icons and short guarantees (secure payment, returns, delivery) that build trust near the buy button or in the footer.",
+	"keywords": [ "payment", "visa", "paypal", "secure", "guarantee", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"heading": { "type": "string", "default": "" },
+		"showPayments": { "type": "boolean", "default": true },
+		"payments": { "type": "array", "default": [ "visa", "mastercard", "paypal", "applepay", "googlepay" ], "items": { "type": "string" } },
+		"payStyle": { "type": "string", "default": "color" },
+		"paySize": { "type": "integer", "default": 44 },
+		"showBadges": { "type": "boolean", "default": true },
+		"badges": { "type": "array", "items": { "type": "object" } },
+		"align": { "type": "string" },
+		"contentAlign": { "type": "string", "default": "center" },
+		"iconColor": { "type": "string", "default": "" },
+		"textColor": { "type": "string", "default": "" },
+		"background": { "type": "string", "default": "" },
+		"borderColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"render": "file:./render.php"
+}

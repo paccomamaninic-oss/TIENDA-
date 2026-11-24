@@ -1,0 +1,1 @@
+{"schema":"envo-blocks/v1","title":"Only payment methods, large","blocks":[{"name":"envo-blocks/trust-badges","attributes":{"heading":"","showPayments":true,"payments":["visa","mastercard","maestro","paypal","bank","cod"],"payStyle":"color","paySize":56,"showBadges":false,"contentAlign":"center","iconColor":"","textColor":"","background":"","borderColor":""},"innerBlocks":[]}]}

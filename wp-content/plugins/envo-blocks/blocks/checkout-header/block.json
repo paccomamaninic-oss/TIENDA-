@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/checkout-header",
+	"title": "Checkout Header",
+	"category": "envo-blocks",
+	"icon": "lock",
+	"description": "A calm header for the checkout: your logo, a secure checkout note and a link back to the cart, without the menu. For distraction-free checkout layouts.",
+	"keywords": [
+		"checkout",
+		"header",
+		"logo",
+		"secure",
+		"distraction free",
+		"layout"
+	],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"showLogo": {
+			"type": "boolean",
+			"default": true
+		},
+		"logoWidth": {
+			"type": "integer",
+			"default": 140
+		},
+		"secureText": {
+			"type": "string",
+			"default": ""
+		},
+		"showBack": {
+			"type": "boolean",
+			"default": true
+		},
+		"backText": {
+			"type": "string",
+			"default": ""
+		},
+		"headerStyle": {
+			"type": "string",
+			"default": "split"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true
+		},
+		"color": {
+			"text": true,
+			"background": true,
+			"link": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"width": true,
+			"style": true
+		}
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-layouts",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,358 @@
+/**
+ * Form Styler block: one look for the forms of Contact Form 7, WPForms, Fluent Forms, Ninja Forms, Formidable Forms,
+ * Forminator and Gravity Forms (and any other form shortcode, through the plain form elements).
+ *
+ * The block settings come as custom properties of the wrapper (--envo-fs-*). The selectors start with
+ * ".envo-form-styler:not(#envo-fs):not(#envo-fs)": the :not() of an ID that never exists counts like an ID, so the rules win over
+ * the own styles of the form plugins (classes only) without !important, and themes or custom CSS can still win
+ * with an ID or !important. The lists of fields are in :where(), so the rules for selects, text areas, focus and
+ * the field styles can override the base rule.
+ */
+
+.envo-form-styler {
+	--envo-fs-accent: var(--envo-fs-focus, var(--envo-fs-btn-bg, var(--envo-fs-theme-btn-bg, var(--wp--preset--color--primary, #2563eb))));
+	--envo-fs-line: var(--envo-fs-border, color-mix(in srgb, currentColor 28%, transparent));
+	--envo-fs-ok: var(--envo-fs-success, #15803d);
+	--envo-fs-bad: var(--envo-fs-error, #c62828);
+	--envo-fs-btn-hover-filter: brightness(0.9);
+	box-sizing: border-box;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(form, .wpforms-form, .frm_forms, .nf-form-cont, .gform_wrapper) {
+	max-width: none;
+	margin-block: 0;
+}
+
+/* Hidden fields of Contact Form 7 (its own CSS hides them, but the editor preview has no CSS of the plugins). */
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .hidden-fields-container {
+	display: none;
+}
+
+/* ---------------------------------------------------------------- spacing between the fields */
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(
+	.wpcf7-form > p,
+	.wpforms-field-container > .wpforms-field,
+	.wpforms-submit-container,
+	.fluentform fieldset > .ff-el-group,
+	nf-field > .nf-field-container,
+	.frm_fields_container > .frm_form_field,
+	.forminator-custom-form > .forminator-row
+) {
+	margin-top: 0;
+	margin-bottom: var(--envo-fs-gap, 18px);
+	padding-block: 0;
+}
+
+/* WPForms keeps "medium" rows (first and last name) at 60 %; the fields take the whole width like the others. */
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .wpforms-field-row {
+	max-width: 100%;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.frm_fields_container, .gform_fields) {
+	row-gap: var(--envo-fs-gap, 18px);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .frm_fields_container > .frm_form_field {
+	margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------- labels */
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(label, legend, .wpforms-field-label, .ff-el-input--label label, .nf-field-label label, .frm_primary_label, .forminator-label, .gfield_label, .wpforms-field-sublabel, .forminator-description, .frm_description, .gfield_description) {
+	color: var(--envo-fs-label, inherit);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.wpcf7-form > p > label, .wpforms-field-label, .ff-el-input--label label, .nf-field-label label, .frm_primary_label, .forminator-label, .gfield_label) {
+	display: block;
+	margin: 0 0 6px;
+	padding: 0;
+	font-size: var(--envo-fs-label-size, inherit);
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+/* Contact Form 7 wraps the field in its label: the field stays normal text. */
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.wpcf7-form > p > label > br, .wpcf7-form > p > label + br) {
+	display: none;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .wpcf7-form > p > label > .wpcf7-form-control-wrap {
+	display: block;
+	margin-top: 6px;
+	font-weight: 400;
+}
+
+/* Choices (radio buttons, checkboxes) */
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.wpcf7-list-item label, .wpcf7-list-item-label, .wpforms-field-label-inline, .ff-el-form-check-label, .list-checkbox-wrap label, .list-radio-wrap label, .frm_checkbox label, .frm_radio label, .forminator-radio, .forminator-checkbox, .gchoice label) {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+	font-size: inherit;
+	font-weight: 400;
+	color: var(--envo-fs-label, inherit);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.wpcf7-list-item, label.forminator-radio, label.forminator-checkbox) {
+	margin: 0 18px 4px 0;
+}
+
+/* Forminator draws its own radio buttons and checkboxes. */
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.forminator-radio-bullet, .forminator-checkbox-box) {
+	margin: 0;
+	background-color: transparent;
+	border-color: var(--envo-fs-line);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) input:checked + :is(.forminator-radio-bullet, .forminator-checkbox-box) {
+	border-color: var(--envo-fs-accent);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) input:checked + .forminator-radio-bullet::before {
+	background-color: var(--envo-fs-accent);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) input:checked + .forminator-checkbox-box {
+	color: #fff;
+	background-color: var(--envo-fs-accent);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.forminator-radio-label, .forminator-checkbox-label) {
+	margin: 0;
+	font-size: inherit;
+	color: inherit;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) input:is([type="checkbox"], [type="radio"]) {
+	width: 1.1em;
+	height: 1.1em;
+	margin: 0;
+	accent-color: var(--envo-fs-accent);
+}
+
+/* ---------------------------------------------------------------- fields */
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :where(
+	input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="hidden"]):not([type="file"]):not([type="range"]):not([type="color"]):not([type="image"]),
+	select,
+	textarea,
+	.select2-container .select2-selection
+) {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	min-height: 0;
+	margin: 0;
+	padding: calc(var(--envo-fs-pad, 12px) * 0.75) var(--envo-fs-pad, 12px);
+	font: inherit;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--envo-fs-field-text, inherit);
+	background-color: var(--envo-fs-field-bg, transparent);
+	background-image: none;
+	border: var(--envo-fs-bw, 1px) solid var(--envo-fs-line);
+	border-radius: var(--envo-fs-radius, 6px);
+	box-shadow: none;
+	outline: 0;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) select {
+	padding-right: calc(var(--envo-fs-pad, 12px) + 20px);
+	appearance: none;
+	background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+	background-position: calc(100% - var(--envo-fs-pad, 12px) - 6px) 55%, calc(100% - var(--envo-fs-pad, 12px)) 55%;
+	background-size: 6px 6px;
+	background-repeat: no-repeat;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) select[multiple] {
+	padding-right: var(--envo-fs-pad, 12px);
+	background-image: none;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) textarea {
+	min-height: 140px;
+	resize: vertical;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .select2-container .select2-selection--single {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .select2-container .select2-selection .select2-selection__rendered {
+	padding: 0;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .select2-container .select2-selection .select2-selection__arrow {
+	position: absolute;
+	top: 50%;
+	right: var(--envo-fs-pad, 12px);
+	width: auto;
+	height: auto;
+	transform: translateY(-50%);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(input, textarea)::placeholder {
+	color: currentColor;
+	opacity: 0.5;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(input, select, textarea):focus,
+.envo-form-styler:not(#envo-fs):not(#envo-fs) .select2-container--open .select2-selection {
+	border-color: var(--envo-fs-accent);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--envo-fs-accent) 22%, transparent);
+	outline: 0;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) input:is([type="checkbox"], [type="radio"]):focus {
+	box-shadow: none;
+	outline: 2px solid var(--envo-fs-accent);
+	outline-offset: 2px;
+}
+
+/* Filled: a light tint instead of the border */
+.envo-form-styler--filled:not(#envo-fs):not(#envo-fs) :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="hidden"]):not([type="file"]):not([type="range"]):not([type="color"]):not([type="image"]), select, textarea, .select2-container .select2-selection) {
+	background-color: var(--envo-fs-field-bg, color-mix(in srgb, currentColor 6%, transparent));
+	border-color: var(--envo-fs-border, transparent);
+}
+
+/* Underline: only the line under the field */
+.envo-form-styler--underline:not(#envo-fs):not(#envo-fs) :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="hidden"]):not([type="file"]):not([type="range"]):not([type="color"]):not([type="image"]), select, textarea, .select2-container .select2-selection) {
+	padding-inline: 2px;
+	border-width: 0 0 max(var(--envo-fs-bw, 1px), 1px);
+	border-radius: 0;
+}
+
+.envo-form-styler--underline:not(#envo-fs):not(#envo-fs) select {
+	padding-right: 24px;
+	background-position: calc(100% - 10px) 55%, calc(100% - 4px) 55%;
+}
+
+.envo-form-styler--underline:not(#envo-fs):not(#envo-fs) :is(input, select, textarea):focus {
+	box-shadow: 0 1px 0 0 var(--envo-fs-accent);
+}
+
+/* ---------------------------------------------------------------- the button */
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(input[type="submit"], button[type="submit"], .wpforms-submit, .ff-btn-submit, .frm_button_submit, .forminator-button-submit, .gform_button, .nf-element[type="button"]) {
+	display: block;
+	box-sizing: border-box;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	min-height: 0;
+	margin: 0;
+	padding: calc(var(--envo-fs-pad, 12px) * 0.85) calc(var(--envo-fs-pad, 12px) * 2.2);
+	font: inherit;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--envo-fs-btn-text, var(--envo-fs-theme-btn-text, var(--wp--preset--color--base, #fff)));
+	background: var(--envo-fs-btn-bg, var(--envo-fs-theme-btn-bg, var(--wp--preset--color--contrast, #111)));
+	border: 0;
+	border-radius: var(--envo-fs-btn-radius, var(--envo-fs-theme-btn-radius, var(--envo-fs-radius, 6px)));
+	box-shadow: none;
+	text-shadow: none;
+	text-transform: none;
+	cursor: pointer;
+	transition: background-color 0.15s ease, color 0.15s ease, filter 0.15s ease;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(input[type="submit"], button[type="submit"], .wpforms-submit, .ff-btn-submit, .frm_button_submit, .forminator-button-submit, .gform_button, .nf-element[type="button"]):is(:hover, :focus-visible) {
+	color: var(--envo-fs-btn-hover-text, var(--envo-fs-btn-text, var(--envo-fs-theme-btn-text, var(--wp--preset--color--base, #fff))));
+	background: var(--envo-fs-btn-hover-bg, var(--envo-fs-btn-bg, var(--envo-fs-theme-btn-bg, var(--wp--preset--color--contrast, #111))));
+	filter: var(--envo-fs-btn-hover-filter);
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(input[type="submit"], button[type="submit"], .wpforms-submit, .ff-btn-submit, .frm_button_submit, .forminator-button-submit, .gform_button, .nf-element[type="button"]):focus-visible {
+	outline: 2px solid var(--envo-fs-accent);
+	outline-offset: 2px;
+}
+
+.envo-form-styler--btn-center:not(#envo-fs):not(#envo-fs) :is(input[type="submit"], button[type="submit"], .wpforms-submit, .ff-btn-submit, .frm_button_submit, .forminator-button-submit, .gform_button, .nf-element[type="button"]) {
+	margin-inline: auto;
+}
+
+.envo-form-styler--btn-right:not(#envo-fs):not(#envo-fs) :is(input[type="submit"], button[type="submit"], .wpforms-submit, .ff-btn-submit, .frm_button_submit, .forminator-button-submit, .gform_button, .nf-element[type="button"]) {
+	margin-left: auto;
+}
+
+.envo-form-styler--btn-full:not(#envo-fs):not(#envo-fs) :is(input[type="submit"], button[type="submit"], .wpforms-submit, .ff-btn-submit, .frm_button_submit, .forminator-button-submit, .gform_button, .nf-element[type="button"]) {
+	width: 100%;
+}
+
+/* The wrappers of the button take the whole row, so the button can move left, to the centre or right. */
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.frm_submit, .forminator-row-last .forminator-col, .gform_footer, .ff_submit_btn_wrapper) {
+	display: block;
+	width: 100%;
+	text-align: initial;
+}
+
+/* ---------------------------------------------------------------- messages */
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.wpcf7 form.sent .wpcf7-response-output, .wpforms-confirmation-container-full, .ff-message-success, .nf-response-msg, .frm_message, .forminator-response-message.forminator-success, .gform_confirmation_message) {
+	margin: var(--envo-fs-gap, 18px) 0;
+	padding: 0.8em 1em;
+	font-size: inherit;
+	color: var(--envo-fs-ok);
+	background: color-mix(in srgb, var(--envo-fs-ok) 8%, transparent);
+	border: 1px solid color-mix(in srgb, var(--envo-fs-ok) 45%, transparent);
+	border-radius: var(--envo-fs-radius, 6px);
+	box-shadow: none;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.wpcf7 form:is(.invalid, .unaccepted, .failed, .spam, .payment-required, .aborted) .wpcf7-response-output, .wpforms-error-container, .ff-errors-in-stack, .frm_error_style, .forminator-response-message.forminator-error, .gform_validation_errors) {
+	margin: var(--envo-fs-gap, 18px) 0;
+	padding: 0.8em 1em;
+	font-size: inherit;
+	color: var(--envo-fs-bad);
+	background: color-mix(in srgb, var(--envo-fs-bad) 7%, transparent);
+	border: 1px solid color-mix(in srgb, var(--envo-fs-bad) 45%, transparent);
+	border-radius: var(--envo-fs-radius, 6px);
+	box-shadow: none;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(.wpcf7-not-valid-tip, .wpforms-error:not(input):not(select):not(textarea), .ff-el-is-error .text-danger, .nf-error-msg, .frm_error, .forminator-error-message, .gfield_validation_message, .validation_message) {
+	display: block;
+	margin: 6px 0 0;
+	padding: 0;
+	font-size: 0.875em;
+	color: var(--envo-fs-bad);
+	background: none;
+	border: 0;
+}
+
+.envo-form-styler:not(#envo-fs):not(#envo-fs) :is(input, select, textarea):is([aria-invalid="true"], .wpcf7-not-valid, .wpforms-error) {
+	border-color: var(--envo-fs-bad);
+}
+
+/* ---------------------------------------------------------------- two columns */
+
+.envo-form-styler--cols-2:not(#envo-fs):not(#envo-fs) :is(.wpcf7-form, .wpforms-field-container, .fluentform form > fieldset, nf-fields-wrap, .frm_fields_container, .forminator-custom-form, .gform_fields) {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: var(--envo-fs-gap, 18px);
+	align-items: start;
+}
+
+/* Everything takes the whole row, only short fields (one line, a select) share it. */
+.envo-form-styler--cols-2:not(#envo-fs):not(#envo-fs) :is(.wpcf7-form, .wpforms-field-container, .fluentform form > fieldset, nf-fields-wrap, .frm_fields_container, .forminator-custom-form, .gform_fields) > * {
+	grid-column: 1 / -1;
+}
+
+.envo-form-styler--cols-2:not(#envo-fs):not(#envo-fs) :is(.wpcf7-form, .wpforms-field-container, .fluentform form > fieldset, nf-fields-wrap, .frm_fields_container, .forminator-custom-form, .gform_fields) > :has(input:is([type="text"], [type="email"], [type="tel"], [type="url"], [type="number"], [type="date"]), select):not(:has(textarea, [type="checkbox"], [type="radio"], [type="submit"], button)) {
+	grid-column: auto;
+}
+
+@media (max-width: 600px) {
+	.envo-form-styler--cols-2:not(#envo-fs):not(#envo-fs) :is(.wpcf7-form, .wpforms-field-container, .fluentform form > fieldset, nf-fields-wrap, .frm_fields_container, .forminator-custom-form, .gform_fields) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

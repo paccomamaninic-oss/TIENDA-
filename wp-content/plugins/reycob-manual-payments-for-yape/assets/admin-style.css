@@ -1,0 +1,126 @@
+.pyr-admin {
+  max-width: 1180px;
+}
+
+.pyr-admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 22px 0 18px;
+}
+
+.pyr-admin-header h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.pyr-admin-header p {
+  margin: 0;
+  color: #646970;
+}
+
+.pyr-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.pyr-stats div {
+  padding: 16px;
+  border: 1px solid #dcdcde;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.pyr-stats strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 22px;
+  color: #1d2327;
+}
+
+.pyr-stats span {
+  color: #646970;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.pyr-payments-table td,
+.pyr-payments-table th {
+  vertical-align: middle;
+}
+
+.pyr-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pyr-status-pending {
+  background: #fff8e5;
+  color: #996800;
+}
+
+.pyr-status-approved {
+  background: #edfaef;
+  color: #1b7f35;
+}
+
+.pyr-status-rejected {
+  background: #fcf0f1;
+  color: #b32d2e;
+}
+
+.pyr-muted {
+  color: #8c8f94;
+}
+
+.pyr-capture-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pyr-capture-cell img {
+  width: 46px;
+  height: 46px;
+  border: 1px solid #dcdcde;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.pyr-qr-admin-preview {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 8px;
+  border: 1px solid #dcdcde;
+  border-radius: 8px;
+  background: #fff;
+  color: #8c8f94;
+}
+
+.pyr-qr-admin-preview img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+}
+
+@media (max-width: 780px) {
+  .pyr-admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pyr-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}

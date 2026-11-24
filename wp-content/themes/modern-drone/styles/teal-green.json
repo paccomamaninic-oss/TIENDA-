@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "title": "Teal Green",
+  "version": 2,
+  "settings": {
+    "color": {
+            "palette": [
+                {
+                    "color": "#FFFFFF",
+                    "name": "Base",
+                    "slug": "base"
+                },
+                {
+                    "color": "#CCFB03",
+                    "name": "Primary",
+                    "slug": "primary"
+                },
+                {
+                    "color": "#2D2D2D",
+                    "name": "Secondary",
+                    "slug": "secondary"
+                },
+                {
+                    "color": "#0000000f",
+                    "name": "Section Background",
+                    "slug": "section-bg"
+                },
+                {
+                    "color": "#ffffff",
+                    "name": "Text Color",
+                    "slug": "text-color"
+                },
+                {
+                    "color": "#ffffff",
+                    "name": "Headings",
+                    "slug": "heading"
+                },
+                {
+                    "color": "#1F1F1F",
+                    "name": "Background",
+                    "slug": "background"
+                },
+                {
+                    "color": "#2D2D2D",
+                    "name": "Second Background",
+                    "slug": "second-background"
+                },
+                {
+                    "color":"#828282",
+                    "name": "Border Color",
+                    "slug": "border-color"
+                },
+                {
+                    "color":"#ffffff73",
+                    "name": "Sidebar Shadow Color",
+                    "slug": "sidebar-shadow-color"
+                }
+            ]
+    }
+  }
+}

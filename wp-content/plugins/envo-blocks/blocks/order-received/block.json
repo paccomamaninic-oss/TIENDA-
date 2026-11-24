@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/order-received",
+	"title": "Order Received",
+	"category": "envo-blocks",
+	"icon": "yes-alt",
+	"description": "The order details of the thank-you page after an order (order number, total, payment, products and addresses) in a style of your choice, for order received layouts.",
+	"keywords": [ "thank you", "order received", "order confirmation", "order details", "woocommerce", "layout" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"boxStyle": { "type": "string", "default": "cards" },
+		"showMessage": { "type": "boolean", "default": true },
+		"showCustomer": { "type": "boolean", "default": true },
+		"accentColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true },
+		"color": { "text": true, "background": true }
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-layouts",
+	"render": "file:./render.php"
+}

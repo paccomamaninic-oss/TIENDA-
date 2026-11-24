@@ -1,0 +1,238 @@
+<wpml-config>
+	<!-- Envo Blocks for multilingual sites, read by WPML and Polylang: what is translated, what is copied. -->
+	<custom-types>
+		<!-- Store layouts: one layout per language (the layout of the visitor's language is used). -->
+		<custom-type translate="1">envo_layout</custom-type>
+	</custom-types>
+
+	<custom-fields>
+		<!-- Settings of a store layout: the same in every language. -->
+		<custom-field action="copy">_envo_layout_type</custom-field>
+		<custom-field action="copy">_envo_layout_rules</custom-field>
+		<custom-field action="copy">_envo_layout_product</custom-field>
+		<custom-field action="copy">_envo_layout_design</custom-field>
+		<custom-field action="copy">_envo_layout_colors</custom-field>
+		<custom-field action="copy">_envo_layout_bare</custom-field>
+		<!-- Product data. -->
+		<custom-field action="translate">_envo_blocks_tabs</custom-field>
+		<custom-field action="copy">_envo_blocks_videos</custom-field>
+		<custom-field action="ignore">_envo_blocks_price_history</custom-field>
+		<custom-field action="ignore">_envo_blocks_preview</custom-field>
+		<custom-field action="ignore">_envo_side_cart</custom-field>
+	</custom-fields>
+
+	<custom-fields-texts>
+		<key name="_envo_blocks_tabs">
+			<key name="*">
+				<key name="title"/>
+				<key name="content"/>
+			</key>
+		</key>
+	</custom-fields-texts>
+
+	<admin-texts>
+		<!-- Texts of the settings pages. -->
+		<key name="envo_blocks_catalog_text"/>
+		<key name="envo_blocks_catalog_label"/>
+		<key name="envo_blocks_catalog_button"/>
+		<key name="envo_blocks_catalog_url"/>
+		<key name="envo_blocks_lowest_price_text"/>
+		<key name="envo_blocks_payment_qr">
+			<key name="message"/>
+		</key>
+		<key name="envo_blocks_checkout_fields">
+			<key name="address">
+				<key name="*">
+					<key name="label"/>
+				</key>
+			</key>
+			<key name="fields">
+				<key name="*">
+					<key name="label"/>
+					<key name="options">
+						<key name="*"/>
+					</key>
+				</key>
+			</key>
+		</key>
+		<key name="envo_blocks_invoices">
+			<key name="note"/>
+			<key name="terms"/>
+			<key name="texts">
+				<key name="*"/>
+			</key>
+			<key name="labels">
+				<key name="*"/>
+			</key>
+		</key>
+		<!-- The wishlist page: WPML and Polylang give each language its own page. -->
+		<key name="envo_blocks_wishlist_page"/>
+	</admin-texts>
+
+	<gutenberg-blocks>
+		<gutenberg-block type="envo-blocks/active-filters" translate="1">
+			<key name="title"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/advanced-heading" translate="1">
+			<key name="words"/>
+			<key name="before">
+				<key name="text"/>
+			</key>
+			<key name="after">
+				<key name="text"/>
+			</key>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/announcement-bar" translate="1">
+			<key name="messages">
+				<key name="*">
+					<key name="text"/>
+					<key name="url"/>
+				</key>
+			</key>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/cart-items" translate="1">
+			<key name="heading"/>
+			<key name="emptyText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/cart-summary" translate="1">
+			<key name="note"/>
+			<key name="checkoutLabel"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/checkout-header" translate="1">
+			<key name="secureText"/>
+			<key name="backText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/countdown" translate="1">
+			<key name="title"/>
+			<key name="finishedText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/coupon-box" translate="1">
+			<key name="title"/>
+			<key name="description"/>
+			<key name="copyText"/>
+			<key name="copiedText"/>
+			<key name="applyText"/>
+			<key name="buttonText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/delivery-estimate" translate="1">
+			<key name="messageToday"/>
+			<key name="messageLater"/>
+			<key name="messageDelivery"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/faq-item" translate="1">
+			<key name="question"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/features-bar" translate="1">
+			<key name="items">
+				<key name="*">
+					<key name="title"/>
+					<key name="text"/>
+				</key>
+			</key>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/invoice-download" translate="1">
+			<key name="text"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/lowest-price" translate="1">
+			<key name="text"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/map" translate="1">
+			<key name="loadButtonText"/>
+			<key name="cardText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/opening-hours" translate="1">
+			<key name="title"/>
+			<key name="closedText"/>
+			<key name="exceptions"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/order-tracking" translate="1">
+			<key name="title"/>
+			<key name="description"/>
+			<key name="buttonText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/payment-qr" translate="1">
+			<key name="title"/>
+			<key name="description"/>
+			<key name="message"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/pricing-table" translate="1">
+			<key name="savingsText"/>
+			<key name="featuredText"/>
+			<key name="badgeText"/>
+			<key name="buttonText"/>
+			<key name="plans">
+				<key name="*">
+					<key name="name"/>
+					<key name="description"/>
+					<key name="price"/>
+					<key name="period"/>
+					<key name="features"/>
+					<key name="buttonText"/>
+					<key name="buttonUrl"/>
+				</key>
+			</key>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/product-filter" translate="1">
+			<key name="title"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/product-questions" translate="1">
+			<key name="title"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/product-tab" translate="1">
+			<key name="title"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/product-tabs" translate="1">
+			<key name="panelText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/rating-summary" translate="1">
+			<key name="heading"/>
+			<key name="linkText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/recently-viewed" translate="1">
+			<key name="heading"/>
+			<key name="emptyText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/review-photos" translate="1">
+			<key name="heading"/>
+			<key name="emptyText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/shipping-bar" translate="1">
+			<key name="messageProgress"/>
+			<key name="messageReached"/>
+			<key name="messageEmpty"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/size-guide" translate="1">
+			<key name="buttonText"/>
+			<key name="modalTitle"/>
+			<key name="modalText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/stock-indicator" translate="1">
+			<key name="lowText"/>
+			<key name="inStockText"/>
+			<key name="outText"/>
+			<key name="backorderText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/trust-badges" translate="1">
+			<key name="heading"/>
+			<key name="badges">
+				<key name="*">
+					<key name="text"/>
+				</key>
+			</key>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/video-popup" translate="1">
+			<key name="videoTitle"/>
+			<key name="caption"/>
+			<key name="label"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/wishlist-button" translate="1">
+			<key name="addText"/>
+			<key name="addedText"/>
+		</gutenberg-block>
+		<gutenberg-block type="envo-blocks/wishlist" translate="1">
+			<key name="emptyTitle"/>
+			<key name="emptyText"/>
+			<key name="emptyButtonText"/>
+		</gutenberg-block>
+	</gutenberg-blocks>
+</wpml-config>

@@ -1,0 +1,13 @@
+/* Envo Blocks - Product data > Tabs. */
+#woocommerce-product-data ul.wc-tabs li.envo_blocks_tabs_options a::before {
+	content: "\f510"; /* dashicons-index-card */
+}
+
+.eb-pt-admin__intro { margin: 0; padding: 12px 12px 0 !important; color: #50575e; }
+.eb-pt-admin__row { margin: 12px; padding: 4px 0 8px; border: 1px solid #dcdcde; border-radius: 4px; background: #fff; }
+.eb-pt-admin__content { padding: 0 12px; }
+.eb-pt-admin__content .wp-editor-wrap { margin: 0; }
+.eb-pt-admin__text { width: 100%; }
+.eb-pt-admin__tools { display: flex; gap: 6px; align-items: center; margin: 8px 12px 0 !important; padding: 0 !important; }
+.eb-pt-admin__tools .button-link-delete { margin-inline-start: auto; }
+.eb-pt-admin__add-wrap { padding: 0 12px !important; }

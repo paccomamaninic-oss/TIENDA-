@@ -1,0 +1,1015 @@
+/*
+ * Envo Blocks Store – WooCommerce (Porto-like look).
+ * Loaded only when WooCommerce is active. Selectors start with :root so they win over
+ * WooCommerce's own stylesheets that load after the theme.
+ */
+
+/* ---------- Prices ---------- */
+
+:root .wc-block-components-product-price,
+:root .wc-block-grid__product-price,
+:root .woocommerce ul.products li.product .price,
+:root .woocommerce div.product p.price,
+:root .woocommerce div.product span.price {
+	color: var(--wp--preset--color--foreground);
+	font-weight: 600;
+}
+:root .wc-block-product .wc-block-components-product-price,
+:root .wc-block-grid__product-price,
+:root .woocommerce ul.products li.product .price {
+	font-size: 1.0625rem !important;
+}
+:root .wc-block-components-product-price del,
+:root .wc-block-grid__product-price del,
+:root .woocommerce ul.products li.product .price del,
+:root .woocommerce div.product p.price del {
+	color: var(--wp--preset--color--muted);
+	font-weight: 400;
+	opacity: 1;
+	margin-right: 0.35em;
+}
+:root .wc-block-components-product-price ins,
+:root .wc-block-grid__product-price ins,
+:root .woocommerce ul.products li.product .price ins,
+:root .woocommerce div.product p.price ins {
+	text-decoration: none;
+}
+
+/* ---------- Sale badge ---------- */
+
+:root .wc-block-components-product-sale-badge,
+:root .wc-block-grid__product-onsale,
+:root .woocommerce span.onsale {
+	background: var(--wp--preset--color--sale);
+	color: #fff;
+	border: 0;
+	border-radius: 2px;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	line-height: 1.4;
+	min-width: 0;
+	min-height: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	padding: 0.25em 0.6em;
+}
+:root .woocommerce ul.products li.product .onsale {
+	top: 0.75em;
+	right: 0.75em;
+	left: auto;
+	margin: 0;
+}
+:root .woocommerce div.product > span.onsale,
+:root .woocommerce div.product .woocommerce-product-gallery span.onsale {
+	top: 0.75em;
+	left: 0.75em;
+	right: auto;
+	margin: 0;
+	z-index: 10;
+}
+
+/* ---------- Product cards (block grid, product collection, classic loop) ---------- */
+
+:root .wc-block-product,
+:root .wc-block-grid__product,
+:root .woocommerce ul.products li.product {
+	text-align: center;
+}
+:root .wp-block-woocommerce-product-collection .wp-block-post-title {
+	font-size: 1.0625rem !important;
+	font-weight: 600;
+	line-height: 1.4;
+	text-align: center;
+	margin-top: 0.75rem;
+	margin-bottom: 0.25rem;
+}
+:root .wc-block-grid__product-title,
+:root .woocommerce ul.products li.product .woocommerce-loop-product__title,
+:root .woocommerce ul.products li.product .woocommerce-loop-category__title {
+	color: var(--wp--preset--color--foreground);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+:root .wp-block-woocommerce-product-collection .wp-block-post-title a,
+:root .wc-block-grid__product-link,
+:root .woocommerce ul.products li.product a:not(.button) {
+	color: var(--wp--preset--color--foreground);
+	text-decoration: none;
+}
+:root .wp-block-woocommerce-product-collection .wp-block-post-title a:hover,
+:root .wc-block-grid__product-link:hover .wc-block-grid__product-title,
+:root .woocommerce ul.products li.product a:hover .woocommerce-loop-product__title,
+:root .woocommerce ul.products li.product a:hover .woocommerce-loop-category__title {
+	color: var(--wp--preset--color--primary);
+}
+:root .woocommerce ul.products li.product .woocommerce-loop-category__title mark.count {
+	color: var(--wp--preset--color--muted);
+}
+:root .wc-block-components-product-rating__stars {
+	color: var(--wp--preset--color--muted);
+}
+:root .woocommerce ul.products li.product .woocommerce-LoopProduct-link .star-rating {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ---------- Single product ---------- */
+
+.sky-product .woocommerce-breadcrumb a {
+	text-decoration: none;
+}
+.sky-product .woocommerce-breadcrumb a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Gallery: sale badge in the corner, thumbnails as a 4-column row. */
+.sky-product .wp-block-woocommerce-product-image-gallery {
+	position: relative;
+}
+:root .sky-product .wp-block-woocommerce-product-image-gallery > span.onsale {
+	position: absolute;
+	top: 0.75em;
+	left: 0.75em;
+	right: auto;
+	margin: 0;
+	z-index: 10;
+}
+.sky-product .woocommerce-product-gallery .flex-control-thumbs {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0.5rem;
+	margin: 0.5rem 0 0;
+	padding: 0;
+}
+/* WooCommerce sizes the thumbnails as 25% floats with a stronger selector. */
+:root .sky-product .woocommerce-product-gallery .flex-control-thumbs li {
+	width: auto !important;
+	float: none !important;
+	margin: 0 !important;
+	list-style: none;
+}
+:root .sky-product .woocommerce-product-gallery .flex-control-thumbs li img {
+	display: block;
+	width: 100%;
+	height: auto;
+	opacity: 1;
+	border: 1px solid var(--wp--preset--color--line);
+	cursor: pointer;
+}
+:root .sky-product .woocommerce-product-gallery .flex-control-thumbs li img.flex-active,
+:root .sky-product .woocommerce-product-gallery .flex-control-thumbs li img:hover {
+	border-color: var(--wp--preset--color--foreground);
+}
+
+/* Summary */
+.sky-product__summary > * {
+	margin-block-start: 0;
+}
+.sky-product__summary .wc-block-components-product-rating__container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+:root .sky-product__summary .wc-block-components-product-rating__stars {
+	color: var(--wp--preset--color--sale);
+	margin: 0;
+}
+.sky-product__summary .woocommerce-review-link {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+	text-decoration: none;
+}
+/* The card rule above sets prices to 1.0625rem !important; the product's own price is bigger. */
+:root .sky-product__summary .wc-block-components-product-price {
+	font-size: 1.5rem !important;
+}
+.sky-product__summary .wp-block-post-excerpt {
+	line-height: 1.75;
+	margin-bottom: 1.25rem;
+}
+.sky-product__summary .wp-block-post-excerpt__excerpt {
+	margin: 0;
+}
+
+/* SKU, categories, tags: dark label, grey value. */
+.sky-product__meta {
+	color: var(--wp--preset--color--foreground);
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1.8;
+}
+.sky-product__meta .wp-block-post-terms a,
+.sky-product__meta .wc-block-components-product-sku .sku {
+	color: var(--wp--preset--color--muted);
+	font-weight: 400;
+	text-decoration: none;
+}
+.sky-product__meta .wp-block-post-terms a:hover {
+	color: var(--wp--preset--color--primary);
+}
+.sky-product__meta .wc-block-components-product-sku {
+	font-size: inherit;
+	text-transform: none;
+}
+
+/* Add to cart: between two lines, quantity stepper + dark button. */
+.sky-product__cart {
+	margin-top: 1.25rem;
+}
+.sky-product__cart .stock {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+	margin: 0 0 0.5rem;
+}
+:root .sky-product__cart form.cart {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.75rem;
+	margin: 0;
+	padding: 1.25rem 0;
+	border-top: 1px solid var(--wp--preset--color--line);
+	border-bottom: 1px solid var(--wp--preset--color--line);
+}
+:root .sky-product__cart .quantity {
+	height: 3rem;
+	margin: 0;
+	border: 2px solid var(--wp--preset--color--line);
+	border-radius: 0;
+}
+/* The stepper is a flex row: let the input stretch to the box instead of sizing it itself. */
+:root .sky-product__cart .quantity input.qty {
+	box-sizing: border-box;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 1;
+	font-weight: 700;
+}
+:root .sky-product__cart .single_add_to_cart_button {
+	height: 3rem;
+	margin: 0;
+	padding: 0 1.75rem;
+	border-radius: 0;
+	background: var(--wp--preset--color--foreground);
+	color: #fff;
+	font-size: 0.875rem;
+}
+:root .sky-product__cart .single_add_to_cart_button:hover,
+:root .sky-product__cart .single_add_to_cart_button:focus {
+	background: var(--wp--preset--color--primary);
+	color: #fff;
+}
+
+/*
+ * Variation choice (variable products): product page, Single Product block and anywhere else the
+ * add-to-cart form is used. WooCommerce styles it only inside .woocommerce div.product.
+ */
+:root form.variations_form table.variations {
+	width: 100%;
+	max-width: 420px;
+	margin: 0 0 1rem;
+	border: 0;
+	border-collapse: collapse;
+	table-layout: auto;
+}
+:root form.variations_form table.variations tr {
+	border: 0;
+}
+:root form.variations_form table.variations th,
+:root form.variations_form table.variations td {
+	display: block;
+	padding: 0;
+	border: 0;
+	background: none;
+	text-align: left;
+}
+:root form.variations_form table.variations th.label {
+	padding-bottom: 0.4rem;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+:root form.variations_form table.variations th.label label {
+	margin: 0;
+}
+:root form.variations_form table.variations tr + tr th.label {
+	padding-top: 0.9rem;
+}
+:root form.variations_form table.variations td.value {
+	position: relative; /* Keeps a visually hidden select (e.g. behind swatches) inside the cell. */
+	padding-bottom: 0;
+}
+:root form.variations_form table.variations select {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: 2.875rem;
+	margin: 0;
+	padding: 0 2.5rem 0 0.9rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 3px;
+	background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23222529' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 0.9rem center;
+	color: var(--wp--preset--color--foreground);
+	font-family: inherit;
+	font-size: 0.9375rem;
+	line-height: 1.4;
+	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+}
+:root form.variations_form table.variations select:hover {
+	border-color: var(--wp--preset--color--muted);
+}
+:root form.variations_form table.variations select:focus {
+	border-color: var(--wp--preset--color--primary);
+	outline: 0;
+	box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.15);
+}
+:root form.variations_form .reset_variations {
+	display: inline-block;
+	margin: 0.45rem 0 0;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+	text-decoration: underline;
+}
+:root form.variations_form .reset_variations:hover {
+	color: var(--wp--preset--color--primary);
+}
+:root form.variations_form .single_variation_wrap .woocommerce-variation {
+	margin: 0 0 0.75rem;
+}
+:root form.variations_form .woocommerce-variation-price .price {
+	color: var(--wp--preset--color--foreground);
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+:root form.variations_form .woocommerce-variation-price .price del {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875em;
+	font-weight: 400;
+}
+:root form.variations_form .woocommerce-variation-availability .stock {
+	margin: 0.25rem 0 0;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+}
+:root form.variations_form .woocommerce-variation-add-to-cart {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	gap: 0.75rem;
+}
+:root form.variations_form .woocommerce-variation-add-to-cart .quantity {
+	display: flex;
+	margin: 0;
+}
+/* The quantity box takes the height of the add to cart button next to it. */
+:root form.variations_form .woocommerce-variation-add-to-cart .quantity input.qty {
+	box-sizing: border-box;
+	height: auto;
+	min-height: 2.5rem;
+	width: 4.5rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 3px;
+	text-align: center;
+}
+/* On the product page the cart form is a flex row: the variation table takes its own line. */
+:root .sky-product__cart form.variations_form {
+	display: block;
+}
+:root .sky-product__cart form.variations_form .woocommerce-variation-add-to-cart .quantity {
+	display: inline-flex;
+	flex: 0 0 auto;
+}
+:root .sky-product__cart form.variations_form .woocommerce-variation-add-to-cart .quantity input.qty {
+	height: auto;
+	min-height: 0;
+	width: 3rem;
+	border: 0;
+}
+
+/* Tabs: uppercase labels, active one underlined. */
+:root .sky-product__tabs .woocommerce-tabs ul.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 2.2rem;
+	margin: 0 0 1.5rem !important;
+	padding: 0 !important;
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	overflow: visible;
+}
+:root .sky-product__tabs .woocommerce-tabs ul.tabs::before,
+:root .sky-product__tabs .woocommerce-tabs ul.tabs li::before,
+:root .sky-product__tabs .woocommerce-tabs ul.tabs li::after {
+	display: none !important;
+}
+/* WooCommerce draws the tabs as boxes with a stronger selector, hence !important. */
+:root .sky-product__tabs .woocommerce-tabs ul.tabs li {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: none !important;
+}
+:root .sky-product__tabs .woocommerce-tabs ul.tabs li a {
+	display: block;
+	margin-bottom: -1px;
+	padding: 0.5rem 0 !important;
+	border-bottom: 2px solid transparent;
+	color: var(--wp--preset--color--muted) !important;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+:root .sky-product__tabs .woocommerce-tabs ul.tabs li.active a,
+:root .sky-product__tabs .woocommerce-tabs ul.tabs li a:hover {
+	color: var(--wp--preset--color--foreground) !important;
+	border-bottom-color: var(--wp--preset--color--foreground);
+}
+.sky-product__tabs .woocommerce-Tabs-panel {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.875rem;
+	line-height: 1.75;
+}
+.sky-product__tabs .woocommerce-product-attributes {
+	width: 100%;
+	border-collapse: collapse;
+}
+.sky-product__tabs .woocommerce-product-attributes th,
+.sky-product__tabs .woocommerce-product-attributes td {
+	padding: 0.6rem 0;
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	text-align: left;
+}
+.sky-product__tabs .woocommerce-product-attributes th {
+	width: 30%;
+	color: var(--wp--preset--color--foreground);
+	font-weight: 600;
+}
+.sky-product__tabs .woocommerce-product-attributes td p {
+	margin: 0;
+}
+
+/* Related products (the margin is here: Product Collection does not save inline spacing styles). */
+.sky-product__related {
+	margin-top: var(--wp--preset--spacing--60);
+}
+.sky-product__related-title {
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--wp--preset--color--line);
+}
+.sky-product__related .sky-card__cats a {
+	color: inherit;
+	text-decoration: none;
+}
+.sky-product__related .wp-block-woocommerce-product-rating {
+	display: flex;
+	justify-content: center;
+}
+
+/* ---------- Buttons (classic WooCommerce markup) ---------- */
+
+/* WooCommerce renders a.button inline, so its padding spills over table rows and neighbours. */
+:root .woocommerce a.button,
+:root .woocommerce button.button,
+:root .woocommerce input.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4em;
+	line-height: 1.4;
+	text-decoration: none;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+/* Small buttons for table actions, inline "Edit" links and links inside notices. */
+:root .woocommerce-orders-table .button,
+:root .woocommerce-table--order-details .button,
+:root .woocommerce-MyAccount-content .woocommerce-Address-title .edit,
+:root .woocommerce .woocommerce-info .button,
+:root .woocommerce .woocommerce-message .button {
+	padding: 0.45rem 0.9rem;
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 3px;
+	font-size: 0.75rem;
+}
+/* Secondary (outline) look: View, Cancel, Edit, links inside notices. */
+:root .woocommerce-orders-table .button.view,
+:root .woocommerce .button.cancel,
+:root .woocommerce-MyAccount-content .woocommerce-Address-title .edit,
+:root .woocommerce .woocommerce-info .button,
+:root .woocommerce .woocommerce-message .button {
+	display: inline-flex;
+	align-items: center;
+	background: transparent;
+	border: 1px solid var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--primary);
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	line-height: 1.4;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+:root .woocommerce-orders-table .button.view:hover,
+:root .woocommerce-MyAccount-content .woocommerce-Address-title .edit:hover,
+:root .woocommerce .woocommerce-info .button:hover,
+:root .woocommerce .woocommerce-message .button:hover {
+	background: var(--wp--preset--color--primary);
+	color: #fff;
+}
+/* Block notice banners ("No downloads available yet. Browse products"): WooCommerce styles the link as plain text with !important. */
+:root .wc-block-components-notice-banner > .wc-block-components-notice-banner__content .wc-forward {
+	display: inline-flex !important;
+	align-items: center;
+	padding: 0.45rem 0.9rem !important;
+	border: 1px solid var(--wp--preset--color--primary) !important;
+	border-radius: 3px;
+	background: #fff !important;
+	color: var(--wp--preset--color--primary) !important;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	line-height: 1.4;
+	opacity: 1 !important;
+	text-decoration: none !important;
+	text-transform: uppercase;
+}
+:root .wc-block-components-notice-banner > .wc-block-components-notice-banner__content .wc-forward:hover {
+	background: var(--wp--preset--color--primary) !important;
+	color: #fff !important;
+}
+:root .wc-block-components-notice-banner > .wc-block-components-notice-banner__content:has(.wc-forward) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 1rem;
+}
+:root .wc-block-components-notice-banner > .wc-block-components-notice-banner__content:has(.wc-forward) .wc-forward {
+	order: 2;
+	float: none;
+	margin: 0;
+}
+:root .woocommerce .button.cancel {
+	border-color: var(--wp--preset--color--line);
+	color: var(--wp--preset--color--muted);
+}
+:root .woocommerce .button.cancel:hover {
+	background: var(--wp--preset--color--sale);
+	border-color: var(--wp--preset--color--sale);
+	color: #fff;
+}
+
+/* ---------- "View cart" link after an AJAX add to cart ---------- */
+
+/* WooCommerce appends a.added_to_cart right after the button: inline in classic cards (beside it or wrapped),
+   below it in block cards. Always put it on its own line under the button, as a small pill. */
+:root body a.added_to_cart,
+:root .woocommerce ul.products li.product a.added_to_cart {
+	display: block;
+	width: fit-content;
+	margin: 0.6rem auto 0;
+	padding: 0.3rem 0.85rem;
+	border-radius: 999px;
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--primary);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	line-height: 1.4;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+:root body a.added_to_cart::before {
+	content: "\2713\00a0";
+}
+:root body a.added_to_cart::after {
+	content: "\00a0\2192";
+}
+:root body a.added_to_cart:hover,
+:root body a.added_to_cart:focus,
+:root .woocommerce ul.products li.product a.added_to_cart:hover {
+	background: var(--wp--preset--color--primary);
+	color: #fff;
+}
+/* Block cards stack button and link in a column with a 12 px gap. The button has a bottom margin set inline by
+   its block in some product lists (shop, categories: 1rem) and none in others (home), so with the link present
+   the gap alone spaces them (!important only to beat that inline style). */
+:root body .wc-block-components-product-button a.added_to_cart {
+	margin-top: 0;
+}
+:root body .wc-block-components-product-button:has(a.added_to_cart) .wc-block-components-product-button__button {
+	margin-bottom: 0 !important;
+}
+
+/* ---------- Forms ---------- */
+
+:root .woocommerce form .form-row {
+	margin: 0 0 1.1rem;
+	padding: 0;
+}
+:root .woocommerce form .form-row label {
+	margin-bottom: 0.35rem;
+	color: var(--wp--preset--color--foreground);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+:root .woocommerce form .form-row label.woocommerce-form__label-for-checkbox {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-weight: 400;
+}
+:root .woocommerce form .form-row .input-text,
+:root .woocommerce form .form-row select,
+:root .woocommerce form .form-row textarea {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.7rem 0.9rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 3px;
+	background: #fff;
+	color: var(--wp--preset--color--foreground);
+	font-size: 0.9375rem;
+	line-height: 1.4;
+}
+:root .woocommerce form .form-row .input-text:focus,
+:root .woocommerce form .form-row select:focus,
+:root .woocommerce form .form-row textarea:focus {
+	border-color: var(--wp--preset--color--primary);
+	outline: 0;
+	box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.15);
+}
+/* Country / state dropdowns (selectWoo): same size as the text inputs. */
+:root .woocommerce form .form-row .select2-container .select2-selection--single {
+	height: auto;
+	padding: 0;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 3px;
+}
+:root .woocommerce form .form-row .select2-container .select2-selection--single .select2-selection__rendered {
+	padding: 0.7rem 2.25rem 0.7rem 0.9rem;
+	color: var(--wp--preset--color--foreground);
+	font-size: 0.9375rem;
+	line-height: 1.4;
+}
+:root .woocommerce form .form-row .select2-container .select2-selection--single .select2-selection__arrow {
+	top: 0;
+	right: 0.5rem;
+	height: 100%;
+}
+:root .woocommerce form .form-row em,
+:root .woocommerce form .form-row .description {
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+}
+:root .woocommerce form fieldset {
+	margin: 0.5rem 0 1.5rem;
+	padding: 1.25rem 1.25rem 0.25rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 4px;
+}
+:root .woocommerce form fieldset legend {
+	padding: 0 0.5rem;
+	color: var(--wp--preset--color--foreground);
+	font-size: 0.875rem;
+	font-weight: 700;
+}
+
+/* ---------- My account ---------- */
+
+/* Navigation as a card, active item marked with a blue bar. */
+@media (min-width: 769px) {
+	:root .woocommerce-account .woocommerce-MyAccount-navigation {
+		width: 24%;
+	}
+	:root .woocommerce-account .woocommerce-MyAccount-content {
+		width: 72%;
+	}
+}
+:root .woocommerce-account .woocommerce-MyAccount-navigation ul {
+	margin: 0 0 2rem;
+	padding: 0;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 4px;
+	list-style: none;
+	overflow: hidden;
+}
+:root .woocommerce-account .woocommerce-MyAccount-navigation ul li {
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid var(--wp--preset--color--line);
+}
+:root .woocommerce-account .woocommerce-MyAccount-navigation ul li:last-child {
+	border-bottom: 0;
+}
+:root .woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+	display: block;
+	padding: 0.8rem 1.1rem;
+	box-shadow: inset 3px 0 0 transparent;
+	color: var(--wp--preset--color--foreground);
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+:root .woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover {
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--primary);
+}
+:root .woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
+	background: var(--wp--preset--color--secondary);
+	box-shadow: inset 3px 0 0 var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--primary);
+}
+:root .woocommerce-account .woocommerce-MyAccount-navigation-link--customer-logout a {
+	color: var(--wp--preset--color--muted);
+	font-weight: 400;
+}
+
+:root .woocommerce-account .woocommerce-MyAccount-content {
+	font-size: 0.9375rem;
+}
+:root .woocommerce-account .woocommerce-MyAccount-content > p:first-child {
+	margin-top: 0;
+}
+:root .woocommerce-account .woocommerce-MyAccount-content h2 {
+	margin: 2rem 0 1rem;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+/* "Order #1 was placed on … and is currently …" */
+:root .woocommerce-account .woocommerce-MyAccount-content mark {
+	color: var(--wp--preset--color--foreground);
+	font-weight: 700;
+}
+
+/* Status as a pill in the order detail. */
+:root .woocommerce-account mark.order-status {
+	display: inline-block;
+	padding: 0.15em 0.6em;
+	border-radius: 999px;
+	background: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--primary);
+	font-size: 0.8125rem;
+	font-weight: 600;
+}
+:root .woocommerce-account .woocommerce-orders-table__cell-order-status {
+	white-space: nowrap;
+}
+
+/* Tables: orders list, order details, downloads. */
+:root .woocommerce-account table.shop_table {
+	width: 100%;
+	margin: 0 0 1.5rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 4px;
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+}
+:root .woocommerce-account table.shop_table th,
+:root .woocommerce-account table.shop_table td {
+	padding: 0.85rem 1rem;
+	border: 0;
+	border-top: 1px solid var(--wp--preset--color--line);
+	vertical-align: middle;
+	line-height: 1.5;
+}
+:root .woocommerce-account table.shop_table thead th {
+	border-top: 0;
+	background: #f7f7f7;
+	color: var(--wp--preset--color--muted);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+:root .woocommerce-account table.shop_table tfoot th {
+	color: var(--wp--preset--color--foreground);
+	font-weight: 600;
+}
+:root .woocommerce-account table.shop_table :is(td, th) a:not(.button) {
+	color: var(--wp--preset--color--foreground);
+	font-weight: 600;
+	text-decoration: none;
+}
+:root .woocommerce-account table.shop_table :is(td, th) a:not(.button):hover {
+	color: var(--wp--preset--color--primary);
+}
+:root .woocommerce-account .woocommerce-orders-table__cell-order-date,
+:root .woocommerce-account .woocommerce-orders-table__cell-order-actions {
+	white-space: nowrap;
+}
+/* Orders list: status text coloured by the row's status class (the cell holds bare text, no wrapper to style as a pill). */
+:root .woocommerce-account .woocommerce-orders-table__cell-order-status {
+	font-size: 0.8125rem;
+	font-weight: 600;
+}
+:root .woocommerce-account .woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status {
+	color: #2e7d32;
+}
+:root .woocommerce-account .woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status {
+	color: var(--wp--preset--color--primary);
+}
+:root .woocommerce-account :is(.woocommerce-orders-table__row--status-pending, .woocommerce-orders-table__row--status-on-hold, .woocommerce-orders-table__row--status-failed) .woocommerce-orders-table__cell-order-status {
+	color: #c0392b;
+}
+:root .woocommerce-account :is(.woocommerce-orders-table__row--status-cancelled, .woocommerce-orders-table__row--status-refunded) .woocommerce-orders-table__cell-order-status {
+	color: var(--wp--preset--color--muted);
+}
+/* Spacing that also works when the buttons wrap onto two lines. */
+:root .woocommerce-account table.shop_table .button {
+	margin: 0.15rem 0.35rem 0.15rem 0;
+}
+:root .woocommerce-account table.shop_table .button:last-child {
+	margin-right: 0;
+}
+/* Phones: WooCommerce stacks the orders table and hides the order number cell; show it as the card header. */
+@media (max-width: 768px) {
+	:root .woocommerce-account table.shop_table_responsive tbody th {
+		display: flex;
+		justify-content: space-between;
+		background: #f7f7f7;
+		text-align: right;
+	}
+	:root .woocommerce-account table.shop_table_responsive tbody th::before {
+		content: attr(data-title) ":";
+		font-weight: 700;
+	}
+	:root .woocommerce-account table.shop_table_responsive tbody tr:first-child th {
+		border-top: 0;
+	}
+	:root .woocommerce-account table.shop_table_responsive tbody tr td {
+		background: #fff;
+	}
+}
+
+/* Order detail: addresses as cards, "order again" spacing. */
+:root .woocommerce-account .woocommerce-customer-details address {
+	padding: 1.25rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 4px;
+	font-style: normal;
+	line-height: 1.7;
+}
+:root .woocommerce-account .woocommerce-customer-details .woocommerce-column__title {
+	margin-top: 1.5rem;
+	font-size: 1.125rem;
+}
+:root .woocommerce-account .order-again {
+	margin: 0 0 1.5rem;
+}
+
+/* Addresses page: two cards with an outline "Edit" button. */
+:root .woocommerce-account .woocommerce-Addresses {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1.25rem;
+	margin-top: 1rem;
+}
+:root .woocommerce-account .woocommerce-Addresses::before,
+:root .woocommerce-account .woocommerce-Addresses::after {
+	display: none;
+}
+:root .woocommerce-account .woocommerce-Addresses .woocommerce-Address {
+	width: auto;
+	float: none;
+	margin: 0;
+	padding: 1.25rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 4px;
+}
+:root .woocommerce-account .woocommerce-Address-title {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	margin-bottom: 0.75rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--wp--preset--color--line);
+}
+:root .woocommerce-account .woocommerce-Address-title::before,
+:root .woocommerce-account .woocommerce-Address-title::after {
+	display: none;
+}
+:root .woocommerce-account .woocommerce-Address-title h2 {
+	margin: 0;
+	font-size: 1.125rem;
+}
+:root .woocommerce-account .woocommerce-Address-title .edit {
+	float: none;
+	white-space: nowrap;
+}
+:root .woocommerce-account .woocommerce-Address address {
+	font-style: normal;
+	line-height: 1.7;
+}
+
+/* Logged out: keep a lone login form readable instead of full width. */
+:root .woocommerce-account:not(.logged-in) .woocommerce > :is(h2, .woocommerce-form-login, .woocommerce-ResetPassword) {
+	max-width: 30rem;
+}
+:root .woocommerce-account .woocommerce-form-login,
+:root .woocommerce-account .woocommerce-form-register {
+	margin: 0 0 1.5rem;
+	padding: 1.5rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 4px;
+}
+/* "Log in" button first, "Remember me" next to it. */
+:root .woocommerce-account .woocommerce-form-login .form-row:has(.woocommerce-form-login__submit) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.75rem 1.25rem;
+}
+:root .woocommerce-account .woocommerce-form-login .woocommerce-form-login__submit {
+	order: -1;
+	float: none;
+	margin: 0;
+}
+:root .woocommerce-account .woocommerce-form-login .woocommerce-form-login__rememberme {
+	margin: 0;
+}
+:root .woocommerce-account .woocommerce-LostPassword {
+	margin: 0;
+	font-size: 0.8125rem;
+}
+
+/* ---------- Software License plugin (licence manage page, order detail) ---------- */
+
+/* Licence availability box: status, start and expire date. */
+:root #woo_sl_lk .licence_expire {
+	margin-bottom: 1.5rem;
+	padding: 1rem 1.25rem;
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 4px;
+	background: #fafafa;
+	font-size: 0.875rem;
+	line-height: 1.8;
+}
+
+/* "Extend …" is printed as a plain a.button without the theme's button class: make it a clear call to action. */
+/* inline-block, not flex: the label is text + a price span and must wrap as one sentence. */
+:root .woocommerce a.button.button-extend {
+	display: inline-block;
+	max-width: 100%;
+	margin: 1rem 0 0.25rem;
+	padding: 0.8rem 1.4rem;
+	border: 0;
+	border-radius: 3px;
+	background: var(--wp--preset--color--primary);
+	box-shadow: 0 4px 12px rgba(0, 136, 204, 0.25);
+	color: #fff;
+	font-size: 0.875rem;
+	font-weight: 700;
+	line-height: 1.4;
+	text-align: left;
+	text-decoration: none;
+	text-transform: none;
+	white-space: normal;
+}
+:root .woocommerce a.button.button-extend::before {
+	content: "\21BB";
+	margin-right: 0.5em;
+	font-size: 1.15em;
+	line-height: 1;
+}
+:root .woocommerce a.button.button-extend:hover,
+:root .woocommerce a.button.button-extend:focus {
+	background: var(--wp--preset--color--primary-dark);
+	box-shadow: 0 6px 16px rgba(0, 110, 166, 0.3);
+	color: #fff;
+}
+:root .woocommerce a.button.button-extend .woocommerce-Price-amount {
+	color: inherit;
+	font-weight: 800;
+}
+
+/* "Generate Licence Key" uses the same plain markup. */
+:root .woocommerce a.button.button_generate {
+	padding: 0.7rem 1.4rem;
+	border: 0;
+	border-radius: 3px;
+	background: var(--wp--preset--color--primary);
+	color: #fff;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+}
+:root .woocommerce a.button.button_generate:hover {
+	background: var(--wp--preset--color--primary-dark);
+	color: #fff;
+}

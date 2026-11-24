@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/advanced-heading",
+	"title": "Advanced Heading",
+	"category": "envo-blocks",
+	"icon": "heading",
+	"description": "A heading made of three parts, each with its own typography, colors, background and border. The middle part can rotate several texts with an animation.",
+	"keywords": [ "heading", "title", "animated", "rotating", "typing", "headline" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"tag": { "type": "string", "default": "h2" },
+		"textAlign": { "type": "string", "default": "center" },
+		"layout": { "type": "string", "default": "inline" },
+		"before": { "type": "object", "default": {} },
+		"middle": { "type": "object", "default": { "color": "#6d28d9", "fontWeight": "800" } },
+		"after": { "type": "object", "default": {} },
+		"words": { "type": "string" },
+		"animation": { "type": "string", "default": "slide-up" },
+		"interval": { "type": "integer", "default": 2500 },
+		"loop": { "type": "boolean", "default": true },
+		"decoration": { "type": "string", "default": "none" },
+		"decorationColor": { "type": "string", "default": "" },
+		"linkUrl": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true, "lineHeight": true },
+		"color": { "text": true, "background": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"viewScript": "envo-blocks-heading",
+	"render": "file:./render.php"
+}

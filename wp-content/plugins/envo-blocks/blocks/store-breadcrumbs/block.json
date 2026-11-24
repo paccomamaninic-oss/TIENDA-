@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/store-breadcrumbs",
+	"title": "Store Breadcrumbs",
+	"category": "envo-blocks",
+	"icon": "arrow-right-alt2",
+	"description": "The WooCommerce breadcrumbs (Home / Shop / Category / Product) for store layouts and any page.",
+	"keywords": [ "breadcrumbs", "path", "navigation", "woocommerce", "layout" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"separator": { "type": "string", "default": "/" },
+		"textAlign": { "type": "string", "default": "left" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true, "textTransform": true, "letterSpacing": true },
+		"color": { "text": true, "link": true, "background": false }
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-layouts",
+	"render": "file:./render.php"
+}

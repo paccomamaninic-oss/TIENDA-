@@ -1,0 +1,80 @@
+.ata-wcspc-wrap { max-width: 960px; margin: 20px 20px 40px 0; }
+.ata-wcspc-header {
+	background: linear-gradient(135deg, #9b5c8f 0%, #6b3d6a 100%);
+	border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; color: #fff;
+	box-shadow: 0 8px 24px rgba(155, 92, 143, 0.25);
+}
+.ata-wcspc-header h1 { margin: 0 0 6px; font-size: 1.5rem; color: #fff; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ata-wcspc-header .dashicons { font-size: 28px; width: 28px; height: 28px; }
+.ata-wcspc-version { font-size: 0.75rem; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 20px; }
+.ata-wcspc-badge-free { font-size: 0.7rem; background: #fff; color: #9b5c8f; padding: 2px 10px; border-radius: 20px; font-weight: 600; }
+.ata-wcspc-subtitle { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+.ata-wcspc-pro-banner {
+	background: #fff8e5; border: 1px solid #f0c36d; border-radius: 10px;
+	padding: 14px 18px; margin-bottom: 20px;
+}
+.ata-wcspc-pro-banner p { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.ata-wcspc-tabs { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+.ata-wcspc-tab-nav { display: flex; flex-wrap: wrap; border-bottom: 1px solid #e8e8e8; background: #fafafa; padding: 0 8px; }
+.ata-wcspc-tab {
+	border: none; background: transparent; padding: 14px 18px; font-size: 14px; font-weight: 500;
+	color: #555; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px;
+}
+.ata-wcspc-tab:hover { color: #9b5c8f; }
+.ata-wcspc-tab.active { color: #9b5c8f; border-bottom-color: #9b5c8f; }
+.ata-wcspc-panel { display: none; padding: 24px; }
+.ata-wcspc-panel.active { display: block; }
+.ata-wcspc-card { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+.ata-wcspc-card h2 { margin: 0 0 16px; font-size: 1.1rem; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0; }
+.ata-wcspc-card .form-table th { padding-left: 0; width: 220px; font-weight: 500; }
+.ata-field-hint { font-weight: 400 !important; color: #646970; margin: 6px 0 0 !important; font-size: 12px !important; line-height: 1.45; }
+.ata-card-intro { margin: -8px 0 16px; color: #646970; font-size: 13px; }
+.ata-wcspc-locked { background: #f9f9f9; border-style: dashed; }
+.ata-wcspc-locked ul { margin: 0 0 12px 18px; }
+.ata-wcspc-footer { margin-top: 20px; padding: 16px 0; }
+.ata-wcspc-icon-preview { display: inline-block; margin-left: 12px; font-size: 24px; vertical-align: middle; }
+
+.ata-wcspc-header-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+.ata-wcspc-header-left { flex: 1 1 auto; min-width: 200px; }
+.ata-wcspc-header-right { flex: 0 0 auto; }
+.ata-wcspc-upgrade-btn {
+	display: inline-block;
+	background: #fff;
+	color: #9b5c8f !important;
+	font-weight: 600;
+	text-decoration: none;
+	padding: 10px 18px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+	transition: transform 0.15s, box-shadow 0.15s;
+}
+.ata-wcspc-upgrade-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+	color: #6b3d6a !important;
+}
+.ata-wcspc-pro-badge {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	background: linear-gradient(135deg, #9b5c8f, #6b3d6a);
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 4px;
+	vertical-align: middle;
+	margin-left: 6px;
+}
+.ata-wcspc-locked h2 {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 4px;
+}

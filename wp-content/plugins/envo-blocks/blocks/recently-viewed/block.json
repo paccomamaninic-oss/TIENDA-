@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/recently-viewed",
+	"title": "Recently Viewed Products",
+	"category": "envo-blocks",
+	"icon": "backup",
+	"description": "Products the visitor looked at last. They are remembered in the browser and loaded through the WooCommerce Store API, so the block works on cached pages too.",
+	"keywords": [ "recently", "viewed", "history", "products", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"showHeading": { "type": "boolean", "default": true },
+		"heading": { "type": "string", "default": "" },
+		"limit": { "type": "integer", "default": 4 },
+		"columns": { "type": "integer", "default": 4 },
+		"columnsMobile": { "type": "integer", "default": 2 },
+		"excludeCurrent": { "type": "boolean", "default": true },
+		"showPrice": { "type": "boolean", "default": true },
+		"showRating": { "type": "boolean", "default": false },
+		"showButton": { "type": "boolean", "default": false },
+		"imageRatio": { "type": "string", "default": "1" },
+		"emptyText": { "type": "string", "default": "" },
+		"showClear": { "type": "boolean", "default": false },
+		"textColor": { "type": "string", "default": "" },
+		"priceColor": { "type": "string", "default": "" },
+		"cardBackground": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"viewScript": "envo-blocks-recent",
+	"render": "file:./render.php"
+}

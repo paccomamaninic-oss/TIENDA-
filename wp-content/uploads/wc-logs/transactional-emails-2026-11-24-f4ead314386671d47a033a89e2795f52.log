@@ -1,0 +1,1 @@
+2026-11-24T01:44:19+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"NICO","MercadoPago\\Woocommerce\\Gateways\\YapeGateway":null}

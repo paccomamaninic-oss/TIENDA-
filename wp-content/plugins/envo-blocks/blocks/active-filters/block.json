@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/active-filters",
+	"title": "Active Filters",
+	"category": "envo-blocks",
+	"icon": "dismiss",
+	"description": "The chosen filters of the shop as chips – a click removes one – and \"Clear all\". Shown only while a filter is on.",
+	"keywords": [ "filters", "active filters", "chosen", "clear", "shop", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"title": { "type": "string", "default": "" },
+		"showClear": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-filters",
+	"render": "file:./render.php"
+}

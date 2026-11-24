@@ -1,0 +1,164 @@
+/**
+ * Tax Switcher block: two buttons, a switch or a dropdown.
+ */
+
+.envo-tax {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5em 0.75em;
+	color: var(--envo-tax-text, inherit);
+	line-height: 1.3;
+}
+
+.envo-tax--justify-center {
+	justify-content: center;
+}
+
+.envo-tax--justify-right {
+	justify-content: flex-end;
+}
+
+.envo-tax__label {
+	font-weight: 600;
+}
+
+.envo-tax__group {
+	display: inline-flex;
+	align-items: center;
+}
+
+/* Two buttons (segmented) */
+
+.envo-tax--buttons .envo-tax__group {
+	padding: 3px;
+	border: 1px solid var(--envo-tax-border, color-mix(in srgb, currentColor 25%, transparent));
+	border-radius: var(--envo-tax-radius, 20px);
+	background: var(--envo-tax-bg, transparent);
+}
+
+.envo-tax__option {
+	display: inline-block;
+	padding: 0.35em 0.9em;
+	border-radius: calc(var(--envo-tax-radius, 20px) - 3px);
+	color: inherit;
+	font-size: 0.9em;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background-color 0.15s, color 0.15s;
+}
+
+.envo-tax__option:hover {
+	background: color-mix(in srgb, currentColor 10%, transparent);
+	color: inherit;
+}
+
+/* The default active look works on light and dark backgrounds; the block colors replace it. */
+.envo-tax__option.is-active,
+.envo-tax__option.is-active:hover {
+	background: var(--envo-tax-active-bg, color-mix(in srgb, currentColor 16%, transparent));
+	color: var(--envo-tax-active-text, inherit);
+	font-weight: 600;
+}
+
+/* Switch */
+
+.envo-tax--toggle .envo-tax__group {
+	gap: 0.6em;
+}
+
+.envo-tax__side {
+	color: inherit;
+	font-size: 0.9em;
+	text-decoration: none;
+	opacity: 0.65;
+	cursor: pointer;
+}
+
+.envo-tax__side.is-active {
+	font-weight: 600;
+	opacity: 1;
+}
+
+.envo-tax__side:hover {
+	color: inherit;
+	opacity: 1;
+}
+
+.envo-tax__switch {
+	position: relative;
+	color: inherit;
+	display: inline-block;
+	flex: none;
+	width: 2.6em;
+	height: 1.5em;
+	border: 1px solid var(--envo-tax-border, transparent);
+	border-radius: var(--envo-tax-radius, 20px);
+	background: var(--envo-tax-bg, color-mix(in srgb, currentColor 22%, transparent));
+	cursor: pointer;
+	transition: background-color 0.15s;
+}
+
+.envo-tax__switch.is-on {
+	background: var(--envo-tax-active-bg, currentColor);
+}
+
+.envo-tax__knob {
+	position: absolute;
+	top: 50%;
+	left: 0.2em;
+	width: 1.1em;
+	height: 1.1em;
+	border-radius: var(--envo-tax-radius, 20px);
+	background: var(--envo-tax-active-text, #fff);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
+	transform: translateY(-50%);
+	transition: left 0.15s;
+}
+
+.envo-tax__switch.is-on .envo-tax__knob {
+	left: calc(100% - 1.3em);
+}
+
+/* Dropdown */
+
+.envo-tax__form {
+	display: inline-flex;
+	gap: 0.4em;
+	margin: 0;
+}
+
+.envo-tax__select {
+	padding: 0.35em 2em 0.35em 0.8em;
+	border: 1px solid var(--envo-tax-border, color-mix(in srgb, currentColor 30%, transparent));
+	border-radius: min(var(--envo-tax-radius, 20px), 8px);
+	background-color: var(--envo-tax-bg, transparent);
+	color: inherit;
+	font: inherit;
+	font-size: 0.9em;
+	cursor: pointer;
+}
+
+.envo-tax__select option {
+	color: #1e1e1e;
+}
+
+.envo-tax a:focus-visible,
+.envo-tax__select:focus-visible {
+	outline: 2px solid var(--envo-tax-active-bg, currentColor);
+	outline-offset: 2px;
+}
+
+.envo-tax.is-busy {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.envo-tax__option,
+	.envo-tax__switch,
+	.envo-tax__knob {
+		transition: none;
+	}
+}

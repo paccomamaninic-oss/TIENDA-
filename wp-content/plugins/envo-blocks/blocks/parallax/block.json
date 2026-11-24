@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/parallax",
+	"title": "Parallax Section",
+	"category": "envo-blocks",
+	"icon": "cover-image",
+	"description": "A section with an image or video background that moves slower than the page (or zooms) while scrolling, with any blocks on top of it. Smooth on phones too.",
+	"keywords": [ "parallax", "background", "section", "hero", "banner", "cover", "scroll", "image", "video" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"mediaId": { "type": "integer", "default": 0 },
+		"mediaUrl": { "type": "string", "default": "" },
+		"mediaType": { "type": "string", "default": "image" },
+		"mediaAlt": { "type": "string", "default": "" },
+		"focalPoint": { "type": "object", "default": { "x": 0.5, "y": 0.5 } },
+		"effect": { "type": "string", "default": "scroll" },
+		"speed": { "type": "integer", "default": 30 },
+		"reverse": { "type": "boolean", "default": false },
+		"onMobile": { "type": "boolean", "default": true },
+		"heightMode": { "type": "string", "default": "px" },
+		"minHeight": { "type": "integer", "default": 520 },
+		"contentWidth": { "type": "integer", "default": 0 },
+		"verticalAlign": { "type": "string", "default": "center" },
+		"overlayColor": { "type": "string", "default": "#000000" },
+		"overlayOpacity": { "type": "integer", "default": 40 },
+		"textColor": { "type": "string", "default": "#ffffff" },
+		"backgroundColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": [ "top", "bottom" ], "padding": true },
+		"__experimentalBorder": { "radius": true }
+	},
+	"example": {
+		"attributes": { "minHeight": 320 },
+		"innerBlocks": [
+			{ "name": "core/heading", "attributes": { "content": "Summer collection", "textAlign": "center" } }
+		]
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": [ "envo-blocks-blocks", "envo-blocks-parallax" ],
+	"viewScript": "envo-blocks-parallax",
+	"render": "file:./render.php"
+}

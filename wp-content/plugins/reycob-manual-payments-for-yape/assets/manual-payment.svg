@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Pago manual</title>
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="#f4f5f7"/>
+  <rect x="15" y="13" width="34" height="38" rx="5" fill="#ffffff" stroke="#30343b" stroke-width="3"/>
+  <path d="M22 22h20M22 29h13" fill="none" stroke="#30343b" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="39" cy="40" r="9" fill="#24735b"/>
+  <path d="m35 40 3 3 6-7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

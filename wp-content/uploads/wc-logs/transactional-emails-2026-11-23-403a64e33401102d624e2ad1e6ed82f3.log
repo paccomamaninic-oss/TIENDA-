@@ -1,0 +1,9 @@
+2026-11-23T20:57:43+00:00 INFO Email "new_order" for order #178 sent CONTEXT: {"email_type":"new_order","status":"sent","recipient":"NICO","order":178}
+2026-11-23T20:57:44+00:00 INFO Email "customer_on_hold_order" for order #178 sent CONTEXT: {"email_type":"customer_on_hold_order","status":"sent","recipient":"NICO","order":178}
+2026-11-23T20:59:21+00:00 INFO Email "new_order" for order #180 sent CONTEXT: {"email_type":"new_order","status":"sent","recipient":"NICO","order":180}
+2026-11-23T20:59:21+00:00 INFO Email "customer_on_hold_order" for order #180 sent CONTEXT: {"email_type":"customer_on_hold_order","status":"sent","recipient":"NICO","order":180}
+2026-11-23T21:08:11+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"NICO","REYCOB_PYP_Yape_Gateway":null}
+2026-11-23T21:12:07+00:00 INFO Email "new_order" for order #186 sent CONTEXT: {"email_type":"new_order","status":"sent","recipient":"NICO","order":186}
+2026-11-23T21:12:07+00:00 INFO Email "customer_on_hold_order" for order #186 sent CONTEXT: {"email_type":"customer_on_hold_order","status":"sent","recipient":"NICO","order":186}
+2026-11-23T22:06:58+00:00 INFO Email "new_order" for order #189 sent CONTEXT: {"email_type":"new_order","status":"sent","recipient":"NICO","order":189}
+2026-11-23T22:06:58+00:00 INFO Email "customer_on_hold_order" for order #189 sent CONTEXT: {"email_type":"customer_on_hold_order","status":"sent","recipient":"NICO","order":189}

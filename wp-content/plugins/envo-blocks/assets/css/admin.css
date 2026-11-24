@@ -1,0 +1,930 @@
+/* Envo Blocks admin pages. */
+.eb-admin {
+	--sf-violet: #6d28d9;
+	--sf-violet-dark: #5b21b6;
+	--sf-gradient: linear-gradient(135deg, #4338ca, #6d28d9 55%, #a21caf);
+	--sf-text: #1e1e1e;
+	--sf-muted: #50575e;
+	--sf-line: #e5e7eb;
+	max-width: 1280px;
+	margin-right: 20px;
+	color: var(--sf-text);
+}
+
+.eb-admin h2,
+.eb-admin h3 {
+	color: var(--sf-text);
+}
+
+.eb-admin a {
+	color: var(--sf-violet);
+}
+
+.eb-admin a:hover,
+.eb-admin a:focus {
+	color: var(--sf-violet-dark);
+}
+
+/* Header with logo and tabs. */
+.eb-admin__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 12px 0 24px;
+	padding: 14px 20px;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.eb-admin__brand {
+	display: flex;
+	flex: none;
+	align-items: center;
+	gap: 12px;
+}
+
+.eb-admin__name {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.eb-admin__version {
+	margin: 2px 0 0;
+	color: var(--sf-muted);
+	font-size: 12px;
+}
+
+.eb-admin__tabs {
+	display: flex;
+	flex: 1 1 auto;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	gap: 2px;
+	max-width: 100%;
+	overflow-x: auto;
+	scrollbar-width: thin;
+	padding: 4px;
+	border: 1px solid #ddd6fe;
+	border-radius: 10px;
+	background: #f5f3ff;
+}
+
+.eb-admin .eb-admin__tab {
+	flex: none;
+	padding: 7px 11px;
+	border-radius: 7px;
+	color: #4c1d95;
+	font-size: 13px;
+	white-space: nowrap;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.eb-admin .eb-admin__tab:hover {
+	background: #ede9fe;
+	color: #3b0764;
+}
+
+.eb-admin .eb-admin__tab.is-active {
+	background: var(--sf-gradient);
+	color: #fff;
+	box-shadow: 0 2px 6px rgba(109, 40, 217, 0.35);
+}
+
+.eb-admin .eb-admin__tab:focus-visible {
+	outline: 2px solid var(--sf-violet);
+	outline-offset: 2px;
+	box-shadow: none;
+}
+
+/* Hero. */
+.eb-hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+	gap: 32px;
+	align-items: center;
+	margin-bottom: 24px;
+	padding: 36px 40px;
+	border-radius: 16px;
+	background: var(--sf-gradient);
+	color: #fff;
+}
+
+.eb-admin .eb-hero h2 {
+	margin: 0 0 12px;
+	color: #fff;
+	font-size: 30px;
+	line-height: 1.2;
+}
+
+.eb-hero p {
+	max-width: 620px;
+	margin: 0;
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.eb-hero__buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 24px;
+}
+
+.eb-admin .button.eb-button-light {
+	border-color: #fff;
+	background: #fff;
+	color: var(--sf-violet-dark);
+}
+
+.eb-admin .button.eb-button-light:hover,
+.eb-admin .button.eb-button-light:focus {
+	border-color: #ede9fe;
+	background: #ede9fe;
+	color: #3b0764;
+}
+
+.eb-admin .button.eb-button-ghost {
+	border-color: rgba(255, 255, 255, 0.7);
+	background: transparent;
+	color: #fff;
+}
+
+.eb-admin .button.eb-button-ghost:hover,
+.eb-admin .button.eb-button-ghost:focus {
+	background: rgba(255, 255, 255, 0.12);
+	color: #fff;
+}
+
+.eb-admin .button.eb-button-pro {
+	border-color: var(--sf-violet);
+	background: var(--sf-violet);
+	color: #fff;
+}
+
+.eb-admin .button.eb-button-pro:hover,
+.eb-admin .button.eb-button-pro:focus {
+	border-color: var(--sf-violet-dark);
+	background: var(--sf-violet-dark);
+	color: #fff;
+}
+
+.eb-stats {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+	margin: 0;
+}
+
+.eb-stats li {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	margin: 0;
+	padding: 16px;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.14);
+}
+
+.eb-stats .eb-icon {
+	opacity: 0.85;
+}
+
+.eb-stats strong {
+	font-size: 28px;
+	line-height: 1.2;
+}
+
+.eb-stats span {
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 13px;
+}
+
+.eb-checks {
+	margin: 0;
+}
+
+.eb-checks li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 12px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.eb-checks .eb-icon {
+	flex: none;
+	padding: 4px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cards and layout. */
+.eb-columns {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 340px;
+	gap: 24px;
+	align-items: start;
+}
+
+.eb-main,
+.eb-side {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.eb-card {
+	padding: 24px;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.eb-card h2 {
+	margin: 0 0 16px;
+	font-size: 18px;
+}
+
+.eb-card h3 {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 4px;
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 8px;
+	font-size: 15px;
+}
+
+.eb-card p {
+	margin: 0 0 12px;
+	color: var(--sf-muted);
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.eb-steps {
+	margin: 0 0 16px;
+	padding: 0;
+	list-style: none;
+	counter-reset: eb-step;
+}
+
+.eb-steps li {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	margin: 0;
+	padding: 0 0 18px 48px;
+	counter-increment: eb-step;
+}
+
+.eb-steps li::before {
+	content: counter(eb-step);
+	position: absolute;
+	top: -2px;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: var(--sf-gradient);
+	color: #fff;
+	font-weight: 700;
+}
+
+.eb-steps strong {
+	font-size: 14px;
+}
+
+.eb-steps span {
+	color: var(--sf-muted);
+	font-size: 13px;
+}
+
+.eb-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 18px;
+	margin: 0;
+}
+
+.eb-admin .eb-links a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.eb-admin .eb-links a:hover {
+	text-decoration: underline;
+}
+
+.eb-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0 0 16px;
+}
+
+.eb-chips li {
+	margin: 0;
+	padding: 5px 12px;
+	border-radius: 999px;
+	background: #f5f3ff;
+	color: #4c1d95;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.eb-list {
+	margin: 0;
+}
+
+.eb-list li {
+	margin: 0;
+	border-top: 1px solid var(--sf-line);
+}
+
+.eb-list li:first-child {
+	border-top: 0;
+}
+
+.eb-admin .eb-list a {
+	display: block;
+	padding: 8px 0;
+	font-size: 13px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.eb-admin .eb-list a:hover {
+	text-decoration: underline;
+}
+
+.eb-badge {
+	display: inline-block;
+	margin-bottom: 10px;
+	padding: 3px 10px;
+	border-radius: 999px;
+	background: var(--sf-gradient);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+}
+
+.eb-badge--light {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.eb-tag {
+	padding: 2px 8px;
+	border-radius: 999px;
+	background: #ecfdf5;
+	color: #047857;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+/* PRO box in the sidebar. */
+.eb-probox {
+	padding: 0;
+	overflow: hidden;
+}
+
+.eb-probox__img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid var(--sf-line);
+}
+
+.eb-probox__body {
+	padding: 20px 24px 24px;
+}
+
+.eb-probox h2 {
+	margin-bottom: 8px;
+}
+
+.eb-review {
+	background: #faf5ff;
+}
+
+/* Grids. */
+.eb-intro {
+	margin-bottom: 20px;
+}
+
+.eb-intro h2,
+.eb-title {
+	margin: 0 0 6px;
+	font-size: 22px;
+}
+
+.eb-intro p {
+	margin: 0;
+	color: var(--sf-muted);
+	font-size: 14px;
+}
+
+.eb-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 20px;
+}
+
+.eb-block {
+	display: flex;
+	flex-direction: column;
+}
+
+.eb-block p:not(.eb-links) {
+	flex: 1;
+}
+
+.eb-guide h3 {
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	line-height: 1.35;
+}
+
+.eb-guide h3 .eb-icon {
+	flex: none;
+	color: var(--sf-violet);
+}
+
+.eb-guide--pro {
+	border: 1px solid #ddd6fe;
+	background: #faf5ff;
+}
+
+.eb-after {
+	margin-top: 24px;
+}
+
+/* Below the blocks the PRO box is a wide banner: picture left, text right. */
+.eb-after .eb-probox {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	align-items: center;
+}
+
+.eb-after .eb-probox__img {
+	height: 100%;
+	border-right: 1px solid var(--sf-line);
+	border-bottom: 0;
+	object-fit: contain;
+	background: #fff;
+}
+
+@media (max-width: 782px) {
+	.eb-after .eb-probox {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.eb-after .eb-probox__img {
+		border-right: 0;
+		border-bottom: 1px solid var(--sf-line);
+	}
+}
+
+/* PRO page. */
+.eb-hero--pro {
+	grid-template-columns: minmax(0, 1.6fr) minmax(240px, 1fr);
+}
+
+.eb-gallery-wrap {
+	margin-bottom: 32px;
+}
+
+.eb-gallery-wrap h2 {
+	margin: 0 0 6px;
+	font-size: 22px;
+}
+
+.eb-gallery-wrap > p {
+	margin: 0 0 16px;
+	color: var(--sf-muted);
+	font-size: 14px;
+}
+
+.eb-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.eb-admin .eb-shot {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	color: var(--sf-text);
+	text-decoration: none;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.eb-admin .eb-shot:hover,
+.eb-admin .eb-shot:focus-visible {
+	box-shadow: 0 10px 30px rgba(76, 29, 149, 0.18);
+	color: var(--sf-text);
+	transform: translateY(-2px);
+}
+
+.eb-shot img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: contain;
+	background: #f6f7f7;
+}
+
+.eb-shot span {
+	padding: 12px 16px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.eb-grid--pro {
+	margin-bottom: 32px;
+}
+
+.eb-chips--pro {
+	margin: 4px 0 0;
+}
+
+.eb-pro-blocks .eb-links {
+	margin-top: 22px;
+}
+
+.eb-cta {
+	margin-bottom: 24px;
+	padding: 36px;
+	border: 1px solid #ddd6fe;
+	border-radius: 16px;
+	background: #f5f3ff;
+	text-align: center;
+}
+
+.eb-cta h2 {
+	margin: 0 0 6px;
+	font-size: 22px;
+}
+
+.eb-cta p {
+	margin: 0 0 18px;
+	color: var(--sf-muted);
+	font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+	.eb-columns,
+	.eb-hero,
+	.eb-hero--pro {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.eb-gallery {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 600px) {
+	.eb-admin {
+		margin-right: 10px;
+	}
+
+	.eb-hero {
+		padding: 24px;
+	}
+
+	.eb-admin .eb-hero h2 {
+		font-size: 24px;
+	}
+
+	.eb-gallery {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.eb-admin .eb-shot {
+		transition: none;
+	}
+}
+
+/* Envo Blocks PRO blocks (listed also without PRO). */
+.eb-tag--pro {
+	background: var(--sf-gradient);
+	color: #fff;
+	letter-spacing: 0.04em;
+}
+
+.eb-card .eb-pro-blocks__group {
+	margin: 20px 0 8px;
+	color: var(--sf-muted);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.eb-intro--pro {
+	margin-top: 40px;
+	padding-top: 28px;
+	border-top: 1px solid var(--sf-line);
+}
+
+.eb-admin .eb-group-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 26px 0 12px;
+	font-size: 15px;
+}
+
+.eb-admin .eb-link-pro {
+	font-weight: 700;
+}
+
+/* Note above the template library of the Templates Import page. */
+.eb-note {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	margin: 0 0 20px;
+	padding: 12px 16px;
+	border-left: 4px solid #6d28d9;
+	border-radius: 0 8px 8px 0;
+	background: #f5f3ff;
+	color: #3b0764;
+}
+
+.eb-note .eb-icon {
+	flex: none;
+	margin-top: 1px;
+	color: #6d28d9;
+}
+
+.eb-note p {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.eb-admin .eb-note a {
+	margin-left: 4px;
+	font-weight: 600;
+}
+
+/* Block icons on the Blocks page (Dashicons, as in the inserter). */
+.eb-block__icon.dashicons {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 32px;
+	height: 32px;
+	border-radius: 8px;
+	background: #f5f3ff;
+	color: #6d28d9;
+	font-size: 20px;
+}
+
+.eb-block__icon.dashicons::before {
+	width: 20px;
+	height: 20px;
+}
+
+/* Message without an active WooCommerce (with the install button). */
+.eb-woo-notice {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+	margin: 0 0 24px;
+	padding: 20px 24px;
+	border: 1px solid #f0c33c;
+	border-left-width: 4px;
+	border-radius: 12px;
+	background: #fcf9e8;
+	color: #3c2a00;
+}
+
+.eb-woo-notice__icon {
+	display: grid;
+	flex: none;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: #fff;
+	color: #7f54b3;
+	place-items: center;
+}
+
+.eb-woo-notice__icon .eb-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.eb-woo-notice h2 {
+	margin: 0 0 6px;
+	font-size: 16px;
+}
+
+.eb-woo-notice p {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.eb-woo-notice__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 16px;
+	align-items: center;
+	margin-top: 12px !important;
+}
+
+.eb-woo-notice__status.is-error {
+	color: #b32d2e;
+	font-weight: 600;
+}
+
+/* Settings: every setting of Envo Blocks (and PRO) with a sidebar. */
+.eb-hub {
+	display: grid;
+	grid-template-columns: 220px minmax(0, 1fr);
+	gap: 24px;
+	align-items: start;
+	margin-top: 20px;
+}
+
+.eb-hub__nav {
+	position: sticky;
+	top: 52px;
+	max-height: calc(100vh - 72px);
+	overflow-y: auto;
+	padding: 14px;
+	border: 1px solid var(--sf-line);
+	border-radius: 12px;
+	background: #fff;
+}
+
+.eb-hub__group {
+	margin: 12px 0 6px;
+	padding: 0 10px;
+	color: var(--sf-muted);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.eb-hub__group:first-child {
+	margin-top: 0;
+}
+
+.eb-hub__nav ul {
+	margin: 0;
+}
+
+.eb-hub__nav li {
+	margin: 0;
+}
+
+.eb-hub__link {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 7px 10px;
+	border-radius: 8px;
+	color: var(--sf-text);
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.eb-hub__link:hover,
+.eb-hub__link:focus {
+	background: #f5f3ff;
+	color: var(--sf-violet);
+}
+
+.eb-hub__link.is-active {
+	background: #f5f3ff;
+	color: var(--sf-violet-dark);
+	font-weight: 600;
+}
+
+.eb-hub__link.is-locked {
+	color: var(--sf-muted);
+}
+
+.eb-hub__pro {
+	padding: 1px 6px;
+	border-radius: 999px;
+	background: var(--sf-gradient);
+	color: #fff;
+	font-size: 10px;
+	font-weight: 700;
+}
+
+.eb-hub__bar {
+	position: sticky;
+	z-index: 20;
+	top: 32px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-bottom: 20px;
+	padding: 8px;
+	border: 1px solid var(--sf-line);
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+}
+
+.eb-hub__bar a {
+	padding: 6px 12px;
+	border-radius: 999px;
+	color: var(--sf-text);
+	font-weight: 500;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.eb-hub__bar a:hover,
+.eb-hub__bar a:focus {
+	background: #f5f3ff;
+	color: var(--sf-violet);
+}
+
+.eb-hub__bar a.is-active {
+	background: var(--sf-violet);
+	color: #fff;
+}
+
+.eb-hub__main [id] {
+	scroll-margin-top: 140px;
+}
+
+.eb-hub__main {
+	min-width: 0;
+}
+
+.eb-hub__main .eb-extra {
+	margin-top: 0;
+}
+
+@media (max-width: 960px) {
+	.eb-hub {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.eb-hub__nav {
+		position: static;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px 12px;
+		align-items: center;
+	}
+
+	.eb-hub__nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2px;
+	}
+
+	.eb-hub__group {
+		margin: 0;
+		padding: 0;
+	}
+
+	.eb-hub__nav {
+		max-height: none;
+	}
+
+	.eb-hub__bar {
+		top: 46px;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+	}
+}
+
+/* Below 600px the admin bar scrolls away with the page. */
+@media (max-width: 600px) {
+	.eb-hub__bar {
+		top: 0;
+	}
+}

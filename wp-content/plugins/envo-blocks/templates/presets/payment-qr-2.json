@@ -1,0 +1,1 @@
+{"schema":"envo-blocks/v1","title":"EPC QR for euro payments","blocks":[{"name":"envo-blocks/payment-qr","attributes":{"title":"Pay with your banking app","description":"","format":"epc","account":"","message":"","showDetails":true,"layout":"stack","qrSize":200,"boxStyle":"box","background":"","textColor":""},"innerBlocks":[]}]}

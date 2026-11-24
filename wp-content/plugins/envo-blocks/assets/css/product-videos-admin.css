@@ -1,0 +1,45 @@
+/* Envo Blocks - Product data > Videos. */
+#woocommerce-product-data ul.wc-tabs li.envo_blocks_videos_options a::before {
+	content: "\f236"; /* dashicons-video-alt3 */
+}
+
+.eb-pv-admin__intro {
+	margin: 12px 12px 4px !important;
+	color: #646970;
+}
+
+.eb-pv-admin__row {
+	margin: 10px 12px;
+	padding: 4px 0;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	background: #fbfbfc;
+}
+
+.eb-pv-admin__row .form-field .eb-pv-admin__url {
+	width: 60%;
+	margin-right: 6px;
+}
+
+.eb-pv-admin__preview img {
+	width: 48px;
+	height: 48px;
+	margin-right: 8px;
+	border-radius: 4px;
+	object-fit: cover;
+	vertical-align: middle;
+}
+
+.eb-pv-admin__row .description {
+	display: block;
+	clear: both;
+	margin: 6px 0 0 !important;
+}
+
+.eb-pv-admin__remove {
+	margin-left: 12px !important;
+}
+
+.eb-pv-admin__add-wrap {
+	margin: 10px 12px 14px !important;
+}

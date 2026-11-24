@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/faq-item",
+	"title": "FAQ Item",
+	"category": "envo-blocks",
+	"icon": "editor-help",
+	"description": "One question of the FAQ block; its answer is made of blocks (text, lists, images, buttons).",
+	"keywords": [ "faq", "question", "answer" ],
+	"textdomain": "envo-blocks",
+	"parent": [ "envo-blocks/faq" ],
+	"attributes": {
+		"question": { "type": "string", "default": "" },
+		"open": { "type": "boolean", "default": false }
+	},
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"render": "file:./render.php"
+}

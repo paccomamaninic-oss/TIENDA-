@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/invoice-download",
+	"title": "Invoice Download",
+	"category": "envo-blocks",
+	"icon": "media-document",
+	"description": "A button that downloads the PDF invoice of the order – for the order confirmation page. Shown when the invoice is issued.",
+	"keywords": [ "invoice", "pdf", "download", "order confirmation", "credit note", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"text": { "type": "string", "default": "" },
+		"showCredits": { "type": "boolean", "default": true },
+		"textAlign": { "type": "string", "default": "left" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,77 @@
+/* Envo Blocks - block settings and editor-only parts of the blocks. */
+.components-panel__body .sb-ctl { margin-bottom: 16px; }
+.components-panel__body .sb-ctl:last-child { margin-bottom: 0; }
+.sb-checks, .sb-days { display: grid; gap: 8px; margin: 0 0 16px; padding: 0; border: 0; }
+.sb-days__legend { margin-bottom: 8px; padding: 0; font-size: 11px; font-weight: 500; text-transform: uppercase; }
+.sb-repeater { display: grid; gap: 12px; }
+.sb-repeater__row { padding: 12px; border: 1px solid #ddd; border-radius: 4px; }
+.sb-repeater__row .sb-ctl { margin-bottom: 10px; }
+.sb-repeater__tools { display: flex; align-items: center; gap: 4px; }
+.sb-repeater__tools .components-button.is-link { margin-left: auto; }
+
+/* Recently Viewed is hidden on the front end until it has products; the preview always shows. */
+.editor-styles-wrapper .sb-recent { display: block; }
+
+/* Size Guide: the content of the window is edited inline below the button. */
+.sb-size--editor .sb-size__editor-panel { margin-top: 12px; padding: 16px; border: 1px dashed #c3c4c7; border-radius: 6px; text-align: left; background: var(--sb-size-bg, transparent); }
+.sb-size--editor .sb-size__editor-label { margin: 0 0 12px; color: #757575; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .03em; }
+.sb-size--editor .sb-size__body { padding: 0; }
+
+/* Two fields side by side (price + old price, sizes). */
+.sb-price-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sb-price-row > .sb-ctl { margin-bottom: 0; }
+.sb-help-tight { margin-top: -8px !important; }
+
+/* Map in the editor: clicks select the block and its content, the map does not take them. */
+.sb-map--editor .sb-map__frame { pointer-events: none; }
+.sb-map--editor .sb-map__empty { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; color: #50575e; text-align: center; background: #f0f0f1; }
+
+/* Product Tabs: the bar switches the visible Product Tab block; the tabs filled from the product are samples. */
+.sb-ptabs--editor .sb-ptabs__nav { overflow: visible; flex-wrap: wrap; }
+.sb-ptabs--editor.sb-ptabs--nav-top .sb-ptabs__nav { align-items: center; }
+.sb-ptabs--editor .sb-ptabs__tab--auto span { font-style: italic; opacity: .75; }
+.sb-ptabs--editor .sb-ptabs__icon-wrap { display: inline-flex; }
+.sb-ptabs--editor .sb-ptabs__add { flex: none; min-width: 32px; margin-inline-start: 4px; }
+.sb-ptabs--editor.sb-ptabs--nav-left .sb-ptabs__add,
+.sb-ptabs--editor.sb-ptabs--nav-right .sb-ptabs__add { align-self: flex-start; }
+.sb-ptabs--editor.sb-ptabs--has-panel-bg .sb-ptabs__panel { padding: var(--sb-pt-pad, 24px); border-radius: var(--sb-pt-radius, 6px); background: var(--sb-pt-panel-bg); }
+.sb-ptabs--editor.sb-ptabs--has-panel-bg.sb-ptabs--nav-top .sb-ptabs__panel { margin-top: 12px; }
+.sb-ptab-sample { padding: 14px 16px; border: 1px dashed #c3c4c7; border-radius: 4px; }
+.sb-ptab-sample__label { display: block; margin-bottom: 8px; color: #757575; font-size: 11px; font-weight: 500; letter-spacing: .03em; text-transform: uppercase; }
+.sb-ptab-sample p { margin: 0; }
+.sb-ptab-sample__table { border-collapse: collapse; }
+.sb-ptab-sample__table th, .sb-ptab-sample__table td { padding: 4px 16px 4px 0; text-align: start; }
+
+/* What Envo Blocks PRO adds to a block (block settings, only without PRO). */
+.envo-pro-note { position: relative; margin: 16px 0 0; padding: 12px 12px 12px 14px; border: 1px solid #ddd6fe; border-inline-start: 3px solid #7c3aed; border-radius: 4px; background: #f5f3ff; }
+.envo-pro-note__badge { display: inline-block; margin-bottom: 6px; padding: 1px 6px; border-radius: 3px; background: #7c3aed; color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .06em; line-height: 16px; }
+.envo-pro-note__text { margin: 0 0 10px; color: #1e1e1e; font-size: 12px; line-height: 1.5; }
+.envo-pro-note__button.components-button { color: #6d28d9; box-shadow: inset 0 0 0 1px #7c3aed; }
+.envo-pro-note__button.components-button:hover:not(:disabled) { color: #5b21b6; box-shadow: inset 0 0 0 1px #5b21b6; }
+
+/* FAQ: the editor shows every answer (open look). */
+.sb-faq--editor .sb-faq__item {
+	background: var(--sb-faq-open-bg, var(--sb-faq-q-bg, transparent));
+}
+
+.sb-faq--editor .sb-faq__question {
+	cursor: text;
+}
+
+.sb-faq--editor.sb-faq--icon-plus .sb-faq__icon::after {
+	transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.sb-faq--editor.sb-faq--icon-chevron .sb-faq__icon::before {
+	top: 60%;
+	transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.sb-faq--editor > .block-list-appender {
+	position: relative;
+	align-self: flex-start;
+	margin-top: 4px;
+}
+
+/* "Documentation" button at the end of the block settings. */
+.envo-docs-link .components-button { width: 100%; justify-content: center; }

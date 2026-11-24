@@ -1,0 +1,72 @@
+/* Parallax Section: background image or video (moved by parallax-view.js), overlay, inner blocks on top. */
+.sb-plx {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+	min-height: var(--sb-plx-h, 520px);
+	padding: 64px 24px;
+	overflow: hidden;
+	overflow: clip;
+	isolation: isolate;
+	color: var(--sb-plx-text, #fff);
+	background: var(--sb-plx-bg, #1f2933);
+}
+.sb-plx.sb-plx--top { justify-content: flex-start; }
+.sb-plx.sb-plx--bottom { justify-content: flex-end; }
+
+/* The background is larger than the section by the parallax distance (speed % of the height, half above and half
+   below), so moving it never shows an edge. */
+.sb-plx .sb-plx__media {
+	position: absolute;
+	z-index: -2;
+	inset: calc(var(--sb-plx-speed, 30) * -0.5%) 0;
+	margin: 0;
+	pointer-events: none;
+	will-change: transform;
+}
+.sb-plx.sb-plx--zoom .sb-plx__media,
+.sb-plx.sb-plx--none .sb-plx__media { inset: 0; }
+.sb-plx .sb-plx__media .sb-plx__img {
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	margin: 0;
+	border-radius: 0;
+	object-fit: cover;
+}
+
+.sb-plx .sb-plx__overlay {
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background: var(--sb-plx-overlay, #000);
+	opacity: var(--sb-plx-overlay-o, .4);
+	pointer-events: none;
+}
+
+.sb-plx .sb-plx__content {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: var(--sb-plx-w, var(--wp--style--global--content-size, 1140px));
+	margin-inline: auto;
+}
+.sb-plx .sb-plx__content > :first-child { margin-top: 0; }
+.sb-plx .sb-plx__content > :last-child { margin-bottom: 0; }
+/* Headings and links take the section's text color (themes often give them their own). */
+.sb-plx .sb-plx__content :is(h1, h2, h3, h4, h5, h6):not(.has-text-color) { color: inherit; }
+
+/* Still on phones (when set) and for visitors who asked for less motion. */
+@media (max-width: 781px) {
+	.sb-plx.sb-plx--still-mobile .sb-plx__media { inset: 0; transform: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.sb-plx .sb-plx__media { inset: 0; transform: none !important; }
+}
+
+/* Editor: the background stays still, the inner blocks are edited as usual. */
+.editor-styles-wrapper .sb-plx .sb-plx__media { inset: 0; }
+.sb-plx.sb-plx--editor.sb-plx--no-media .sb-plx__overlay { opacity: .15; }

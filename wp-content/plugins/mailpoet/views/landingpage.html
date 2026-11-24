@@ -1,0 +1,13 @@
+<% extends 'layout.html' %>
+
+<% block content %>
+<div id="mailpoet_landingpage_container"></div>
+
+<script type="text/javascript">
+  <% autoescape 'js' %>
+    var mailpoet_welcome_wizard_url = <%= json_encode(welcome_wizard_url) %>;
+    var mailpoet_welcome_wizard_current_step = <%= json_encode(welcome_wizard_current_step) %>;
+    var mailpoet_can_manage_settings = <%= can_manage_settings ? 'true' : 'false' %>;
+  <% endautoescape %>
+</script>
+<% endblock %>

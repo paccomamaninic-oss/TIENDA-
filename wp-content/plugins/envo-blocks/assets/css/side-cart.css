@@ -1,0 +1,445 @@
+/**
+ * Envo Blocks – Side cart: the panel of a "Side cart" store layout and its blocks (Cart Items, Cart Summary).
+ * Colours come from the palette of the layout (--envo-* of layouts.css), with neutral fallbacks.
+ */
+
+/* Panel. */
+.envo-sc__overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 99998;
+	background: rgba(10, 10, 10, 0.45);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+.envo-sc__overlay.is-open { opacity: 1; }
+.envo-sc__panel {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 99999;
+	display: flex;
+	flex-direction: column;
+	width: min(var(--envo-sc-width, 420px), 100vw);
+	max-width: 100vw;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	background: var(--envo-sc-bg, #fff);
+	color: var(--envo-sc-ink, #111);
+	box-shadow: -12px 0 40px rgba(0, 0, 0, 0.18);
+	transform: translateX(100%);
+	transition: transform 0.3s ease;
+	outline: none;
+}
+.envo-sc__panel--left {
+	right: auto;
+	left: 0;
+	box-shadow: 12px 0 40px rgba(0, 0, 0, 0.18);
+	transform: translateX(-100%);
+}
+.envo-sc__panel.is-open { transform: none; }
+.admin-bar .envo-sc__panel { top: var(--wp-admin--admin-bar--height, 32px); }
+html.envo-sc-lock { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+	.envo-sc__panel,
+	.envo-sc__overlay { transition: none; }
+}
+.envo-sc__close {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 3;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+}
+.envo-sc__close:hover,
+.envo-sc__close:focus-visible { background: rgba(127, 127, 127, 0.15); }
+.envo-sc__panel--left .envo-sc__close { right: 14px; }
+.envo-sc__content {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	min-height: 100%;
+}
+.envo-sc__content > * {
+	flex: 1 0 auto;
+	margin-block: 0 !important;
+	max-width: none !important;
+	width: 100%;
+	box-sizing: border-box;
+}
+/* Vertical groups of the layout: no wrapping (a wrapping column spreads its rows over the panel height). */
+.envo-sc__content .is-layout-flex.is-vertical { flex-wrap: nowrap; }
+.envo-sc__loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	overflow: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s;
+}
+.envo-sc__loading span {
+	display: block;
+	width: 40%;
+	height: 100%;
+	background: var(--envo-accent, currentColor);
+	animation: envo-sc-load 1s ease-in-out infinite;
+}
+.envo-sc__panel.is-loading .envo-sc__loading { opacity: 1; }
+@keyframes envo-sc-load {
+	from { transform: translateX(-100%); }
+	to { transform: translateX(250%); }
+}
+
+/* Helpers of the designs: hidden while the cart is empty / only while it is empty. */
+.envo-sc.is-empty .envo-sc-hide-empty,
+.envo-sc.is-empty .envo-sc-summary { display: none !important; }
+.envo-sc:not(.is-empty) .envo-sc-only-empty { display: none !important; }
+
+/* Buttons. */
+.envo-sc-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 48px;
+	padding: 12px 20px;
+	border: 1.5px solid var(--envo-accent, #111);
+	border-radius: var(--envo-sc-radius, 8px);
+	background: var(--envo-accent, #111);
+	color: var(--envo-on-accent, #fff) !important;
+	font: inherit;
+	font-weight: 600;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	box-sizing: border-box;
+	transition: opacity 0.2s, background-color 0.2s;
+}
+.envo-sc-btn:hover { opacity: 0.88; }
+.envo-sc-btn--secondary {
+	background: transparent;
+	border-color: var(--envo-line, rgba(127, 127, 127, 0.4));
+	color: inherit !important;
+}
+.envo-sc-btn--secondary:hover {
+	opacity: 1;
+	border-color: currentColor;
+}
+
+/* Cart Items. */
+.envo-sc-items { box-sizing: border-box; }
+.envo-sc-items__head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 4px 10px;
+	padding-right: 44px; /* The close button. */
+	margin-bottom: 8px;
+}
+.envo-sc-items__title {
+	margin: 0 !important;
+	font-size: 1.35em;
+	font-weight: 700;
+	line-height: 1.25;
+	color: inherit;
+}
+.envo-sc-items__count {
+	color: var(--envo-muted, inherit);
+	font-size: 0.9em;
+	opacity: 0.9;
+}
+.envo-sc-items__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.envo-sc-item {
+	display: grid;
+	grid-template-columns: 76px minmax(0, 1fr) auto;
+	gap: 14px;
+	align-items: start;
+	margin: 0;
+	padding: 16px 0;
+	border-bottom: 1px solid var(--envo-line, rgba(127, 127, 127, 0.2));
+}
+.envo-sc-item__image {
+	display: block;
+	aspect-ratio: 1;
+	overflow: hidden;
+	border-radius: 8px;
+	background: var(--envo-surface, rgba(127, 127, 127, 0.08));
+}
+.envo-sc-item__image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	margin: 0;
+}
+.envo-sc-item__main {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 0;
+}
+.envo-sc-item__name {
+	font-weight: 600;
+	line-height: 1.3;
+	color: inherit !important;
+	text-decoration: none !important;
+}
+.envo-sc-item__name:hover { text-decoration: underline !important; }
+.envo-sc-item__meta {
+	color: var(--envo-muted, inherit);
+	font-size: 0.85em;
+}
+.envo-sc-item__price {
+	font-weight: 600;
+	white-space: nowrap;
+	text-align: right;
+}
+.envo-sc-item__price del {
+	display: block;
+	font-weight: 400;
+	font-size: 0.85em;
+	opacity: 0.6;
+}
+.envo-sc-item__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 14px;
+	margin-top: 6px;
+}
+.envo-sc-qty {
+	display: inline-flex;
+	align-items: center;
+	border: 1px solid var(--envo-line, rgba(127, 127, 127, 0.35));
+	border-radius: 999px;
+	overflow: hidden;
+}
+.envo-sc-qty button {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: inherit;
+	font-size: 16px;
+	line-height: 1;
+	cursor: pointer;
+}
+.envo-sc-qty button:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+.envo-sc-qty input {
+	width: 36px;
+	height: 32px;
+	padding: 0;
+	border: 0 !important;
+	background: transparent !important;
+	color: inherit !important;
+	font: inherit;
+	text-align: center;
+	-moz-appearance: textfield;
+	box-shadow: none !important;
+}
+.envo-sc-qty input::-webkit-outer-spin-button,
+.envo-sc-qty input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.envo-sc-item__remove {
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--envo-muted, inherit);
+	font: inherit;
+	font-size: 0.85em;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.envo-sc-item__remove:hover { color: inherit; }
+.envo-sc-items.is-no-images .envo-sc-item { grid-template-columns: minmax(0, 1fr) auto; }
+.envo-sc-items.is-no-images .envo-sc-item__image,
+.envo-sc-items.is-no-quantity .envo-sc-qty,
+.envo-sc-items.is-no-remove .envo-sc-item__remove { display: none; }
+
+/* Compact: small images, one line. */
+.envo-sc-items--compact .envo-sc-item {
+	grid-template-columns: 52px minmax(0, 1fr) auto;
+	gap: 12px;
+	padding: 10px 0;
+	align-items: center;
+}
+.envo-sc-items--compact .envo-sc-item__actions { margin-top: 2px; }
+.envo-sc-items--compact .envo-sc-qty button,
+.envo-sc-items--compact .envo-sc-qty input { height: 28px; }
+
+/* Cards: each item in a box. */
+.envo-sc-items--cards .envo-sc-items__list {
+	display: grid;
+	gap: 12px;
+}
+.envo-sc-items--cards .envo-sc-item {
+	padding: 12px;
+	border: 1px solid var(--envo-line, rgba(127, 127, 127, 0.2));
+	border-radius: var(--envo-radius, 12px);
+	background: var(--envo-surface, #fff);
+}
+
+.envo-sc-items__empty {
+	display: none;
+	padding: 32px 0;
+	text-align: center;
+}
+.envo-sc-items__empty p { margin: 0 0 16px; }
+.envo-sc.is-empty .envo-sc-items__empty { display: block; }
+.envo-sc.is-pending .envo-sc-items__empty { display: none; } /* Until the cart is loaded. */
+.envo-sc.is-empty .envo-sc-items__list { display: none; }
+
+/* Cart Summary. */
+.envo-sc-summary {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	box-sizing: border-box;
+}
+.envo-sc-summary.is-sticky {
+	position: sticky;
+	bottom: 0;
+	z-index: 2;
+	margin-top: auto !important;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-top: 1px solid var(--envo-line, rgba(127, 127, 127, 0.2));
+	background-color: var(--envo-sc-bg, #fff);
+}
+.envo-sc-summary__row {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 0 !important;
+}
+.envo-sc-summary__row[hidden] { display: none; }
+.envo-sc-summary__subtotal { font-size: 1.1em; }
+.envo-sc-summary__subtotal strong { font-weight: 700; }
+.envo-sc-summary__savings { color: var(--envo-accent, inherit); }
+.envo-l-dark .envo-sc-summary__savings,
+.envo-sc-summary__savings strong { font-weight: 600; }
+.envo-sc-summary__note {
+	margin: 0 !important;
+	color: var(--envo-muted, inherit);
+	font-size: 0.85em;
+}
+.envo-sc-summary__buttons {
+	display: grid;
+	gap: 10px;
+}
+.envo-sc-summary--row .envo-sc-summary__buttons { grid-template-columns: 1fr 1fr; }
+.envo-sc-summary__link {
+	margin: 0 !important;
+	text-align: center;
+	font-size: 0.9em;
+}
+.envo-sc-summary__link a { color: inherit; }
+.envo-sc-coupon {
+	display: flex;
+	gap: 8px;
+	margin: 0;
+}
+.envo-sc-coupon input {
+	flex: 1;
+	min-width: 0;
+	min-height: 44px;
+	padding: 8px 12px;
+	border: 1px solid var(--envo-line, rgba(127, 127, 127, 0.4));
+	border-radius: var(--envo-sc-radius, 8px);
+	background: var(--envo-surface, #fff);
+	color: var(--envo-ink, inherit);
+	font: inherit;
+	box-sizing: border-box;
+}
+.envo-sc-coupon .envo-sc-btn { min-height: 44px; padding-inline: 16px; }
+.envo-sc-coupons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.envo-sc-coupons:empty { display: none; }
+.envo-sc-coupons__item {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 4px 2px 10px;
+	border-radius: 999px;
+	background: var(--envo-surface, rgba(127, 127, 127, 0.12));
+	border: 1px solid var(--envo-line, transparent);
+	font-size: 0.85em;
+	font-weight: 600;
+}
+.envo-sc-coupons__remove {
+	width: 22px;
+	height: 22px;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+}
+
+/* Dark palettes. */
+.envo-l-dark .envo-sc-item__price del { opacity: 0.7; }
+
+/* The editor: no sticky summary (no panel there). */
+.editor-styles-wrapper .envo-sc-summary.is-sticky {
+	position: static;
+	box-shadow: none;
+}
+
+/* Themes style every button (Twenty Twenty-One, Storefront …): the controls of the panel keep their own look. */
+#envo-side-cart :is(.envo-sc__close, .envo-sc-qty button, .envo-sc-item__remove, .envo-sc-coupons__remove) {
+	min-height: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	color: inherit;
+	font-size: inherit;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+}
+#envo-side-cart .envo-sc__close { width: 40px; height: 40px; padding: 0; border-radius: 50%; }
+#envo-side-cart .envo-sc-qty button { width: 32px; height: 32px; padding: 0; font-size: 16px; }
+#envo-side-cart .envo-sc-item__remove { padding: 0; color: var(--envo-muted, inherit); font-size: 0.85em; text-decoration: underline; }
+#envo-side-cart .envo-sc-coupons__remove { width: 22px; height: 22px; padding: 0; border-radius: 50%; }
+#envo-side-cart :is(.envo-sc__close, .envo-sc-qty button, .envo-sc-coupons__remove):is(:hover, :focus-visible) { background: rgba(127, 127, 127, 0.15); color: inherit; }
+#envo-side-cart .envo-sc-item__remove:is(:hover, :focus-visible) { background: transparent; color: inherit; }
+#envo-side-cart .envo-sc-qty input { width: 36px; min-height: 0; height: 32px; padding: 0; border: 0; background: transparent; color: inherit; font-size: inherit; }
+#envo-side-cart .envo-sc-coupon input { min-height: 44px; padding: 8px 12px; font-size: inherit; }
+#envo-side-cart .envo-sc-btn { min-height: 44px; font-size: inherit; line-height: 1.2; text-transform: none; letter-spacing: normal; }
+#envo-side-cart .envo-sc-btn--primary { background: var(--envo-accent, #111); border: 1.5px solid var(--envo-accent, #111); color: var(--envo-on-accent, #fff); }
+#envo-side-cart .envo-sc-btn--secondary { background: transparent; border: 1.5px solid var(--envo-line, rgba(127, 127, 127, 0.4)); color: inherit; }
+#envo-side-cart .envo-sc-btn--secondary:is(:hover, :focus-visible) { background: transparent; border-color: currentColor; color: inherit; }
+#envo-side-cart .envo-sc-btn--primary:is(:hover, :focus-visible) { background: var(--envo-accent, #111); color: var(--envo-on-accent, #fff); opacity: 0.88; }

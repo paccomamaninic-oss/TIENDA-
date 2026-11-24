@@ -1,0 +1,289 @@
+.pyr-payment-box {
+  --pyr-ink: #25212a;
+  --pyr-muted: #5d5864;
+  --pyr-line: #e6e2e9;
+  --pyr-soft: #f6f4f7;
+  --pyr-action: #383042;
+  --pyr-success: #17624c;
+  margin: 8px 0 4px;
+  padding: 16px;
+  border: 1px solid var(--pyr-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--pyr-ink);
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.pyr-payment-box *, .pyr-payment-box *::before, .pyr-payment-box *::after {
+  box-sizing: border-box;
+}
+
+.payment_method_pago_yape_reycob > label,
+.woocommerce-checkout #payment ul.payment_methods li.payment_method_pago_yape_reycob > label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.payment_method_pago_yape_reycob > label img[src*="/assets/yape-logo.png"],
+.woocommerce-checkout #payment ul.payment_methods li.payment_method_pago_yape_reycob > label img[src*="/assets/yape-logo.png"] {
+  display: inline-block;
+  float: none;
+  width: 36px;
+  height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  margin: 0;
+  border-radius: 50%;
+  clip-path: circle(44%);
+  vertical-align: middle;
+}
+
+.pyr-payment-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--pyr-line);
+}
+
+.pyr-payment-head > div {
+  flex: 1 1 230px;
+  min-width: 0;
+}
+
+.pyr-payment-head strong {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 17px;
+}
+
+.pyr-step {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ece7ef;
+  color: var(--pyr-action);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pyr-payment-box .pyr-payment-head p {
+  margin: 7px 0 0;
+  color: var(--pyr-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.pyr-badge {
+  align-self: flex-start;
+  padding: 4px 8px;
+  border: 1px solid var(--pyr-line);
+  border-radius: 5px;
+  color: var(--pyr-muted);
+  background: var(--pyr-soft);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pyr-payment-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.pyr-qr-card {
+  display: grid;
+  justify-items: center;
+  flex: 0 1 264px;
+  width: 264px;
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  padding: 11px 11px 5px;
+  border: 1px solid var(--pyr-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.pyr-payment-box .pyr-qr-card img {
+  display: block;
+  float: none;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 0;
+}
+
+.pyr-payment-info {
+  display: grid;
+  gap: 12px;
+  flex: 1 1 210px;
+  min-width: 0;
+}
+
+.pyr-amount {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 14px;
+  border-inline-start: 3px solid #817088;
+  border-radius: 6px;
+  background: var(--pyr-soft);
+}
+
+.pyr-amount > span,
+.pyr-phone-row small,
+.pyr-phone-row em,
+.pyr-upload-help {
+  color: var(--pyr-muted);
+  font-size: 12px;
+}
+
+.pyr-payment-box .pyr-amount strong,
+.pyr-payment-box .pyr-amount strong .amount {
+  color: var(--pyr-ink);
+  font-size: 24px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.pyr-phone-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--pyr-line);
+}
+
+.pyr-phone-row > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pyr-phone-row strong { font-size: 17px; user-select: text; }
+.pyr-phone-row em { font-style: normal; }
+
+.pyr-payment-box .pyr-copy-btn,
+.pyr-payment-box .pyr-remove-file,
+.pyr-payment-box .pyr-qr-link,
+.pyr-payment-box .pyr-upload-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid #d9d3de;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--pyr-action);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.pyr-payment-box svg { flex: 0 0 16px; }
+.pyr-payment-box .pyr-qr-link { border-color: transparent; }
+.pyr-payment-box .pyr-copy-btn:hover,
+.pyr-payment-box .pyr-remove-file:hover,
+.pyr-payment-box .pyr-qr-link:hover { background: var(--pyr-soft); color: var(--pyr-action); }
+
+.pyr-upload-area {
+  position: relative;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--pyr-line);
+}
+
+.pyr-payment-box .pyr-upload-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed #b8afbf;
+  border-radius: 8px;
+  background: var(--pyr-soft);
+  cursor: pointer;
+}
+
+.pyr-upload-text { display: grid; flex: 1 1 140px; min-width: 0; }
+.pyr-upload-title { color: var(--pyr-ink); font-weight: 700; }
+
+.pyr-payment-box #pyr_capture_file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pyr-payment-box .pyr-upload-button {
+  min-height: 44px;
+  background: var(--pyr-action);
+  border-color: var(--pyr-action);
+  color: #fff;
+}
+
+.pyr-upload-label:hover .pyr-upload-button { background: #211c28; }
+.pyr-payment-box :is(button, a):focus-visible,
+.pyr-payment-box #pyr_capture_file:focus-visible + .pyr-upload-label {
+  outline: 2px solid #63516d;
+  outline-offset: 2px;
+}
+
+.pyr-copy-status,
+.pyr-upload-status {
+  color: var(--pyr-success);
+  font-size: 13px;
+}
+
+.pyr-copy-status:empty,
+.pyr-upload-status:empty { display: none; }
+.pyr-upload-status:not(:empty) { margin-top: 8px; }
+.pyr-copy-status.is-error,
+.pyr-upload-status.is-error { color: #a32e33; }
+.pyr-upload-area[aria-busy="true"] .pyr-upload-label { opacity: .72; cursor: progress; }
+.pyr-upload-area.is-uploaded .pyr-upload-label { border-color: #8eb7a7; background: #f2f8f5; }
+
+.pyr-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pyr-payment-box .pyr-preview[hidden] { display: none !important; }
+
+.pyr-payment-box .pyr-preview img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin: 0;
+  border: 1px solid var(--pyr-line);
+  border-radius: 6px;
+}

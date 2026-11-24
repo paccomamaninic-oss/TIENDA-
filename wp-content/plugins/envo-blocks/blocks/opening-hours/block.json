@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/opening-hours",
+	"title": "Opening Hours",
+	"category": "envo-blocks",
+	"icon": "store",
+	"description": "Opening hours of your shop or branch with a live \"Open now / Closed · opens …\" status in the time zone of your site, today highlighted and special days such as holidays.",
+	"keywords": [ "opening hours", "hours", "store", "branch", "open", "closed", "business hours" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"hours": { "type": "array", "default": [], "items": { "type": "string" } },
+		"exceptions": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"showStatus": { "type": "boolean", "default": true },
+		"showTable": { "type": "boolean", "default": true },
+		"highlightToday": { "type": "boolean", "default": true },
+		"groupDays": { "type": "boolean", "default": false },
+		"showExceptions": { "type": "boolean", "default": true },
+		"closedText": { "type": "string", "default": "" },
+		"boxStyle": { "type": "string", "default": "box" },
+		"openColor": { "type": "string", "default": "" },
+		"closedColor": { "type": "string", "default": "" },
+		"todayBackground": { "type": "string", "default": "" },
+		"textColor": { "type": "string", "default": "" },
+		"background": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"viewScript": "envo-blocks-hours",
+	"render": "file:./render.php"
+}

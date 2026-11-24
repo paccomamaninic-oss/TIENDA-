@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/language-switcher",
+	"title": "Language Switcher",
+	"category": "envo-blocks",
+	"icon": "translation",
+	"description": "The languages of WPML, Polylang or TranslatePress as a dropdown or a row of links, with flags, names or codes – for the header, the footer or any page.",
+	"keywords": [ "language", "languages", "switcher", "multilingual", "wpml", "polylang", "translatepress", "flag" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"layout": { "type": "string", "default": "dropdown" },
+		"show": { "type": "string", "default": "flag-name" },
+		"flagShape": { "type": "string", "default": "rect" },
+		"hideCurrent": { "type": "boolean", "default": false },
+		"hideMissing": { "type": "boolean", "default": false },
+		"justify": { "type": "string", "default": "left" },
+		"menuAlign": { "type": "string", "default": "left" },
+		"textColor": { "type": "string", "default": "" },
+		"activeColor": { "type": "string", "default": "" },
+		"background": { "type": "string", "default": "" },
+		"menuBackground": { "type": "string", "default": "" },
+		"menuTextColor": { "type": "string", "default": "" },
+		"borderColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": [ "envo-blocks-blocks", "envo-blocks-language-switcher" ],
+	"viewScript": "envo-blocks-language-switcher",
+	"render": "file:./render.php"
+}

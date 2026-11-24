@@ -1,0 +1,213 @@
+/* Envo Blocks > Checkout Fields. */
+.eb-cf {
+	max-width: 1180px;
+}
+
+.eb-cf .notice.inline {
+	margin: 0 0 16px;
+}
+
+.eb-cf__card {
+	margin: 0 0 20px;
+	padding: 22px 24px;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.eb-cf__card h2 {
+	margin: 0 0 6px;
+	font-size: 18px;
+}
+
+.eb-cf__intro {
+	max-width: 820px;
+	margin: 0 0 16px;
+	color: #50575e;
+}
+
+.eb-cf__table {
+	border-color: #e5e7eb;
+	border-radius: 8px;
+	border-collapse: separate;
+	overflow: hidden;
+}
+
+.eb-cf__table th,
+.eb-cf__table td {
+	vertical-align: middle;
+}
+
+.eb-cf__table td code {
+	display: block;
+	margin-top: 2px;
+	padding: 0;
+	background: none;
+	color: #8c8f94;
+	font-size: 11px;
+}
+
+.eb-cf__table .regular-text {
+	width: 100%;
+	max-width: 320px;
+}
+
+.eb-cf__handle-col {
+	width: 28px;
+}
+
+.eb-cf__handle {
+	color: #a7aaad;
+	font-size: 16px;
+	letter-spacing: -2px;
+	text-align: center;
+	cursor: move;
+	user-select: none;
+}
+
+.eb-cf__check-col {
+	width: 80px;
+	text-align: center !important;
+}
+
+.eb-cf__always {
+	color: #00a32a;
+	font-weight: 600;
+}
+
+.eb-cf__options {
+	width: 100%;
+	min-width: 160px;
+}
+
+.eb-cf__sortable tr.ui-sortable-helper {
+	display: table;
+	background: #fff;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.eb-cf__sortable tr.eb-cf__placeholder td {
+	height: 44px;
+	background: #f5f3ff;
+}
+
+.eb-cf__empty {
+	margin: 12px 0 0;
+	color: #646970;
+}
+
+.eb-cf__buttons {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+@media (max-width: 782px) {
+	.eb-cf__card {
+		padding: 16px;
+		overflow-x: auto;
+	}
+}
+
+/* Envo Blocks > Payment QR Code. */
+.eb-pqr__sample {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	align-items: flex-start;
+}
+
+.eb-pqr__code {
+	width: 180px;
+}
+
+.eb-pqr__code svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.eb-pqr__details.widefat {
+	width: auto;
+	min-width: 320px;
+}
+
+/* Envo Blocks > Invoices: Save changes and Preview float at the bottom while the settings scroll. */
+.eb-inv-actions {
+	position: sticky;
+	bottom: 0;
+	z-index: 10;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	margin: 0 0 20px;
+	padding: 12px 24px;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.eb-inv-actions .description {
+	color: #646970;
+}
+
+/* What Envo Blocks PRO adds (class-envo-blocks-pro-settings-teasers.php): locked cards and rows. */
+.eb-pro-teaser {
+	border: 1px dashed #c4b5fd;
+	background: linear-gradient(135deg, #fbfaff 0%, #ffffff 60%);
+}
+
+.eb-pro-teaser__badge {
+	display: inline-block;
+	margin-left: 6px;
+	padding: 2px 7px;
+	border-radius: 999px;
+	background: #6d28d9;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1.5;
+	vertical-align: middle;
+}
+
+.eb-pro-teaser__points {
+	max-width: 820px;
+	margin: 0 0 12px 18px;
+	list-style: disc;
+	color: #3c434a;
+}
+
+.eb-pro-teaser__fields {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	opacity: 0.7;
+}
+
+.eb-pro-teaser__fields .form-table th {
+	padding-left: 0;
+}
+
+.eb-pro-teaser__foot {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 10px;
+	margin: 12px 0 0;
+	color: #50575e;
+}
+
+.eb-pro-teaser__foot .dashicons,
+.eb-pro-teaser__row .dashicons {
+	color: #6d28d9;
+}
+
+.eb-pro-teaser__row .description .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+}

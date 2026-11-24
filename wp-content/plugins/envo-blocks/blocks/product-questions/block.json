@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/product-questions",
+	"title": "Product Questions",
+	"category": "envo-blocks",
+	"icon": "format-chat",
+	"description": "Questions and answers of a product: customers ask, you answer in Envo Blocks › Settings › Product Questions, the answered questions show here with a search.",
+	"keywords": [ "questions", "answers", "q&a", "ask", "faq", "product", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"source": { "type": "string", "default": "current" },
+		"productId": { "type": "integer", "default": 0 },
+		"title": { "type": "string", "default": "" },
+		"perPage": { "type": "integer", "default": 5 },
+		"showSearch": { "type": "boolean", "default": true },
+		"showForm": { "type": "boolean", "default": true },
+		"accentColor": { "type": "string", "default": "" },
+		"textColor": { "type": "string", "default": "" },
+		"background": { "type": "string", "default": "" },
+		"borderColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"style": [ "envo-blocks-blocks", "envo-blocks-questions" ],
+	"render": "file:./render.php"
+}

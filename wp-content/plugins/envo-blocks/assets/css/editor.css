@@ -1,0 +1,1797 @@
+/* Header button */
+.envo-blocks-header-slot {
+	display: flex;
+	align-items: center;
+	flex: none;
+	margin: 0 8px;
+}
+
+.envo-blocks-header-slot .envo-blocks-header-button {
+	gap: 8px;
+	height: 36px;
+	padding: 0 14px 0 12px;
+	border-radius: 2px;
+	background: var(--wp-admin-theme-color, #2271b1);
+	color: #fff;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.envo-blocks-header-slot .envo-blocks-header-button:hover:not(:disabled),
+.envo-blocks-header-slot .envo-blocks-header-button:focus:not(:disabled) {
+	background: var(--wp-admin-theme-color-darker-10, #135e96);
+	color: #fff;
+}
+
+.envo-blocks-header-button__icon {
+	display: block;
+	flex: none;
+	width: 18px;
+	height: 18px;
+}
+
+body.envo-blocks-no-scroll {
+	overflow: hidden;
+}
+
+/* Pop-up */
+.envo-blocks-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 1000000;
+	display: flex;
+	flex-direction: column;
+	background: #f0f2f5;
+	color: #1e1e1e;
+	box-sizing: border-box;
+}
+
+.envo-blocks-modal *,
+.envo-blocks-modal *::before,
+.envo-blocks-modal *::after {
+	box-sizing: border-box;
+}
+
+.envo-blocks-modal__header {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+	grid-template-areas: "brand tabs tools";
+	align-items: center;
+	gap: 16px;
+	min-height: 64px;
+	padding: 0 24px;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.envo-blocks-brand {
+	grid-area: brand;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 0;
+}
+
+.envo-blocks-brand img {
+	display: block;
+	width: 36px;
+	height: 36px;
+	flex: none;
+}
+
+.envo-blocks-brand__name {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: #1e1e1e;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.envo-blocks-tools {
+	grid-area: tools;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 12px;
+	min-width: 0;
+}
+
+/* Category tabs (centered) */
+.envo-blocks-tabs {
+	grid-area: tabs;
+	display: flex;
+	align-items: stretch;
+	justify-self: center;
+	gap: 4px;
+	max-width: 100%;
+	min-height: 64px;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.envo-blocks-tabs::-webkit-scrollbar {
+	display: none;
+}
+
+.envo-blocks-tab {
+	position: relative;
+	flex: none;
+	margin: 0;
+	padding: 0 16px;
+	border: 0;
+	background: transparent;
+	font-size: 14px;
+	font-weight: 500;
+	color: #50575e;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.envo-blocks-tab::after {
+	content: "";
+	position: absolute;
+	left: 12px;
+	right: 12px;
+	bottom: 0;
+	height: 3px;
+	border-radius: 3px 3px 0 0;
+	background: transparent;
+}
+
+.envo-blocks-tab:hover {
+	color: #1e1e1e;
+}
+
+.envo-blocks-tab.is-active {
+	color: var(--wp-admin-theme-color, #2271b1);
+	font-weight: 600;
+}
+
+.envo-blocks-tab.is-active::after {
+	background: var(--wp-admin-theme-color, #2271b1);
+}
+
+.envo-blocks-tab:focus-visible {
+	box-shadow: inset 0 0 0 2px var(--wp-admin-theme-color, #2271b1);
+	outline: 2px solid transparent;
+}
+
+.envo-blocks-search {
+	width: 280px;
+	max-width: 100%;
+	height: 40px;
+	margin: 0;
+	padding: 0 12px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background: #fff;
+	font-size: 14px;
+	color: #1e1e1e;
+}
+
+.envo-blocks-search:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+	outline: 2px solid transparent;
+}
+
+/* Import from file: a hidden file field and the button that opens it. */
+.envo-blocks-file {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+.envo-blocks-upload {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	flex: none;
+	height: 40px;
+	margin: 0;
+	padding: 0 14px 0 10px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background: #fff;
+	color: #1e1e1e;
+	font-size: 13px;
+	font-weight: 500;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.envo-blocks-upload:hover:not(:disabled),
+.envo-blocks-upload:focus-visible {
+	border-color: #6d28d9;
+	color: #6d28d9;
+}
+
+.envo-blocks-upload:disabled {
+	cursor: default;
+	opacity: 0.7;
+}
+
+.envo-blocks-upload svg {
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
+}
+
+.envo-blocks-upload .components-spinner {
+	margin: 0;
+}
+
+.envo-blocks-close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: #1e1e1e;
+	cursor: pointer;
+}
+
+.envo-blocks-close:hover {
+	background: #f0f0f0;
+}
+
+.envo-blocks-close:focus-visible {
+	box-shadow: 0 0 0 2px #2271b1;
+	outline: 2px solid transparent;
+}
+
+.envo-blocks-close svg {
+	fill: currentColor;
+}
+
+/* Body */
+.envo-blocks-modal__body {
+	flex: 1;
+	overflow-y: auto;
+	padding: 32px 24px;
+}
+
+.envo-blocks-container {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.envo-blocks-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.envo-blocks-state {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 48px 0;
+	font-size: 15px;
+	color: #50575e;
+}
+
+.envo-blocks-error {
+	margin: 0 0 24px;
+	padding: 12px 16px;
+	border-left: 4px solid #d63638;
+	background: #fff;
+	font-size: 14px;
+}
+
+.envo-blocks-error__support {
+	margin: 12px 0 0;
+}
+
+/* Card */
+.envo-blocks-card {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.envo-blocks-card__media {
+	position: relative;
+	aspect-ratio: 4 / 3;
+	background: #e2e4e7;
+}
+
+.envo-blocks-card__media img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.envo-blocks-card__title {
+	margin: 0;
+	padding: 14px 16px 4px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #1e1e1e;
+}
+
+.envo-blocks-card__actions {
+	display: flex;
+	gap: 8px;
+	padding: 12px 16px 16px;
+	margin-top: auto;
+}
+
+.envo-blocks-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	min-height: 36px;
+	padding: 0 12px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1;
+	white-space: nowrap;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.envo-blocks-btn--secondary {
+	border-color: #2271b1;
+	background: #fff;
+	color: #2271b1;
+}
+
+.envo-blocks-btn--secondary:hover {
+	background: #f0f6fc;
+	color: #135e96;
+}
+
+.envo-blocks-btn--primary {
+	background: #2271b1;
+	color: #fff;
+}
+
+.envo-blocks-btn--primary:hover:not(:disabled) {
+	background: #135e96;
+}
+
+.envo-blocks-btn--primary:is(a):hover {
+	background: #135e96;
+	color: #fff;
+}
+
+.envo-blocks-btn:focus-visible {
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2271b1;
+	outline: 2px solid transparent;
+}
+
+.envo-blocks-btn:disabled,
+.envo-blocks-btn.is-disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+/* Mobile: 2 blocks per row */
+@media (max-width: 782px) {
+	.envo-blocks-modal__header {
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas:
+			"brand tools"
+			"tabs tabs";
+		padding: 0 12px;
+		gap: 0 8px;
+	}
+
+	.envo-blocks-tabs {
+		justify-self: stretch;
+		min-height: 44px;
+		margin: 0 -12px;
+		padding: 0 4px;
+	}
+
+	.envo-blocks-brand,
+	.envo-blocks-tools {
+		min-height: 56px;
+	}
+
+	.envo-blocks-modal__body {
+		padding: 16px 12px;
+	}
+
+	.envo-blocks-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	.envo-blocks-search {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.envo-blocks-tools {
+		flex: 1;
+		justify-content: flex-end;
+	}
+
+	.envo-blocks-card__title {
+		padding: 10px 12px 2px;
+		font-size: 14px;
+	}
+
+	.envo-blocks-card__actions {
+		flex-direction: column;
+		padding: 8px 12px 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.envo-blocks-brand__name {
+		display: none;
+	}
+}
+
+/* Card image is a button that opens the template. */
+button.envo-blocks-card__media {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+button.envo-blocks-card__media img {
+	transition: transform 0.4s ease;
+}
+
+button.envo-blocks-card__media:hover img,
+button.envo-blocks-card__media:focus-visible img {
+	transform: scale(1.04);
+}
+
+button.envo-blocks-card__media:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: -2px;
+}
+
+.envo-blocks-card__pages {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	padding: 3px 10px;
+	border-radius: 999px;
+	background: rgba(15, 23, 42, 0.78);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+/* Template detail: big preview on the left, pages and requirements on the right. */
+/* Big preview | pages below each other (scroll when there are more) | all information. */
+.envo-blocks-modal.is-detail .envo-blocks-container {
+	max-width: 1262px; /* Preview 600 px + pages 210 px + information 380 px + gaps. */
+}
+
+/* The preview images are 600 px wide, so the preview column is not wider. */
+.envo-blocks-detail {
+	display: grid;
+	grid-template-columns: minmax(0, 600px) 380px;
+	justify-content: center;
+	gap: 24px;
+	align-items: start;
+}
+
+.envo-blocks-detail.has-pages {
+	grid-template-columns: minmax(0, 600px) 210px 380px;
+}
+
+.envo-blocks-detail__preview {
+	height: calc(100vh - 170px);
+	min-height: 360px;
+	overflow-y: auto;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.envo-blocks-detail__preview:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.envo-blocks-detail__preview img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.envo-blocks-detail__empty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: #757575;
+}
+
+.envo-blocks-detail__side {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	height: calc(100vh - 170px);
+	min-height: 360px;
+}
+
+/* Pages and requirements scroll; the import button below them stays visible. */
+.envo-blocks-detail__scroll {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 16px;
+	min-height: 0;
+	margin: -4px;
+	padding: 4px;
+	overflow-y: auto;
+}
+
+.envo-blocks-back {
+	align-self: flex-start;
+	padding: 4px 0;
+	border: 0;
+	background: none;
+	color: #2271b1;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.envo-blocks-back:hover {
+	color: #135e96;
+	text-decoration: underline;
+}
+
+.envo-blocks-detail__title {
+	margin: 0;
+	font-size: 22px;
+	line-height: 1.25;
+}
+
+.envo-blocks-detail__desc {
+	margin: -6px 0 0;
+	color: #50575e;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.envo-blocks-pages {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	height: calc(100vh - 170px);
+	min-height: 360px;
+	margin: -4px;
+	padding: 4px;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+
+.envo-blocks-pages > .envo-blocks-page {
+	/* The pictures get smaller so the pages fit the column; the column scrolls only below this height. */
+	flex: 0 1 auto;
+	min-height: 124px;
+}
+
+.envo-blocks-page {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin: 0;
+	padding: 6px;
+	border: 2px solid transparent;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+	color: #1e1e1e;
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+}
+
+.envo-blocks-page:hover {
+	border-color: #c3c4c7;
+}
+
+.envo-blocks-page.is-active {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+}
+
+.envo-blocks-page:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.envo-blocks-page__img {
+	display: block;
+	flex: 0 1 auto;
+	min-height: 0;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	border-radius: 4px;
+	background: #e2e4e7;
+}
+
+.envo-blocks-page__img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.envo-blocks-page__name {
+	flex: none;
+	overflow: hidden;
+	padding: 0 2px 2px;
+	font-size: 13px;
+	font-weight: 600;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.envo-blocks-deps {
+	padding: 14px 16px;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.envo-blocks-deps__title {
+	margin: 0 0 4px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.envo-blocks-deps__help {
+	margin: 0 0 8px;
+	color: #646970;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.envo-blocks-deps__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.envo-blocks-dep {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 2px 12px;
+	margin: 0;
+	padding: 8px 0;
+	border-top: 1px solid #f0f0f1;
+}
+
+.envo-blocks-dep:first-child {
+	border-top: 0;
+}
+
+.envo-blocks-dep__name {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.envo-blocks-dep__status {
+	grid-row: 2;
+	font-size: 12px;
+	color: #646970;
+}
+
+.envo-blocks-dep__status::before {
+	content: "";
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin-right: 6px;
+	border-radius: 50%;
+	background: #d63638;
+	vertical-align: 0;
+}
+
+.envo-blocks-dep.is-installed .envo-blocks-dep__status::before {
+	background: #dba617;
+}
+
+.envo-blocks-dep.is-active .envo-blocks-dep__status::before {
+	background: #00a32a;
+}
+
+.envo-blocks-dep > .envo-blocks-btn,
+.envo-blocks-dep__link {
+	grid-row: 1 / span 2;
+	grid-column: 2;
+}
+
+.envo-blocks-dep__link {
+	font-size: 12px;
+}
+
+.envo-blocks-dep > a.envo-blocks-btn {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.envo-blocks-dep__note {
+	grid-row: 3;
+	grid-column: 1 / -1;
+	font-size: 12px;
+	color: #646970;
+}
+
+.envo-blocks-btn--small {
+	flex: none;
+	min-height: 30px;
+	padding: 0 12px;
+	border-color: #2271b1;
+	background: #fff;
+	color: #2271b1;
+	font-size: 12px;
+}
+
+.envo-blocks-btn--small:hover:not(:disabled) {
+	background: #f0f6fc;
+}
+
+.envo-blocks-detail__actions {
+	display: flex;
+	flex: none;
+	flex-direction: column;
+	gap: 10px;
+	padding-top: 12px;
+	border-top: 1px solid #dcdcde;
+}
+
+.envo-blocks-detail__note {
+	margin: 0;
+	padding: 10px 12px;
+	border-left: 4px solid #dba617;
+	background: #fcf9e8;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.envo-blocks-detail__buttons {
+	display: flex;
+	gap: 8px;
+}
+
+.envo-blocks-detail__buttons .envo-blocks-btn {
+	min-height: 40px;
+}
+
+.envo-blocks-detail__buttons .envo-blocks-btn--primary {
+	flex: 2;
+}
+
+@media (max-width: 1200px) {
+	.envo-blocks-detail.has-pages {
+		grid-template-columns: minmax(0, 600px) 170px 320px;
+	}
+
+	.envo-blocks-detail {
+		grid-template-columns: minmax(0, 600px) 320px;
+	}
+}
+
+@media (max-width: 960px) {
+	.envo-blocks-detail,
+	.envo-blocks-detail.has-pages {
+		grid-template-columns: minmax(0, 600px);
+	}
+
+	.envo-blocks-detail__preview {
+		height: 52vh;
+	}
+
+	.envo-blocks-detail__side {
+		order: -2;
+		height: auto;
+		min-height: 0;
+	}
+
+	.envo-blocks-detail__scroll {
+		overflow: visible;
+	}
+
+	/* On narrow screens the pages are a row that scrolls sideways, above the preview. */
+	.envo-blocks-pages {
+		flex-direction: row;
+		order: -1;
+		height: auto;
+		min-height: 0;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.envo-blocks-pages > .envo-blocks-page {
+		flex: none;
+		width: 170px;
+	}
+}
+
+@media (max-width: 560px) {
+	.envo-blocks-pages > .envo-blocks-page {
+		width: 140px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	button.envo-blocks-card__media img {
+		transition: none;
+	}
+}
+
+.envo-blocks-detail__scroll > * {
+	flex: none;
+}
+
+.envo-blocks-detail__info {
+	margin: 0;
+	padding: 10px 12px;
+	border-left: 4px solid #72aee6;
+	background: #f0f6fc;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.envo-blocks-detail__buttons .envo-blocks-btn--secondary {
+	flex: 1;
+}
+
+.envo-blocks-detail__demo {
+	align-self: center;
+	font-size: 12px;
+}
+
+
+/* Templates / Blocks / Presets switch in the header. */
+.envo-blocks-switch {
+	grid-area: tabs;
+	justify-self: center;
+	display: inline-flex;
+	flex: none;
+	gap: 4px;
+	padding: 4px;
+	border: 1px solid #ddd6fe;
+	border-radius: 10px;
+	background: #f5f3ff;
+}
+
+.envo-blocks-switch__item {
+	padding: 9px 22px;
+	border: 0;
+	border-radius: 7px;
+	background: transparent;
+	color: #4c1d95;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.2;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.envo-blocks-switch__item:hover {
+	background: #ede9fe;
+	color: #3b0764;
+}
+
+.envo-blocks-switch__item.is-active {
+	background: linear-gradient(135deg, #4338ca, #6d28d9 55%, #a21caf);
+	color: #fff;
+	box-shadow: 0 2px 6px rgba(109, 40, 217, 0.35);
+}
+
+.envo-blocks-switch__item:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 1px;
+}
+
+/* Blocks: sidebar with checkboxes + grid of sections. */
+.envo-blocks-modal.is-blocks .envo-blocks-container {
+	max-width: 1680px;
+}
+
+.envo-blocks-blocks {
+	display: grid;
+	grid-template-columns: 236px minmax(0, 1fr);
+	gap: 28px;
+	align-items: start;
+}
+
+.envo-blocks-sidebar {
+	position: sticky;
+	top: 0;
+	/* As high as the window at most: the switches (head) and the note (help) stay, only the list scrolls. */
+	display: flex;
+	flex-direction: column;
+	max-height: calc(100vh - 140px);
+	overflow: hidden;
+	padding: 16px;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* All / Free / PRO filter above the categories. */
+.envo-blocks-edition {
+	display: flex;
+	gap: 3px;
+	margin: 0 0 16px;
+	padding: 3px;
+	border: 1px solid #ddd6fe;
+	border-radius: 8px;
+	background: #f5f3ff;
+}
+
+.envo-blocks-edition__btn {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	gap: 1px;
+	padding: 6px 4px;
+	border: 0;
+	border-radius: 6px;
+	background: transparent;
+	color: #4c1d95;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.2;
+	cursor: pointer;
+}
+
+.envo-blocks-edition__btn:hover {
+	background: #ede9fe;
+}
+
+.envo-blocks-edition__btn.is-active {
+	background: #fff;
+	color: #3b0764;
+	box-shadow: 0 1px 3px rgba(76, 29, 149, 0.2);
+}
+
+.envo-blocks-edition__btn:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 1px;
+}
+
+.envo-blocks-edition__count {
+	font-size: 10px;
+	font-weight: 400;
+	opacity: 0.75;
+}
+
+.envo-blocks-sidebar__head {
+	flex: none;
+}
+
+.envo-blocks-sidebar__titlebar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin: 0 0 8px;
+}
+
+.envo-blocks-sidebar__clear {
+	padding: 2px 4px;
+	border: 0;
+	background: none;
+	color: #2271b1;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.envo-blocks-sidebar__clear:hover {
+	color: #135e96;
+	text-decoration: underline;
+}
+
+.envo-blocks-sidebar__title {
+	margin: 0;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #646970;
+}
+
+.envo-blocks-sidebar__list {
+	flex: 1 1 auto;
+	min-height: 64px;
+	margin: 0 -6px 0 0;
+	padding: 0 6px 0 0;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	scrollbar-width: thin;
+	list-style: none;
+}
+
+.envo-blocks-sidebar__list:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.envo-blocks-sidebar__list li {
+	margin: 0;
+}
+
+.envo-blocks-check {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 4px;
+	border-radius: 4px;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.envo-blocks-check:hover {
+	background: #f6f7f7;
+}
+
+.envo-blocks-check input {
+	margin: 0;
+}
+
+.envo-blocks-check__label {
+	flex: 1;
+}
+
+.envo-blocks-check__count {
+	min-width: 22px;
+	padding: 1px 7px;
+	border-radius: 999px;
+	background: #f0f0f1;
+	color: #50575e;
+	font-size: 11px;
+	text-align: center;
+}
+
+.envo-blocks-sidebar__help {
+	flex: none;
+	margin: 12px 0 0;
+	padding-top: 12px;
+	border-top: 1px solid #f0f0f1;
+	color: #646970;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.envo-blocks-sections {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+	gap: 24px;
+	align-items: start;
+}
+
+.envo-blocks-section {
+	overflow: hidden;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.envo-blocks-section__media {
+	display: block;
+	width: 100%;
+	max-height: 420px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	border-bottom: 1px solid #f0f0f1;
+	background: #f6f7f7;
+	cursor: pointer;
+}
+
+.envo-blocks-section__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: transform 0.4s ease;
+}
+
+.envo-blocks-section__media:hover:not(:disabled) img,
+.envo-blocks-section__media:focus-visible img {
+	transform: scale(1.02);
+}
+
+.envo-blocks-section__media:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.envo-blocks-section__media:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: -2px;
+}
+
+.envo-blocks-section__empty {
+	display: block;
+	padding: 40px 16px;
+	color: #646970;
+}
+
+.envo-blocks-section__bar {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 16px;
+}
+
+.envo-blocks-section__text {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.envo-blocks-section__title {
+	margin: 0;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 600;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.envo-blocks-section__cats,
+.envo-blocks-section__needs {
+	font-size: 12px;
+	color: #646970;
+}
+
+.envo-blocks-section__needs {
+	color: #b32d2e;
+}
+
+.envo-blocks-btn--small-primary {
+	flex: none;
+	min-height: 32px;
+	padding: 0 16px;
+}
+
+@media (max-width: 960px) {
+	.envo-blocks-blocks {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.envo-blocks-sidebar {
+		position: static;
+		max-height: none;
+		overflow: visible;
+	}
+
+	.envo-blocks-sidebar__list {
+		overflow: visible;
+	}
+
+	/* The switch in the header is right above; one is enough. */
+	.envo-blocks-switch--sidebar {
+		display: none;
+	}
+
+	.envo-blocks-sidebar__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px 12px;
+	}
+
+	.envo-blocks-sections {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.envo-blocks-switch {
+		margin: 0 0 10px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.envo-blocks-section__media img {
+		transition: none;
+	}
+}
+
+/* Template cards next to the sidebar. */
+.envo-blocks-blocks .envo-blocks-grid {
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Taller card pictures; the subpages of a template lie over their bottom part. */
+.envo-blocks-card__visual {
+	position: relative;
+}
+
+.envo-blocks-card .envo-blocks-card__media {
+	display: flex;
+	align-items: flex-start;
+	aspect-ratio: 4 / 5;
+	background: #fff;
+}
+
+/* Full width from the top; a short picture ends on a white background instead of being cropped at the sides. */
+.envo-blocks-card .envo-blocks-card__media img {
+	flex: none;
+	width: 100%;
+	height: auto;
+	object-fit: initial;
+}
+
+.envo-blocks-card__subpages {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 6px;
+	padding: 28px 12px 12px;
+	background: linear-gradient(rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.6));
+	pointer-events: none;
+}
+
+.envo-blocks-card__subpage {
+	position: relative;
+	display: block;
+	aspect-ratio: 4 / 3;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	background: #e2e4e7;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	pointer-events: auto;
+	transition: transform 0.2s ease;
+}
+
+.envo-blocks-card__subpage img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.envo-blocks-card__subpage:hover,
+.envo-blocks-card__subpage:focus-visible {
+	transform: translateY(-2px);
+}
+
+.envo-blocks-card__subpage:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 1px;
+}
+
+.envo-blocks-card__more {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(15, 23, 42, 0.62);
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.envo-blocks-card__subpage {
+		transition: none;
+	}
+}
+
+/* Import replaces the page content. */
+.envo-blocks-detail__warning {
+	margin: 0;
+	padding: 10px 12px;
+	border-left: 4px solid #d63638;
+	background: #fcf0f1;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/* The same switch at the top of the sidebar, as wide as the sidebar. */
+.envo-blocks-switch--sidebar {
+	grid-area: auto;
+	display: flex;
+	width: 100%;
+	min-width: 0;
+	margin: 0 0 16px;
+	padding: 3px;
+	gap: 2px;
+	box-sizing: border-box;
+}
+
+.envo-blocks-switch--sidebar .envo-blocks-switch__item {
+	flex: 1 1 auto;
+	min-width: 0;
+	padding: 7px 6px;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* PRO templates and blocks. */
+.envo-blocks-card__media,
+.envo-blocks-section__media {
+	position: relative;
+}
+
+.envo-blocks-badge {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1;
+	padding: 3px 10px;
+	border-radius: 999px;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	line-height: 1.5;
+}
+
+.envo-blocks-badge--pro {
+	background: linear-gradient(135deg, #4338ca, #6d28d9 55%, #a21caf);
+	box-shadow: 0 2px 6px rgba(76, 29, 149, 0.35);
+}
+
+.envo-blocks-btn--primary.envo-blocks-btn--buy,
+.envo-blocks-btn--primary.envo-blocks-btn--activate,
+.envo-blocks-btn--primary.envo-blocks-btn--renew {
+	/* At least as wide as its text ("Activate License"); "Live demo" next to it takes the rest of the card. */
+	flex: 1 0 auto;
+	background: #6d28d9;
+	color: #fff;
+	text-decoration: none;
+}
+
+.envo-blocks-btn--primary.envo-blocks-btn--buy:hover,
+.envo-blocks-btn--primary.envo-blocks-btn--activate:hover,
+.envo-blocks-btn--primary.envo-blocks-btn--renew:hover {
+	background: #5b21b6;
+	color: #fff;
+}
+
+.envo-blocks-section__bar .envo-blocks-btn--buy,
+.envo-blocks-section__bar .envo-blocks-btn--activate,
+.envo-blocks-section__bar .envo-blocks-btn--renew {
+	flex: none;
+}
+
+.envo-blocks-detail__pro {
+	margin: 0;
+	padding: 10px 12px;
+	border-left: 4px solid #6d28d9;
+	background: #f5f3ff;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/* PRO blocks without the PRO plugin or license: label, Live demo + Buy PRO. */
+.envo-blocks-section__pro {
+	color: #6d28d9;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.envo-blocks-section__actions {
+	display: flex;
+	flex: none;
+	align-items: center;
+	gap: 8px;
+}
+
+.envo-blocks-section__actions .envo-blocks-btn--secondary {
+	border-color: #6d28d9;
+	color: #6d28d9;
+}
+
+.envo-blocks-section__actions .envo-blocks-btn--secondary:hover {
+	background: #f5f3ff;
+	color: #5b21b6;
+}
+
+.envo-blocks-section__media[href] {
+	color: inherit;
+}
+
+@media (max-width: 700px) {
+	.envo-blocks-section__bar {
+		flex-wrap: wrap;
+	}
+}
+
+/* Locked PRO block: the name and the PRO line on the first row, the buttons on the second. */
+.envo-blocks-section.is-locked .envo-blocks-section__bar {
+	flex-wrap: wrap;
+	row-gap: 10px;
+}
+
+.envo-blocks-section.is-locked .envo-blocks-section__text {
+	flex-basis: 100%;
+}
+
+.envo-blocks-section.is-locked .envo-blocks-section__actions {
+	margin-left: auto;
+}
+
+/* Envo Blocks > Templates Import admin page: the same window as a normal page part. */
+.envo-blocks-modal.is-page {
+	position: relative;
+	inset: auto;
+	z-index: auto;
+	display: block;
+	background: transparent;
+}
+
+.envo-blocks-modal.is-page .envo-blocks-modal__header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	min-height: 0;
+	margin: 0 0 20px;
+	padding: 0;
+	background: transparent;
+	box-shadow: none;
+}
+
+.envo-blocks-page-title {
+	margin: 0;
+	font-size: 22px;
+	line-height: 1.3;
+}
+
+.envo-blocks-modal.is-page .envo-blocks-modal__body {
+	overflow: visible;
+	padding: 0;
+}
+
+.envo-blocks-modal.is-page .envo-blocks-container {
+	max-width: none;
+}
+
+.envo-blocks-modal.is-page .envo-blocks-sidebar {
+	top: 48px;
+	max-height: calc(100vh - 80px);
+}
+
+.envo-blocks-modal.is-page .envo-blocks-detail__preview,
+.envo-blocks-modal.is-page .envo-blocks-detail__side,
+.envo-blocks-modal.is-page .envo-blocks-pages {
+	height: calc(100vh - 250px);
+}
+
+.eb-templates-app__loading {
+	color: #646970;
+}
+
+/* Dialog: post or page and its title. */
+.envo-blocks-create {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	background: rgba(17, 12, 40, 0.6);
+}
+
+.envo-blocks-create__box {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: min(460px, 100%);
+	padding: 28px;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.envo-blocks-create__box h2 {
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.3;
+}
+
+.envo-blocks-create__help {
+	margin: -4px 0 4px;
+	color: #50575e;
+	font-size: 13px;
+}
+
+.envo-blocks-create__types {
+	display: flex;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.envo-blocks-create__types legend,
+.envo-blocks-create__label {
+	margin: 0 0 6px;
+	padding: 0;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.envo-blocks-create__type {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 12px;
+	border: 2px solid #dcdcde;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.envo-blocks-create__type.is-active {
+	border-color: #6d28d9;
+	background: #f5f3ff;
+}
+
+.envo-blocks-create__type input {
+	margin: 0;
+}
+
+.envo-blocks-create__label {
+	margin: 4px 0 -6px;
+}
+
+.envo-blocks-create__input {
+	width: 100%;
+	min-height: 40px;
+	padding: 6px 10px;
+	font-size: 15px;
+}
+
+.envo-blocks-create__buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.envo-blocks-create__buttons .envo-blocks-btn {
+	flex: none;
+	padding: 0 18px;
+}
+
+/* Page template of the imported page, with a note about canvas pages. */
+.envo-blocks-page-template {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 14px 16px;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.envo-blocks-create .envo-blocks-page-template {
+	padding: 0;
+	box-shadow: none;
+}
+
+.envo-blocks-page-template__label {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.envo-blocks-page-template__select {
+	width: 100%;
+	max-width: none;
+	min-height: 36px;
+}
+
+.envo-blocks-canvas-note {
+	margin: 0;
+	padding: 8px 10px;
+	border-left: 4px solid #6d28d9;
+	border-radius: 0 4px 4px 0;
+	background: #f5f3ff;
+	color: #3b0764;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.envo-blocks-canvas-note.is-warning {
+	border-left-color: #dba617;
+	background: #fcf9e8;
+	color: #50440a;
+}
+
+/* "Import the header and footer of the template". */
+.envo-blocks-parts {
+	padding: 14px 16px;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.envo-blocks-create .envo-blocks-parts {
+	padding: 0;
+	box-shadow: none;
+}
+
+.envo-blocks-parts__label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.envo-blocks-parts__label input {
+	margin: 0;
+}
+
+.envo-blocks-parts__help {
+	margin: 6px 0 0 24px;
+	color: #50575e;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/* Previews that are not loaded yet keep some height, so the ones further down are not all "visible" at once. */
+.envo-blocks-modal img.is-lazy {
+	min-height: 160px;
+	background: #f0f0f1;
+}
+
+.envo-blocks-page__img img.is-lazy,
+.envo-blocks-card__subpages img.is-lazy {
+	min-height: 0;
+}
+
+/* A preview from the assets server keeps its own aspect ratio while it loads (blurred placeholder behind). */
+.envo-blocks-modal img.is-lazy.has-ratio {
+	min-height: 0;
+}
+
+.envo-blocks-section__media img.has-ratio {
+	height: auto;
+}
+
+/* Layouts: the main colour of the design palette. */
+.envo-blocks-section__swatch {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 6px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 50%;
+	vertical-align: -1px;
+}
+
+/* Templates Import page: our theme above the template grid (ThemeBanner in editor.js). */
+.envo-blocks-theme-banner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 16px 20px;
+	margin: 0 0 20px;
+	padding: 16px 48px 16px 20px;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #2271b1;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.envo-blocks-theme-banner__shot {
+	flex: none;
+	width: 120px;
+	height: auto;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+}
+
+.envo-blocks-theme-banner__text {
+	flex: 1;
+	min-width: 0;
+}
+
+.envo-blocks-theme-banner__text strong {
+	font-size: 14px;
+}
+
+.envo-blocks-theme-banner__text p {
+	margin: 4px 0 0;
+	color: #50575e;
+}
+
+.envo-blocks-theme-banner__actions {
+	display: flex;
+	flex: none;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 16px;
+}
+
+.envo-blocks-theme-banner__actions .envo-blocks-btn {
+	flex: none;
+	background: #2271b1;
+	color: #fff;
+}
+
+.envo-blocks-theme-banner__actions .envo-blocks-btn:hover:not(:disabled) {
+	background: #135e96;
+	color: #fff;
+}
+
+.envo-blocks-theme-banner__actions .envo-blocks-btn.is-busy {
+	opacity: 0.7;
+	cursor: progress;
+}
+
+.envo-blocks-theme-banner__close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: flex;
+	padding: 4px;
+	border: 0;
+	background: transparent;
+	color: #646970;
+	cursor: pointer;
+}
+
+.envo-blocks-theme-banner__close svg {
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
+}
+
+@media (max-width: 782px) {
+	.envo-blocks-theme-banner {
+		flex-wrap: wrap;
+	}
+
+	.envo-blocks-theme-banner__shot {
+		display: none;
+	}
+}

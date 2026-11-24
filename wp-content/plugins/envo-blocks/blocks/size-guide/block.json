@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/size-guide",
+	"title": "Size Guide",
+	"category": "envo-blocks",
+	"icon": "editor-table",
+	"description": "A link or button that opens the size chart in a pop-up window. The content of the window is made of normal blocks (table, image, text).",
+	"keywords": [ "size", "chart", "guide", "table", "modal", "popup", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"buttonText": { "type": "string", "default": "" },
+		"buttonStyle": { "type": "string", "default": "link" },
+		"showIcon": { "type": "boolean", "default": true },
+		"modalTitle": { "type": "string", "default": "" },
+		"modalWidth": { "type": "integer", "default": 720 },
+		"contentAlign": { "type": "string", "default": "left" },
+		"buttonColor": { "type": "string", "default": "" },
+		"buttonTextColor": { "type": "string", "default": "" },
+		"modalBackground": { "type": "string", "default": "" },
+		"modalText": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": { "margin": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"viewScript": "envo-blocks-size-guide",
+	"render": "file:./render.php"
+}

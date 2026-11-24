@@ -1,0 +1,203 @@
+/**
+ * FAQ block: questions as <details>, four item styles (cards, boxed, lines, minimal), plus or chevron icon.
+ */
+.sb-faq {
+	--sb-faq-line: var(--sb-faq-border, color-mix(in srgb, currentColor 14%, transparent));
+	display: flex;
+	flex-direction: column;
+	interpolate-size: allow-keywords;
+}
+
+.sb-faq--cards {
+	gap: var(--sb-faq-gap, 12px);
+}
+
+.sb-faq__item {
+	margin: 0;
+	padding: 0;
+	background: var(--sb-faq-q-bg, transparent);
+	transition: background-color 0.2s ease;
+}
+
+.sb-faq__item[open] {
+	background: var(--sb-faq-open-bg, var(--sb-faq-q-bg, transparent));
+}
+
+/* Cards: every question its own rounded box. */
+.sb-faq--cards .sb-faq__item {
+	border: 1px solid var(--sb-faq-line);
+	border-radius: var(--sb-faq-radius, 10px);
+}
+
+/* Boxed: one box with lines between the questions. */
+.sb-faq--boxed {
+	overflow: hidden;
+	border: 1px solid var(--sb-faq-line);
+	border-radius: var(--sb-faq-radius, 10px);
+}
+
+.sb-faq--boxed .sb-faq__item + .sb-faq__item {
+	border-top: 1px solid var(--sb-faq-line);
+}
+
+/* Lines: lines between and under the questions. */
+.sb-faq--lines .sb-faq__item {
+	border-bottom: 1px solid var(--sb-faq-line);
+}
+
+.sb-faq--lines .sb-faq__item:first-child {
+	border-top: 1px solid var(--sb-faq-line);
+}
+
+.sb-faq--lines .sb-faq__question,
+.sb-faq--minimal .sb-faq__question {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.sb-faq--lines .sb-faq__answer,
+.sb-faq--minimal .sb-faq__answer {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.sb-faq__question {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--sb-faq-pad, 20px);
+	color: var(--sb-faq-q, inherit);
+	cursor: pointer;
+	list-style: none;
+}
+
+.sb-faq__question::-webkit-details-marker,
+.sb-faq__question::marker {
+	display: none;
+	content: "";
+}
+
+.sb-faq__question:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: -4px;
+	border-radius: var(--sb-faq-radius, 10px);
+}
+
+.sb-faq .sb-faq__title {
+	flex: 1;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: 1.05em;
+	font-weight: 600;
+	line-height: 1.4;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.sb-faq__icon {
+	position: relative;
+	flex: 0 0 22px;
+	width: 22px;
+	height: 22px;
+	color: var(--sb-faq-icon, currentColor);
+}
+
+.sb-faq--icon-left .sb-faq__icon {
+	order: -1;
+}
+
+/* Plus that turns into a minus. */
+.sb-faq--icon-plus .sb-faq__icon::before,
+.sb-faq--icon-plus .sb-faq__icon::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 14px;
+	height: 2px;
+	border-radius: 2px;
+	background: currentColor;
+	content: "";
+	transform: translate(-50%, -50%);
+	transition: transform 0.25s ease;
+}
+
+.sb-faq--icon-plus .sb-faq__icon::after {
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.sb-faq--icon-plus .sb-faq__item[open] .sb-faq__icon::after {
+	transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Chevron that turns up. */
+.sb-faq--icon-chevron .sb-faq__icon::before {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	content: "";
+	transform: translate(-50%, -50%) rotate(45deg);
+	transition: transform 0.25s ease, top 0.25s ease;
+}
+
+.sb-faq--icon-chevron .sb-faq__item[open] .sb-faq__icon::before {
+	top: 60%;
+	transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.sb-faq__answer {
+	padding: 0 var(--sb-faq-pad, 20px) var(--sb-faq-pad, 20px);
+	color: var(--sb-faq-a, inherit);
+}
+
+.sb-faq--icon-left:not(.sb-faq--icon-none) .sb-faq__answer {
+	padding-left: calc(var(--sb-faq-pad, 20px) + 38px);
+}
+
+.sb-faq--icon-left.sb-faq--lines .sb-faq__answer,
+.sb-faq--icon-left.sb-faq--minimal .sb-faq__answer {
+	padding-left: 38px;
+}
+
+.sb-faq__answer > :first-child {
+	margin-top: 0;
+}
+
+.sb-faq__answer > :last-child {
+	margin-bottom: 0;
+}
+
+/* Opening and closing slide where the browser animates <details>. */
+@supports selector(::details-content) {
+	.sb-faq__item::details-content {
+		overflow: hidden;
+		block-size: 0;
+		transition: block-size 0.3s ease, content-visibility 0.3s ease allow-discrete;
+	}
+
+	.sb-faq__item[open]::details-content {
+		block-size: auto;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sb-faq__item,
+	.sb-faq__item::details-content,
+	.sb-faq__icon::before,
+	.sb-faq__icon::after {
+		transition: none !important;
+	}
+}
+
+@media print {
+	.sb-faq__item::details-content {
+		block-size: auto;
+		content-visibility: visible;
+	}
+}

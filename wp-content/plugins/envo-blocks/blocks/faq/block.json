@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/faq",
+	"title": "FAQ",
+	"category": "envo-blocks",
+	"icon": "editor-help",
+	"description": "Frequently asked questions that open and close, with schema.org FAQPage data for search engines. Every question is a FAQ Item block, its answer any blocks.",
+	"keywords": [ "faq", "questions", "answers", "accordion", "schema", "help" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"itemStyle": { "type": "string", "default": "cards" },
+		"icon": { "type": "string", "default": "plus" },
+		"iconPosition": { "type": "string", "default": "right" },
+		"questionTag": { "type": "string", "default": "h3" },
+		"firstOpen": { "type": "boolean", "default": false },
+		"allowMultiple": { "type": "boolean", "default": false },
+		"schema": { "type": "boolean", "default": true },
+		"gap": { "type": "integer", "default": 12 },
+		"padding": { "type": "integer", "default": 20 },
+		"radius": { "type": "integer", "default": 10 },
+		"questionColor": { "type": "string", "default": "" },
+		"questionBackground": { "type": "string", "default": "" },
+		"openBackground": { "type": "string", "default": "" },
+		"answerColor": { "type": "string", "default": "" },
+		"iconColor": { "type": "string", "default": "" },
+		"borderColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": [ "envo-blocks-blocks", "envo-blocks-faq" ],
+	"viewScript": "envo-blocks-faq",
+	"render": "file:./render.php"
+}

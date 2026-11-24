@@ -1,0 +1,96 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/shipping-bar",
+	"title": "Free Shipping Progress",
+	"category": "envo-blocks",
+	"icon": "cart",
+	"description": "A bar that shows how much is missing in the cart for free shipping. It updates when the cart changes.",
+	"keywords": [
+		"woocommerce",
+		"shipping",
+		"free",
+		"progress",
+		"cart"
+	],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"thresholdSource": {
+			"type": "string",
+			"default": "auto"
+		},
+		"threshold": {
+			"type": "number",
+			"default": 0
+		},
+		"messageProgress": {
+			"type": "string",
+			"default": ""
+		},
+		"messageReached": {
+			"type": "string",
+			"default": ""
+		},
+		"messageEmpty": {
+			"type": "string",
+			"default": ""
+		},
+		"showBar": {
+			"type": "boolean",
+			"default": true
+		},
+		"barHeight": {
+			"type": "integer",
+			"default": 8
+		},
+		"hideWhenReached": {
+			"type": "boolean",
+			"default": false
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
+		},
+		"barColor": {
+			"type": "string",
+			"default": ""
+		},
+		"trackColor": {
+			"type": "string",
+			"default": ""
+		},
+		"successColor": {
+			"type": "string",
+			"default": ""
+		},
+		"background": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		}
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"viewScript": "envo-blocks-shipping",
+	"render": "file:./render.php"
+}

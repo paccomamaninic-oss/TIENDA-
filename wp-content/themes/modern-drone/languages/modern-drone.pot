@@ -1,0 +1,1329 @@
+# Copyright (C) 2026 pewilliams
+# This file is distributed under the GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Modern Drone 1.0.0\n"
+"Report-Msgid-Bugs-To: https://WordPress.org/support/theme/modern-drone\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-05-06T11:44:12+05:30\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: modern-drone\n"
+
+#. Theme Name of the theme
+#: style.css
+#: block-patterns.php:17
+msgid "Modern Drone"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://www.ovationthemes.com/products/modern-drone"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Modern Drone is crafted for drone service providers, aerial photographers, and videographers seeking a sleek and focused online presence. This technology company enables you to easily showcase your services, project work, and capabilities in a clear and visually engaging manner, allowing potential clients to quickly grasp what you offer. The layout highlights visuals while ensuring simple navigation, making it easy for visitors to explore your photography portfolio and video work in an organized gallery format. With smooth performance across mobile and desktop devices, it guarantees a consistent digital experience for all users. Designed for straightforward setup and easy content management, you can seamlessly update projects, add service details, and manage contact information without hassle. Supporting essential features like portfolio sections, service highlights, and inquiry forms, the theme maintains a lightweight and fast overall structure. Whether you are starting out or looking to expand your creative business, it provides an effective way to present your work and connect with clients online through innovation in tech applications."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "pewilliams"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.ovationthemes.com/"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:340
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:341
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/TGM/class-tgm-plugin-activation.php:343
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/TGM/class-tgm-plugin-activation.php:345
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:346
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: inc/TGM/class-tgm-plugin-activation.php:348
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/TGM/class-tgm-plugin-activation.php:354
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/TGM/class-tgm-plugin-activation.php:360
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/TGM/class-tgm-plugin-activation.php:366
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/TGM/class-tgm-plugin-activation.php:372
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/TGM/class-tgm-plugin-activation.php:378
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:383
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:388
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:393
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:398
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:399
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:400
+#: inc/TGM/class-tgm-plugin-activation.php:3311
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:401
+#: inc/TGM/class-tgm-plugin-activation.php:3103
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: inc/TGM/class-tgm-plugin-activation.php:403
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/TGM/class-tgm-plugin-activation.php:405
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: inc/TGM/class-tgm-plugin-activation.php:407
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:408
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:409
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:410
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:616
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:617
+msgid "Update Required"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:735
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:1042
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:1042
+#: inc/TGM/class-tgm-plugin-activation.php:1052
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:1052
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:1243
+#: inc/TGM/class-tgm-plugin-activation.php:3099
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: inc/TGM/class-tgm-plugin-activation.php:2112
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2421
+msgid "Required"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2424
+msgid "Recommended"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2440
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2443
+msgid "External Source"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2446
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2463
+msgid "Not Installed"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2467
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2469
+msgid "Active"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2475
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2478
+msgid "Requires Update"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2481
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: inc/TGM/class-tgm-plugin-activation.php:2490
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: inc/TGM/class-tgm-plugin-activation.php:2536
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/TGM/class-tgm-plugin-activation.php:2540
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/TGM/class-tgm-plugin-activation.php:2544
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/TGM/class-tgm-plugin-activation.php:2548
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2630
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2638
+msgid "Installed version:"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2646
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2658
+msgid "Available version:"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2681
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2695
+msgid "Plugin"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2696
+msgid "Source"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2697
+msgid "Type"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2701
+msgid "Version"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2702
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/TGM/class-tgm-plugin-activation.php:2751
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/TGM/class-tgm-plugin-activation.php:2756
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/TGM/class-tgm-plugin-activation.php:2762
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2834
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2867
+msgid "Install"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2873
+msgid "Update"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2876
+msgid "Activate"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2907
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2909
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2950
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:2952
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3059
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3085
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3310
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/TGM/class-tgm-plugin-activation.php:3655
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: inc/TGM/class-tgm-plugin-activation.php:3658
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/TGM/class-tgm-plugin-activation.php:3660
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3664
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/TGM/class-tgm-plugin-activation.php:3666
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3667
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/TGM/class-tgm-plugin-activation.php:3669
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3672
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/TGM/class-tgm-plugin-activation.php:3674
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3675
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/TGM/class-tgm-plugin-activation.php:3677
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3682
+msgid "Show Details"
+msgstr ""
+
+#: inc/TGM/class-tgm-plugin-activation.php:3682
+msgid "Hide Details"
+msgstr ""
+
+#: inc/TGM/tgm.php:11
+msgid "Woocommerce"
+msgstr ""
+
+#: inc/TGM/tgm.php:17
+msgid "Gtranslate"
+msgstr ""
+
+#: inc/TGM/tgm.php:24
+msgid "Currency Switcher for WooCommerce"
+msgstr ""
+
+#: inc/TGM/tgm.php:31
+msgid "YITH WooCommerce Quick View"
+msgstr ""
+
+#: inc/TGM/tgm.php:38
+msgid "YITH WooCommerce Wishlist"
+msgstr ""
+
+#: patterns/404.php
+msgctxt "Pattern title"
+msgid "Page Not Found"
+msgstr ""
+
+#: patterns/404.php:11
+msgid "404"
+msgstr ""
+
+#: patterns/404.php:15
+msgid "Page not found!"
+msgstr ""
+
+#: patterns/404.php:19
+msgid "Sorry, the page you are looking for does not exist or has been moved."
+msgstr ""
+
+#: patterns/404.php:24
+msgid "Return Home"
+msgstr ""
+
+#: patterns/about-section.php
+msgctxt "Pattern title"
+msgid "About Section"
+msgstr ""
+
+#: patterns/about-section.php:13
+msgid "Who We "
+msgstr ""
+
+#: patterns/about-section.php:13
+msgid "Are"
+msgstr ""
+
+#: patterns/about-section.php:17
+msgid "Trusted manufacturing experts with over 20 years of industry experience."
+msgstr ""
+
+#: patterns/about-section.php:30
+msgid "20 +"
+msgstr ""
+
+#: patterns/about-section.php:34
+msgid "years of"
+msgstr ""
+
+#: patterns/about-section.php:34
+msgid "experience"
+msgstr ""
+
+#: patterns/about-section.php:42
+msgid "At ForgeFlow Industries, we specialize in delivering innovative and cost-effective manufacturing solutions. From design and prototyping to full-scale production, we ensure precision, durability, and efficiency at every stage.At ForgeFlow Industries, we specialize in delivering innovative and cost-effective manufacturing solutions. From design and prototyping to full-scale production, we ensure precision, durability, and efficiency at every stage."
+msgstr ""
+
+#: patterns/archive.php
+msgctxt "Pattern title"
+msgid "Archives"
+msgstr ""
+
+#: patterns/banner.php
+msgctxt "Pattern title"
+msgid "Banner"
+msgstr ""
+
+#: patterns/banner.php:13
+#: patterns/banner.php:31
+#: patterns/banner.php:49
+msgid "Capture the sky in Ultra 4K & AI Precision"
+msgstr ""
+
+#: patterns/banner.php:17
+#: patterns/banner.php:35
+#: patterns/banner.php:53
+msgid "Up to 30% OFF on Selected Drones"
+msgstr ""
+
+#: patterns/banner.php:22
+#: patterns/banner.php:40
+#: patterns/banner.php:58
+msgid "Shop Drones Now "
+msgstr ""
+
+#: patterns/cart.php
+msgctxt "Pattern title"
+msgid "Cart"
+msgstr ""
+
+#: patterns/cart.php:18
+msgid "You may be interested in…"
+msgstr ""
+
+#: patterns/cart.php:74
+msgid "Your cart is currently empty!"
+msgstr ""
+
+#: patterns/cart.php:82
+msgid "New in store"
+msgstr ""
+
+#: patterns/faq-section.php
+msgctxt "Pattern title"
+msgid "FAQ Section"
+msgstr ""
+
+#: patterns/faq-section.php:13
+msgid "got questions? we got "
+msgstr ""
+
+#: patterns/faq-section.php:13
+msgid "answers"
+msgstr ""
+
+#: patterns/faq-section.php:17
+msgid "Everything you need to know about our logistics services and how we operate."
+msgstr ""
+
+#: patterns/faq-section.php:25
+msgid "1. How do I track my shipment?"
+msgstr ""
+
+#: patterns/faq-section.php:26
+#: patterns/faq-section.php:32
+#: patterns/faq-section.php:38
+#: patterns/faq-section.php:44
+#: patterns/faq-section.php:54
+#: patterns/faq-section.php:60
+#: patterns/faq-section.php:66
+#: patterns/faq-section.php:72
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+msgstr ""
+
+#: patterns/faq-section.php:31
+msgid "2. What shipping modes do you offer?"
+msgstr ""
+
+#: patterns/faq-section.php:37
+msgid "3. Do you handle international shipping?"
+msgstr ""
+
+#: patterns/faq-section.php:43
+msgid "4. How do I track my shipment?"
+msgstr ""
+
+#: patterns/faq-section.php:53
+msgid "5. How do I track my shipment?"
+msgstr ""
+
+#: patterns/faq-section.php:59
+msgid "6.How can I request a quotation?"
+msgstr ""
+
+#: patterns/faq-section.php:65
+msgid "7. What quality standards do you follow?"
+msgstr ""
+
+#: patterns/faq-section.php:71
+msgid "8.Do you test your products before delivery?"
+msgstr ""
+
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Footer"
+msgstr ""
+
+#: patterns/footer.php:17
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste."
+msgstr ""
+
+#: patterns/footer.php:21
+msgid "+1234567890"
+msgstr ""
+
+#: patterns/footer.php:25
+msgid "support@example.com"
+msgstr ""
+
+#: patterns/footer.php:29
+msgid "25/B Milford Road, New York"
+msgstr ""
+
+#: patterns/footer.php:35
+msgid "Find it Fast"
+msgstr ""
+
+#: patterns/footer.php:40
+msgid "Camera Drones"
+msgstr ""
+
+#: patterns/footer.php:44
+msgid "Racing Drones"
+msgstr ""
+
+#: patterns/footer.php:48
+msgid "Mini & Kids Drones"
+msgstr ""
+
+#: patterns/footer.php:52
+msgid "Industrial Drones"
+msgstr ""
+
+#: patterns/footer.php:56
+msgid "Drone Parts"
+msgstr ""
+
+#: patterns/footer.php:63
+msgid "Customer Care"
+msgstr ""
+
+#: patterns/footer.php:68
+msgid "About Us"
+msgstr ""
+
+#: patterns/footer.php:72
+msgid "Shipping Policy"
+msgstr ""
+
+#: patterns/footer.php:76
+msgid "Return Policy"
+msgstr ""
+
+#: patterns/footer.php:80
+msgid "Drone Flying Guide"
+msgstr ""
+
+#: patterns/footer.php:89
+msgid "Resources"
+msgstr ""
+
+#: patterns/footer.php:94
+#: patterns/latest-news.php:11
+msgid "Blog"
+msgstr ""
+
+#: patterns/footer.php:98
+msgid "Case Studies"
+msgstr ""
+
+#: patterns/footer.php:102
+msgid "Press & News"
+msgstr ""
+
+#: patterns/footer.php:106
+msgid "Download Brochures"
+msgstr ""
+
+#: patterns/footer.php:116
+msgid "Modern Drone Theme "
+msgstr ""
+
+#: patterns/footer.php:116
+msgid "Proudly powered by "
+msgstr ""
+
+#: patterns/footer.php:116
+msgid "Ovation Themes "
+msgstr ""
+
+#: patterns/footer.php:116
+msgid " and "
+msgstr ""
+
+#: patterns/footer.php:116
+msgid "WordPress."
+msgstr ""
+
+#: patterns/header-image.php
+msgctxt "Pattern title"
+msgid "Header Image"
+msgstr ""
+
+#: patterns/header.php
+msgctxt "Pattern title"
+msgid "Header"
+msgstr ""
+
+#: patterns/header.php:13
+msgid " (+800) 123 456 7890"
+msgstr ""
+
+#: patterns/header.php:17
+msgid " moderndrone@example.com"
+msgstr ""
+
+#: patterns/header.php:24
+msgid "Free Shipping on Orders $500+"
+msgstr ""
+
+#: patterns/header.php:31
+msgid " Store Location"
+msgstr ""
+
+#: patterns/header.php:71
+msgid "Home"
+msgstr ""
+
+#: patterns/header.php:72
+msgid "Catalog"
+msgstr ""
+
+#: patterns/header.php:74
+msgid "Gift Card"
+msgstr ""
+
+#: patterns/header.php:76
+#: patterns/sidebar.php:48
+msgid "Pages"
+msgstr ""
+
+#: patterns/header.php:78
+msgid "Feature"
+msgstr ""
+
+#: patterns/index-header-image.php
+msgctxt "Pattern title"
+msgid "Index Header Image"
+msgstr ""
+
+#: patterns/index-header-image.php:11
+msgid "blog"
+msgstr ""
+
+#: patterns/latest-news.php
+msgctxt "Pattern title"
+msgid "Latest News"
+msgstr ""
+
+#: patterns/latest-news.php:11
+msgid "Insights & "
+msgstr ""
+
+#: patterns/latest-news.php:15
+msgid "Manufacturing Insights & Innovations"
+msgstr ""
+
+#: patterns/more-post.php
+msgctxt "Pattern title"
+msgid "More Post"
+msgstr ""
+
+#: patterns/more-post.php:11
+msgid "More Articles &amp; Posts"
+msgstr ""
+
+#: patterns/page-title.php
+msgctxt "Pattern title"
+msgid "Page Title"
+msgstr ""
+
+#: patterns/product-search-header-image.php
+msgctxt "Pattern title"
+msgid "Product Search Header Image"
+msgstr ""
+
+#: patterns/project-section.php
+msgctxt "Pattern title"
+msgid "Project Section"
+msgstr ""
+
+#: patterns/project-section.php:69
+#: patterns/project-section.php:115
+#: patterns/project-section.php:207
+#: patterns/project-section.php:253
+#: patterns/project-section.php:345
+#: patterns/project-section.php:391
+msgid "Drone"
+msgstr ""
+
+#: patterns/project-section.php:73
+msgid "Falcon X1 4K GPS Drone"
+msgstr ""
+
+#: patterns/project-section.php:78
+#: patterns/project-section.php:124
+#: patterns/project-section.php:170
+#: patterns/project-section.php:216
+#: patterns/project-section.php:262
+#: patterns/project-section.php:308
+#: patterns/project-section.php:354
+#: patterns/project-section.php:400
+msgid "$789,00"
+msgstr ""
+
+#: patterns/project-section.php:82
+#: patterns/project-section.php:128
+#: patterns/project-section.php:174
+#: patterns/project-section.php:220
+#: patterns/project-section.php:266
+#: patterns/project-section.php:312
+#: patterns/project-section.php:358
+#: patterns/project-section.php:404
+msgid "$685,00"
+msgstr ""
+
+#: patterns/project-section.php:119
+msgid "AeroPro Mini Foldable Drone"
+msgstr ""
+
+#: patterns/project-section.php:165
+msgid "SkyRider Racing Drone"
+msgstr ""
+
+#: patterns/project-section.php:211
+#: patterns/project-section.php:395
+msgid "VisionPro 8K Cinematic Drone"
+msgstr ""
+
+#: patterns/project-section.php:257
+msgid "Smart Drone Battery Pack"
+msgstr ""
+
+#: patterns/project-section.php:303
+msgid "Drone Ultra HD 4K & 8K"
+msgstr ""
+
+#: patterns/project-section.php:349
+msgid "Drone Remote Controller Pro"
+msgstr ""
+
+#: patterns/search-product.php
+msgctxt "Pattern title"
+msgid "Search Product"
+msgstr ""
+
+#: patterns/search-product.php:38
+msgid "No products were found matching your selection."
+msgstr ""
+
+#: patterns/search.php
+msgctxt "Pattern title"
+msgid "Search"
+msgstr ""
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Sidebar"
+msgstr ""
+
+#: patterns/sidebar.php:12
+msgid "Search"
+msgstr ""
+
+#: patterns/sidebar.php:22
+msgid "Popular Posts"
+msgstr ""
+
+#: patterns/sidebar.php:38
+msgid "Categories"
+msgstr ""
+
+#: patterns/sidebar.php:58
+msgid "Archives"
+msgstr ""
+
+#: patterns/sidebar.php:68
+msgid "Tags"
+msgstr ""
+
+#: patterns/sidebar.php:78
+msgid "Follow Us"
+msgstr ""
+
+#: patterns/single-product.php
+msgctxt "Pattern title"
+msgid "Single Product"
+msgstr ""
+
+#: patterns/single-product.php:46
+msgid "Related Products"
+msgstr ""
+
+#: patterns/testimonial.php
+msgctxt "Pattern title"
+msgid "Testimonial Section"
+msgstr ""
+
+#: patterns/testimonial.php:12
+msgid "What Our Clients "
+msgstr ""
+
+#: patterns/testimonial.php:12
+msgid "Say"
+msgstr ""
+
+#: patterns/testimonial.php:16
+msgid "Industry leaders who trust our manufacturing expertise."
+msgstr ""
+
+#: patterns/testimonial.php:27
+msgid "Ava Mitchell"
+msgstr ""
+
+#: patterns/testimonial.php:31
+#: patterns/testimonial.php:49
+#: patterns/testimonial.php:67
+#: patterns/testimonial.php:85
+#: patterns/testimonial.php:103
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error"
+msgstr ""
+
+#: patterns/testimonial.php:45
+msgid "Rahul Desai"
+msgstr ""
+
+#: patterns/testimonial.php:63
+msgid "Claire Benson"
+msgstr ""
+
+#: patterns/testimonial.php:81
+msgid "Liam Chen"
+msgstr ""
+
+#: patterns/testimonial.php:99
+msgid "Sophia James"
+msgstr ""
+
+#: styles/deep-teal.json
+msgctxt "Style variation name"
+msgid "Deep Teal"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Base"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Section Background"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Text Color"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Headings"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Second Background"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Border Color"
+msgstr ""
+
+#: styles/deep-teal.json
+#: styles/deep-violet.json
+#: styles/emerald-green.json
+#: styles/golden-brown.json
+#: styles/olive-green.json
+#: styles/plum-pink.json
+#: styles/royal-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Sidebar Shadow Color"
+msgstr ""
+
+#: styles/deep-violet.json
+msgctxt "Style variation name"
+msgid "Deep Violet"
+msgstr ""
+
+#: styles/emerald-green.json
+msgctxt "Style variation name"
+msgid "Emerald Green"
+msgstr ""
+
+#: styles/golden-brown.json
+msgctxt "Style variation name"
+msgid "Golden Brown"
+msgstr ""
+
+#: styles/olive-green.json
+msgctxt "Style variation name"
+msgid "Olive Green"
+msgstr ""
+
+#: styles/plum-pink.json
+msgctxt "Style variation name"
+msgid "Plum Pink"
+msgstr ""
+
+#: styles/royal-blue.json
+msgctxt "Style variation name"
+msgid "Royal Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Style variation name"
+msgid "Lite"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal heading to base left"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal heading to base right"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal base to heading"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal heading to base"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal heading to primary left"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal heading to primary right"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal primary to heading"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Diagonal heading to primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Oswald"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Poppins"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Elsie"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Lora"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "lato"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Roboto"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body Text"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Regular"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Big"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Huge"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Gigantic"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Banner Title"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Grid Layout(Archieve posts)"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Left Sidebar(Archieve posts)"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Right Sidebar(Archieve posts)"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page Left Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page Right Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page Without Header Image"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post Left Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post No Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post Without Header Image"
+msgstr ""

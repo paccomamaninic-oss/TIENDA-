@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/product-filter",
+	"title": "Product Filter",
+	"category": "envo-blocks",
+	"icon": "filter",
+	"description": "Filter the products of the shop and the categories by price, category, attribute (color, size …), rating or stock, with the number of products of every option. Outside the shop it links to the shop with the option chosen.",
+	"keywords": [ "filter", "filters", "price", "attribute", "color", "size", "category", "rating", "stock", "layered navigation", "shop", "woocommerce" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"filterType": { "type": "string", "default": "attribute" },
+		"attribute": { "type": "string", "default": "" },
+		"display": { "type": "string", "default": "checkbox" },
+		"queryType": { "type": "string", "default": "or" },
+		"title": { "type": "string", "default": "" },
+		"hideTitle": { "type": "boolean", "default": false },
+		"collapsible": { "type": "string", "default": "" },
+		"showCount": { "type": "boolean", "default": true },
+		"hideEmpty": { "type": "boolean", "default": false },
+		"limit": { "type": "integer", "default": 0 },
+		"depth": { "type": "integer", "default": 1 },
+		"step": { "type": "integer", "default": 1 }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true },
+		"color": { "text": true, "background": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-filters",
+	"render": "file:./render.php"
+}

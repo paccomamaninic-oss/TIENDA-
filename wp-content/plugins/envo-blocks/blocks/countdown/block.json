@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/countdown",
+	"title": "Countdown",
+	"category": "envo-blocks",
+	"icon": "clock",
+	"description": "Counts down to a date (a sale, a launch) or every day to a time (\"order by 2 pm\") on the days you choose, in the time zone of your site. When it ends it hides or shows your text.",
+	"keywords": [ "countdown", "timer", "sale", "deadline", "clock", "launch" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"mode": { "type": "string", "default": "date" },
+		"endDate": { "type": "string", "default": "" },
+		"dailyTime": { "type": "string", "default": "14:00" },
+		"days": { "type": "array", "default": [ 1, 2, 3, 4, 5 ], "items": { "type": "integer" } },
+		"outside": { "type": "string", "default": "next" },
+		"title": { "type": "string", "default": "" },
+		"finished": { "type": "string", "default": "hide" },
+		"finishedText": { "type": "string", "default": "" },
+		"showDays": { "type": "boolean", "default": true },
+		"showSeconds": { "type": "boolean", "default": true },
+		"showLabels": { "type": "boolean", "default": true },
+		"look": { "type": "string", "default": "boxes" },
+		"textAlign": { "type": "string", "default": "center" },
+		"numberColor": { "type": "string", "default": "" },
+		"boxBackground": { "type": "string", "default": "" },
+		"labelColor": { "type": "string", "default": "" },
+		"textColor": { "type": "string", "default": "" },
+		"background": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "envo-blocks-blocks-editor",
+	"editorStyle": "envo-blocks-blocks-editor",
+	"style": "envo-blocks-blocks",
+	"viewScript": "envo-blocks-countdown",
+	"render": "file:./render.php"
+}

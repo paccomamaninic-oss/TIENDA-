@@ -1,0 +1,913 @@
+/**
+ * Envo Blocks – Store Layouts: the palettes and helper classes of the layout designs, and the blocks made for the
+ * layouts (Store Breadcrumbs, Shop Toolbar, Order Received, My Account). Loaded with a layout and in its editor.
+ *
+ * Palette classes (envo-pal-<name>, on a group of a design) set the colours that WooCommerce parts take inside it:
+ * buttons, prices, form fields, the cart and the account pages.
+ */
+
+.envo-layout {
+	--envo-bg: transparent;
+	--envo-surface: #fff;
+	--envo-ink: inherit;
+	--envo-muted: #6b6b6b;
+	--envo-line: #e5e5e5;
+	--envo-accent: #111;
+	--envo-on-accent: #fff;
+	--envo-radius: 12px;
+	display: block;
+	margin-block: 0;
+}
+
+/* Palettes. */
+.envo-pal-ivory { --envo-bg: #faf7f2; --envo-surface: #fff; --envo-ink: #1f1b16; --envo-muted: #6f665c; --envo-line: #e8e1d6; --envo-accent: #1f1b16; --envo-on-accent: #fff; }
+.envo-pal-noir { --envo-bg: #111; --envo-surface: #1c1c1c; --envo-ink: #f5f5f5; --envo-muted: #a3a3a3; --envo-line: #2e2e2e; --envo-accent: #e8c27a; --envo-on-accent: #111; }
+.envo-pal-sage { --envo-bg: #f1f4ef; --envo-surface: #fff; --envo-ink: #1d2a22; --envo-muted: #5d6b62; --envo-line: #dbe3d8; --envo-accent: #2f6b4f; --envo-on-accent: #fff; }
+.envo-pal-coral { --envo-bg: #fff5f1; --envo-surface: #fff; --envo-ink: #2a1712; --envo-muted: #7b5a51; --envo-line: #f3d9cf; --envo-accent: #e2553d; --envo-on-accent: #fff; }
+.envo-pal-ocean { --envo-bg: #f2f6fb; --envo-surface: #fff; --envo-ink: #0f1f33; --envo-muted: #56657a; --envo-line: #dbe4f0; --envo-accent: #1d5fd6; --envo-on-accent: #fff; }
+.envo-pal-violet { --envo-bg: #f6f3fd; --envo-surface: #fff; --envo-ink: #1d1533; --envo-muted: #6a6283; --envo-line: #e4ddf7; --envo-accent: #6d3ee8; --envo-on-accent: #fff; }
+.envo-pal-sand { --envo-bg: #f4ece0; --envo-surface: #fffaf3; --envo-ink: #2b2118; --envo-muted: #7d6d5b; --envo-line: #e6d9c6; --envo-accent: #b4682e; --envo-on-accent: #fff; }
+.envo-pal-mono { --envo-bg: #fff; --envo-surface: #f5f5f5; --envo-ink: #0a0a0a; --envo-muted: #666; --envo-line: #e5e5e5; --envo-accent: #0a0a0a; --envo-on-accent: #fff; }
+.envo-pal-midnight { --envo-bg: #0e1726; --envo-surface: #16223a; --envo-ink: #e9eef7; --envo-muted: #93a1b8; --envo-line: #26344f; --envo-accent: #4cc9f0; --envo-on-accent: #0e1726; }
+.envo-pal-blush { --envo-bg: #fdf2f5; --envo-surface: #fff; --envo-ink: #2d1720; --envo-muted: #82606d; --envo-line: #f3d8e1; --envo-accent: #c2416b; --envo-on-accent: #fff; }
+.envo-pal-forest { --envo-bg: #102a1f; --envo-surface: #173a2b; --envo-ink: #eef5ef; --envo-muted: #9fb8a8; --envo-line: #24503b; --envo-accent: #c8e86b; --envo-on-accent: #102a1f; }
+.envo-pal-sun { --envo-bg: #fff8e1; --envo-surface: #fff; --envo-ink: #241c05; --envo-muted: #6f6440; --envo-line: #f1e3b5; --envo-accent: #f2b705; --envo-on-accent: #241c05; }
+
+[class*="envo-pal-"] {
+	/* Themes that colour every button inside a block with a background (Twenty Twenty-One) use the palette. */
+	--local--color-primary: var(--envo-accent);
+	--local--color-background: var(--envo-on-accent);
+	--ebp-vs-accent: var(--envo-accent);
+	color: var(--envo-ink);
+}
+
+/* WooCommerce parts take the palette. */
+[class*="envo-pal-"] :is(.wp-block-button__link, .single_add_to_cart_button, .wc-block-components-button:not(.is-link), .wp-block-woocommerce-product-button .wp-block-button__link, .woocommerce-Button, .woocommerce-button, button.button, a.button, .button.alt, .wc-block-cart__submit-button, .wc-block-components-checkout-place-order-button) {
+	background: var(--envo-accent);
+	border-color: var(--envo-accent);
+	color: var(--envo-on-accent);
+}
+[class*="envo-pal-"] :is(.wp-block-button.is-style-outline .wp-block-button__link) {
+	background: transparent;
+	border: 1.5px solid currentColor;
+	color: var(--envo-ink);
+}
+[class*="envo-pal-"] :is(.wc-block-components-product-price, .wp-block-woocommerce-product-price, .price, .woocommerce-Price-amount) {
+	color: inherit;
+}
+[class*="envo-pal-"] :is(input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], select, textarea, .wc-block-components-text-input input, .quantity .qty) {
+	background-color: var(--envo-surface);
+	border-color: var(--envo-line);
+	color: var(--envo-ink);
+}
+[class*="envo-pal-"] a:not(.wp-block-button__link):not(.button):not(.wc-block-components-button) {
+	color: inherit;
+}
+[class*="envo-pal-"] :is(.wc-block-components-product-sale-badge, .onsale, .wc-block-components-sale-badge) {
+	background: var(--envo-accent);
+	border-color: var(--envo-accent);
+	color: var(--envo-on-accent);
+}
+[class*="envo-pal-"] .star-rating,
+[class*="envo-pal-"] .wc-block-components-product-rating__stars {
+	color: var(--envo-accent);
+}
+
+/* Helper classes of the designs. */
+.envo-l-surface { background: var(--envo-surface); color: var(--envo-ink); }
+.envo-l-bg { background: var(--envo-bg); color: var(--envo-ink); }
+.envo-l-card {
+	background: var(--envo-surface);
+	border: 1px solid var(--envo-line);
+	border-radius: var(--envo-radius);
+}
+.envo-l-muted { color: var(--envo-muted); }
+.envo-l-line { border-color: var(--envo-line) !important; }
+.envo-l-accent { color: var(--envo-accent); }
+.envo-l-accent-bg { background: var(--envo-accent); color: var(--envo-on-accent); }
+.envo-l-eyebrow {
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+.envo-l-steps {
+	counter-reset: envo-step;
+}
+.envo-l-step.is-done,
+.envo-l-step.is-current {
+	color: var(--envo-ink);
+}
+.envo-l-step:not(.is-done):not(.is-current) {
+	opacity: 0.55;
+}
+
+@media (min-width: 960px) {
+	.envo-l-sticky {
+		position: sticky;
+		top: calc(var(--wp-admin--admin-bar--height, 0px) + 24px);
+		align-self: flex-start;
+	}
+}
+
+/* Product page parts. */
+.envo-layout .wp-block-add-to-cart-form form.cart {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	margin: 0;
+}
+.envo-layout .wp-block-add-to-cart-form form.variations_form {
+	display: block;
+}
+/* Classic themes that put − / + buttons around the quantity (e.g. Envo Shop): one row, not a grid row each. */
+.envo-layout .wp-block-add-to-cart-form .woocommerce-variation-add-to-cart:has(> button.minus, > button.plus) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+}
+.envo-layout .wp-block-add-to-cart-form form.cart :is(button.minus, button.plus) {
+	flex: none;
+	width: auto;
+	min-width: 0;
+	margin: 0;
+}
+.envo-layout .wp-block-add-to-cart-form form.cart :is(button.minus, button.plus) + .quantity,
+.envo-layout .wp-block-add-to-cart-form form.cart .quantity:has(+ button.plus) {
+	margin: 0 -12px;
+}
+.envo-layout .wp-block-add-to-cart-form .single_add_to_cart_button {
+	min-height: 48px;
+	padding: 0 28px;
+	border-radius: var(--envo-btn-radius, 999px);
+	font-weight: 600;
+}
+.envo-l-square .wp-block-add-to-cart-form .single_add_to_cart_button,
+.envo-l-square .wp-block-button__link {
+	--envo-btn-radius: 2px;
+	border-radius: 2px;
+}
+.envo-layout .wp-block-woocommerce-product-details .wc-tabs {
+	border-color: var(--envo-line);
+}
+.envo-layout .wp-block-woocommerce-product-gallery {
+	margin-block: 0;
+}
+.envo-layout .envo-l-gallery-round img {
+	border-radius: var(--envo-radius);
+}
+
+/* Shop parts. */
+.envo-layout .wp-block-woocommerce-product-collection .wc-block-components-product-image img,
+.envo-layout .wp-block-woocommerce-product-collection .wp-block-woocommerce-product-image img {
+	border-radius: var(--envo-img-radius, 10px);
+}
+.envo-l-sharp {
+	--envo-img-radius: 0;
+	--envo-radius: 0;
+}
+.envo-l-cards .wc-block-product {
+	padding: 12px 12px 18px;
+	background: var(--envo-surface);
+	border: 1px solid var(--envo-line);
+	border-radius: var(--envo-radius);
+}
+.envo-l-chips .wc-block-product-categories-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.envo-l-chips .wc-block-product-categories-list .wc-block-product-categories-list {
+	display: none;
+}
+.envo-l-chips .wc-block-product-categories-list-item {
+	margin: 0;
+}
+.envo-l-chips .wc-block-product-categories-list-item a {
+	display: inline-block;
+	padding: 8px 16px;
+	background: var(--envo-surface);
+	border: 1px solid var(--envo-line);
+	border-radius: 999px;
+	color: var(--envo-ink);
+	font-size: 0.875rem;
+	text-decoration: none;
+}
+.envo-l-chips .wc-block-product-categories-list-item a:hover {
+	border-color: var(--envo-accent);
+}
+.envo-l-chips .wc-block-product-categories-list-item-count {
+	display: none;
+}
+
+/* Cart parts. */
+.envo-l-cart-card .wc-block-cart__sidebar .wc-block-components-sidebar,
+.envo-l-cart-card .wc-block-cart__totals-title,
+.envo-l-cart-card .wp-block-woocommerce-cart-totals-block {
+	background: var(--envo-surface);
+}
+.envo-l-cart-card .wp-block-woocommerce-cart-totals-block {
+	padding: 24px;
+	border: 1px solid var(--envo-line);
+	border-radius: var(--envo-radius);
+}
+.envo-l-cart-contrast .wp-block-woocommerce-cart-totals-block {
+	padding: 28px;
+	background: var(--envo-ink);
+	border-radius: var(--envo-radius);
+	color: var(--envo-surface);
+}
+.envo-l-cart-contrast .wp-block-woocommerce-cart-totals-block .wc-block-cart__submit-button {
+	background: var(--envo-accent);
+	color: var(--envo-on-accent);
+}
+.envo-l-cart-contrast .wp-block-woocommerce-cart-totals-block :is(.wc-block-components-totals-item, .wc-block-components-panel__button, .wc-block-components-totals-coupon__button) {
+	color: inherit;
+}
+.envo-l-cart-stack .wc-block-components-sidebar-layout {
+	flex-direction: column;
+}
+.envo-l-cart-stack .wc-block-components-sidebar-layout .wc-block-components-main,
+.envo-l-cart-stack .wc-block-components-sidebar-layout .wc-block-components-sidebar {
+	width: 100%;
+	padding: 0;
+}
+.envo-l-cart-stack .wc-block-components-sidebar-layout .wc-block-components-sidebar {
+	margin-top: 24px;
+}
+.envo-l-cart-rows .wc-block-cart-items__row {
+	background: var(--envo-surface);
+	border-radius: var(--envo-radius);
+}
+.envo-l-cart-rows .wc-block-cart-items {
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+.envo-l-cart-rows .wc-block-cart-items__row > td:first-child {
+	border-radius: var(--envo-radius) 0 0 var(--envo-radius);
+	padding-left: 14px;
+}
+.envo-l-cart-rows .wc-block-cart-items__row > td:last-child {
+	border-radius: 0 var(--envo-radius) var(--envo-radius) 0;
+	padding-right: 14px;
+}
+.envo-layout .wp-block-woocommerce-cart.is-loading {
+	min-height: 360px;
+}
+
+/* Store Breadcrumbs. */
+.envo-crumbs .woocommerce-breadcrumb {
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+}
+.envo-crumbs a {
+	color: inherit;
+	text-decoration: none;
+	opacity: 0.75;
+}
+.envo-crumbs a:hover {
+	opacity: 1;
+	text-decoration: underline;
+}
+.envo-crumbs__sep {
+	margin: 0 0.55em;
+	opacity: 0.5;
+}
+
+/* Shop Toolbar. */
+.envo-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 24px;
+	align-items: center;
+	justify-content: space-between;
+}
+.envo-toolbar .woocommerce-result-count,
+.envo-toolbar .woocommerce-ordering {
+	float: none;
+	margin: 0;
+}
+.envo-toolbar .woocommerce-result-count {
+	opacity: 0.8;
+}
+.envo-toolbar .woocommerce-ordering select {
+	min-height: 40px;
+	padding: 0 36px 0 14px;
+	border: 1px solid var(--envo-line, #ddd);
+	border-radius: 8px;
+	background-color: var(--envo-surface, #fff);
+	color: inherit;
+	font: inherit;
+}
+.envo-toolbar--bar {
+	padding-block: 12px;
+	border-block: 1px solid var(--envo-line, #e5e5e5);
+}
+.envo-toolbar--pill {
+	padding: 8px 8px 8px 20px;
+	background: var(--envo-surface, #f5f5f5);
+	border-radius: 999px;
+}
+.envo-toolbar--pill .woocommerce-ordering select {
+	border-radius: 999px;
+}
+
+/* Order Received. */
+:root body .envo-order.envo-order .woocommerce-order > p:first-child,
+:root body .envo-order.envo-order .woocommerce-thankyou-order-received {
+	margin: 0 0 20px;
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+:root body .envo-order.envo-order--no-message .woocommerce-thankyou-order-received {
+	display: none;
+}
+:root body .envo-order.envo-order--no-customer .woocommerce-customer-details {
+	display: none;
+}
+:root body .envo-order.envo-order .woocommerce-order-overview {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 12px;
+	margin: 0 0 28px;
+	padding: 0;
+	list-style: none;
+}
+:root body .envo-order.envo-order .woocommerce-order-overview li {
+	float: none;
+	margin: 0;
+	padding: 16px 18px;
+	border: 0;
+	font-size: 0.75rem;
+	letter-spacing: 0.06em;
+	line-height: 1.5;
+	text-transform: uppercase;
+	opacity: 1;
+}
+:root body .envo-order.envo-order .woocommerce-order-overview li strong {
+	display: block;
+	margin-top: 4px;
+	font-size: 1rem;
+	letter-spacing: 0;
+	text-transform: none;
+	word-break: break-word;
+}
+:root body .envo-order.envo-order .woocommerce-order-details,
+:root body .envo-order.envo-order .woocommerce-customer-details {
+	margin: 0 0 24px;
+}
+:root body .envo-order.envo-order .woocommerce-order-details__title,
+:root body .envo-order.envo-order .woocommerce-column__title {
+	margin: 0 0 12px;
+	font-size: 1.125rem;
+}
+:root body .envo-order.envo-order table.shop_table {
+	width: 100%;
+	margin: 0;
+	border-collapse: collapse;
+	border: 0;
+}
+:root body .envo-order.envo-order table.shop_table :is(th, td) {
+	padding: 12px 0;
+	border: 0;
+	border-bottom: 1px solid var(--envo-line, #e5e5e5);
+	text-align: left;
+}
+:root body .envo-order.envo-order table.shop_table :is(th, td):last-child {
+	text-align: right;
+}
+:root body .envo-order.envo-order .woocommerce-customer-details .col2-set,
+:root body .envo-order.envo-order .woocommerce-columns--addresses {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 16px;
+}
+:root body .envo-order.envo-order .woocommerce-columns--addresses::before,
+:root body .envo-order.envo-order .woocommerce-columns--addresses::after,
+:root body .envo-order.envo-order .col2-set::before,
+:root body .envo-order.envo-order .col2-set::after {
+	display: none;
+}
+:root body .envo-order.envo-order .woocommerce-column {
+	float: none;
+	width: auto;
+	max-width: none;
+	margin: 0;
+}
+:root body .envo-order.envo-order address {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style: normal;
+	line-height: 1.6;
+}
+/* Cards */
+:root body .envo-order.envo-order--cards .woocommerce-order-overview li,
+:root body .envo-order.envo-order--cards .woocommerce-order-details,
+:root body .envo-order.envo-order--cards .woocommerce-column,
+:root body .envo-order.envo-order--cards .woocommerce-bacs-bank-details {
+	padding: 20px 22px;
+	background: var(--envo-surface, #fff);
+	border: 1px solid var(--envo-line, #e5e5e5);
+	border-radius: var(--envo-radius, 12px);
+}
+:root body .envo-order.envo-order--cards .woocommerce-order-overview li {
+	padding: 16px 18px;
+}
+:root body .envo-order.envo-order--cards .woocommerce-order-overview li:first-child {
+	border-top: 3px solid var(--envo-accent, #111);
+}
+/* Receipt */
+:root body .envo-order.envo-order--receipt .woocommerce-order {
+	max-width: 680px;
+	margin-inline: auto;
+	padding: 36px 32px;
+	background: var(--envo-surface, #fff);
+	border-radius: 4px;
+	box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+}
+:root body .envo-order.envo-order--receipt .woocommerce-order-overview {
+	grid-template-columns: 1fr 1fr;
+	padding: 16px 0;
+	border-block: 2px dashed var(--envo-line, #ddd);
+}
+:root body .envo-order.envo-order--receipt .woocommerce-order-overview li {
+	padding: 4px 0;
+}
+:root body .envo-order.envo-order--receipt table.shop_table :is(th, td) {
+	border-bottom-style: dashed;
+}
+:root body .envo-order.envo-order--receipt .woocommerce-thankyou-order-received {
+	text-align: center;
+}
+/* Minimal */
+:root body .envo-order.envo-order--minimal .woocommerce-order-overview {
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 0;
+	border-top: 1px solid var(--envo-line, #e5e5e5);
+}
+:root body .envo-order.envo-order--minimal .woocommerce-order-overview li {
+	padding: 14px 0;
+	border-bottom: 1px solid var(--envo-line, #e5e5e5);
+}
+/* Two columns */
+@media (min-width: 900px) {
+	:root body .envo-order.envo-order--split .woocommerce-order {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+		gap: 0 40px;
+		align-items: start;
+	}
+	:root body .envo-order.envo-order--split .woocommerce-order > * {
+		grid-column: 1;
+	}
+	:root body .envo-order.envo-order--split .woocommerce-order-overview {
+		grid-template-columns: 1fr;
+	}
+	:root body .envo-order.envo-order--split .woocommerce-order ~ .woocommerce-order-details,
+	:root body .envo-order.envo-order--split .woocommerce-order-details {
+		grid-column: 2;
+		grid-row: 1 / span 6;
+	}
+}
+:root body .envo-order.envo-order--split .woocommerce-order-overview li,
+:root body .envo-order.envo-order--split .woocommerce-order-details {
+	padding: 18px 20px;
+	background: var(--envo-surface, #fff);
+	border-radius: var(--envo-radius, 12px);
+}
+:root body .envo-order.envo-order--split .woocommerce-order-overview li {
+	border-left: 3px solid var(--envo-accent, #111);
+}
+
+/* My Account. */
+:root body .envo-account.envo-account .woocommerce::before,
+:root body .envo-account.envo-account .woocommerce::after {
+	display: none;
+}
+:root body .envo-account.envo-account .woocommerce-MyAccount-navigation,
+:root body .envo-account.envo-account .woocommerce-MyAccount-content {
+	float: none;
+	width: auto;
+	max-width: none;
+	margin: 0;
+}
+:root body .envo-account.envo-account .woocommerce-MyAccount-navigation ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	list-style: none;
+	overflow: visible;
+}
+:root body .envo-account.envo-account .woocommerce-MyAccount-navigation li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+:root body .envo-account.envo-account .woocommerce-MyAccount-navigation a {
+	display: block;
+	background: transparent;
+	box-shadow: none;
+	color: inherit;
+	text-decoration: none;
+}
+:root body .envo-account.envo-account .woocommerce-MyAccount-content {
+	min-width: 0;
+}
+:root body .envo-account.envo-account .woocommerce-MyAccount-content > :first-child {
+	margin-top: 0;
+}
+:root body .envo-account.envo-account .woocommerce-MyAccount-content table.shop_table {
+	width: 100%;
+	border-collapse: collapse;
+}
+/* Sidebar */
+@media (min-width: 782px) {
+	:root body .envo-account.envo-account--sidebar.is-signed-in .woocommerce {
+		display: grid;
+		grid-template-columns: 240px minmax(0, 1fr);
+		gap: 40px;
+		align-items: start;
+	}
+}
+:root body .envo-account.envo-account--sidebar .woocommerce-MyAccount-navigation {
+	padding: 10px;
+	background: var(--envo-surface, #f6f6f6);
+	border-radius: var(--envo-radius, 12px);
+}
+:root body .envo-account.envo-account--sidebar .woocommerce-MyAccount-navigation a {
+	padding: 10px 14px;
+	border-radius: 8px;
+}
+:root body .envo-account.envo-account--sidebar .woocommerce-MyAccount-navigation .is-active a,
+:root body .envo-account.envo-account--sidebar .woocommerce-MyAccount-navigation a:hover {
+	background: var(--envo-accent, #111);
+	color: var(--envo-on-accent, #fff);
+}
+@media (max-width: 781px) {
+	:root body .envo-account.envo-account--sidebar .woocommerce-MyAccount-navigation {
+		margin-bottom: 24px;
+	}
+}
+/* Tabs */
+:root body .envo-account.envo-account--tabs .woocommerce-MyAccount-navigation {
+	margin-bottom: 32px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: thin;
+	border-bottom: 1px solid var(--envo-line, #e5e5e5);
+}
+:root body .envo-account.envo-account--tabs .woocommerce-MyAccount-navigation ul {
+	display: flex;
+	gap: 4px;
+	white-space: nowrap;
+}
+:root body .envo-account.envo-account--tabs .woocommerce-MyAccount-navigation a {
+	padding: 12px 16px 10px;
+	border-bottom: 2px solid transparent;
+}
+:root body .envo-account.envo-account--tabs .woocommerce-MyAccount-navigation .is-active a {
+	border-bottom-color: var(--envo-accent, #111);
+	font-weight: 600;
+}
+/* Tiles */
+:root body .envo-account.envo-account--tiles .woocommerce-MyAccount-navigation {
+	margin-bottom: 32px;
+}
+:root body .envo-account.envo-account--tiles .woocommerce-MyAccount-navigation ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 12px;
+}
+:root body .envo-account.envo-account--tiles .woocommerce-MyAccount-navigation a {
+	padding: 22px 18px;
+	background: var(--envo-surface, #fff);
+	border: 1px solid var(--envo-line, #e5e5e5);
+	border-radius: var(--envo-radius, 12px);
+	font-weight: 600;
+	text-align: center;
+	transition: border-color 0.15s, transform 0.15s;
+}
+:root body .envo-account.envo-account--tiles .woocommerce-MyAccount-navigation a:hover {
+	border-color: var(--envo-accent, #111);
+	transform: translateY(-2px);
+}
+:root body .envo-account.envo-account--tiles .woocommerce-MyAccount-navigation .is-active a {
+	background: var(--envo-accent, #111);
+	border-color: var(--envo-accent, #111);
+	color: var(--envo-on-accent, #fff);
+}
+/* Compact */
+:root body .envo-account.envo-account--compact .woocommerce-MyAccount-navigation {
+	margin-bottom: 28px;
+}
+:root body .envo-account.envo-account--compact .woocommerce-MyAccount-navigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+:root body .envo-account.envo-account--compact .woocommerce-MyAccount-navigation a {
+	padding: 7px 14px;
+	border: 1px solid var(--envo-line, #e5e5e5);
+	border-radius: 999px;
+	font-size: 0.875rem;
+}
+:root body .envo-account.envo-account--compact .woocommerce-MyAccount-navigation .is-active a {
+	background: var(--envo-ink, #111);
+	border-color: var(--envo-ink, #111);
+	color: var(--envo-surface, #fff);
+}
+/* Signed out: the login and register forms as cards. */
+:root body .envo-account.envo-account.is-signed-out .u-columns.col2-set {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 24px;
+	width: 100%;
+}
+:root body .envo-account.envo-account.is-signed-out .u-columns.col2-set::before,
+:root body .envo-account.envo-account.is-signed-out .u-columns.col2-set::after {
+	display: none;
+}
+:root body .envo-account.envo-account.is-signed-out .u-column1,
+:root body .envo-account.envo-account.is-signed-out .u-column2 {
+	float: none;
+	width: auto;
+	max-width: none;
+}
+:root body .envo-account.envo-account.is-signed-out :is(.u-column1, .u-column2, .woocommerce > form.login) {
+	padding: 28px;
+	background: var(--envo-surface, #fff);
+	border: 1px solid var(--envo-line, #e5e5e5);
+	border-radius: var(--envo-radius, 12px);
+}
+:root body .envo-account.envo-account.is-signed-out form.login,
+:root body .envo-account.envo-account.is-signed-out form.register {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+:root body .envo-account.envo-account :is(input.input-text, select) {
+	width: 100%;
+	min-height: 44px;
+	padding: 0 12px;
+	border: 1px solid var(--envo-line, #ddd);
+	border-radius: 8px;
+	background: var(--envo-surface, #fff);
+	color: inherit;
+}
+
+/* Classic themes: the widths of the design groups (block themes have them from theme.json). */
+.envo-layout-classic .envo-layout.envo-layout {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: none !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+.envo-layout-classic .envo-layout > .alignfull {
+	width: auto;
+	max-width: none !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+/* Themes that limit every element of the content to the text width (Twenty Twenty-One): the layout sets its own. */
+.envo-layout-classic .envo-layout {
+	--responsive--aligndefault-width: 100%;
+	--responsive--alignwide-width: 100%;
+	--global--spacing-measure: none;
+}
+.envo-layout-classic .envo-layout .alignwide {
+	max-width: 1200px;
+	margin-inline: auto;
+}
+.envo-layout-classic .envo-layout .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	margin-inline: auto;
+}
+
+/* Themes style the WooCommerce lists and tables: the layout styles win inside the blocks. */
+:root body .envo-order.envo-order .woocommerce-order-overview::before,
+:root body .envo-order.envo-order .woocommerce-order-overview::after {
+	display: none;
+}
+:root body .envo-order.envo-order .woocommerce-order-overview li {
+	border-right: 0;
+	margin-right: 0;
+	padding-right: 18px;
+}
+:root body .envo-order.envo-order table.shop_table,
+:root body .envo-order.envo-order table.shop_table :is(th, td) {
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	background: transparent;
+}
+:root body .envo-order.envo-order .woocommerce-order,
+:root body .envo-order.envo-order .woocommerce-order-details {
+	max-width: none;
+}
+
+/* Dark palettes (and texts on an accent band, envo-l-inherit): WooCommerce and theme colours of prices, titles and
+ * fields would be dark on dark. */
+.envo-l-inherit :is(.wp-block-post-title, .wp-block-post-terms, .wp-block-post-terms a, .wc-block-components-product-price, .wc-block-components-product-price *, .woocommerce-Price-amount, .woocommerce-breadcrumb, .woocommerce-breadcrumb a, .wp-block-query-title, .wp-block-term-description),
+.envo-l-dark :is(.wp-block-post-title, .wp-block-post-title a, .price, .woocommerce-variation-price, .wc-block-components-product-price, .wc-block-components-product-price *, .woocommerce-Price-amount, .wp-block-woocommerce-product-price, .woocommerce-breadcrumb, label, .woocommerce-tabs, .wc-tabs a, .wc-block-components-product-name, .wc-block-components-totals-item, .wc-block-cart-item__total, .wc-block-components-product-metadata, .wc-block-components-title, legend, th, td, .woocommerce-result-count) {
+	color: inherit !important;
+}
+.envo-l-dark del,
+.envo-l-dark del * {
+	opacity: 0.6;
+}
+.envo-l-dark :is(.quantity, .wc-block-components-quantity-selector) {
+	background: var(--envo-surface) !important;
+	border-color: var(--envo-line) !important;
+	color: var(--envo-ink) !important;
+}
+.envo-l-dark .ebp-vs .ebp-vs__item {
+	border-color: var(--envo-line) !important;
+	color: var(--envo-ink) !important;
+}
+.envo-l-dark .ebp-vs .ebp-vs__item.is-selected {
+	background: var(--envo-accent) !important;
+	color: var(--envo-on-accent) !important;
+}
+.envo-l-dark :is(.quantity button, .quantity .qty, .wc-block-components-quantity-selector__button, .wc-block-components-quantity-selector__input) {
+	background: transparent !important;
+	color: var(--envo-ink) !important;
+}
+.envo-l-dark :is(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea) {
+	background-color: var(--envo-surface) !important;
+	border-color: var(--envo-line) !important;
+	color: var(--envo-ink) !important;
+}
+.envo-l-dark .wc-block-components-product-image,
+.envo-l-dark .wc-block-components-product-image img {
+	background: var(--envo-surface);
+}
+.envo-l-dark :is(.wc-block-cart-items__row, .wc-block-cart-items, .wc-block-components-totals-wrapper, .wc-block-cart-items__header) {
+	border-color: var(--envo-line) !important;
+}
+
+/* Specifications table, light lines. */
+.envo-layout .wp-block-woocommerce-product-specifications table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0;
+}
+.envo-layout .wp-block-woocommerce-product-specifications :is(th, td) {
+	padding: 10px 0;
+	border: 0;
+	border-bottom: 1px solid var(--envo-line, #e5e5e5);
+	background: transparent;
+	text-align: left;
+}
+.envo-layout .wp-block-woocommerce-product-specifications th {
+	width: 40%;
+	font-weight: 600;
+}
+
+/* Category chips: the top level, at most 14. */
+.envo-l-chips .wc-block-product-categories-list-item:nth-child(n+15) {
+	display: none;
+}
+
+/* Product gallery arrows: classic themes style every button. */
+.envo-layout .wc-block-product-gallery-large-image-next-previous button {
+	min-height: 0;
+	padding: 0;
+	background: rgba(255, 255, 255, 0.92);
+	border: 0;
+	color: #111;
+}
+
+/* Checkout Header (distraction-free checkout). */
+.envo-checkout-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px 24px;
+	box-sizing: border-box;
+}
+.envo-checkout-header--centered {
+	flex-direction: column;
+	text-align: center;
+}
+.envo-checkout-header__logo {
+	display: inline-flex;
+	align-items: center;
+	color: inherit;
+	text-decoration: none;
+}
+.envo-checkout-header__logo img {
+	display: block;
+	width: var(--envo-ch-logo, 140px);
+	max-width: 100%;
+	height: auto;
+}
+.envo-checkout-header__name {
+	font-size: 1.35em;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+}
+.envo-checkout-header__secure {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.85em;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+.envo-checkout-header__secure svg { color: var(--envo-accent, currentColor); flex: none; }
+.envo-checkout-header__back {
+	color: inherit;
+	font-size: 0.9em;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+.envo-checkout-header--split .envo-checkout-header__secure { margin-inline: auto; }
+@media (max-width: 600px) {
+	.envo-checkout-header--split { justify-content: center; text-align: center; }
+	.envo-checkout-header--split .envo-checkout-header__secure { order: 3; width: 100%; justify-content: center; }
+}
+
+/* Checkout Form: arranges the WooCommerce checkout (block and classic). */
+.envo-checkout { box-sizing: border-box; }
+.envo-checkout :is(.wc-block-components-main, .wc-block-components-sidebar) { box-sizing: border-box; }
+.envo-checkout:is(.envo-checkout--one-column, .envo-checkout--summary-top) .wc-block-components-sidebar-layout { flex-direction: column; flex-wrap: nowrap; }
+.envo-checkout:is(.envo-checkout--one-column, .envo-checkout--summary-top) .wc-block-components-sidebar-layout > :is(.wc-block-components-main, .wc-block-components-sidebar) {
+	width: 100%;
+	max-width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.envo-checkout--summary-top .wc-block-components-sidebar-layout > .wc-block-components-sidebar { order: -1; margin-bottom: 32px; }
+.envo-checkout--two-columns.is-sticky .wc-block-components-sidebar-layout.is-large > .wc-block-components-sidebar {
+	position: sticky;
+	top: calc(24px + var(--wp-admin--admin-bar--height, 0px));
+	align-self: flex-start;
+}
+.envo-checkout.has-summary-box .wc-block-components-sidebar .wp-block-woocommerce-checkout-order-summary-block,
+.envo-checkout.has-summary-box form.woocommerce-checkout #order_review {
+	padding: 20px 22px;
+	border: 1px solid var(--envo-line, rgba(127, 127, 127, 0.25));
+	border-radius: var(--envo-radius, 12px);
+	background: var(--envo-surface, #fff);
+	color: var(--envo-ink, inherit);
+}
+.envo-checkout.has-summary-box .wc-block-components-sidebar .wp-block-woocommerce-checkout-order-summary-block { border-width: 1px; }
+/* Classic checkout. */
+.envo-checkout form.woocommerce-checkout #customer_details :is(.col-1, .col-2) { float: none; width: 100%; max-width: 100%; }
+@media (min-width: 900px) {
+	.envo-checkout--two-columns form.woocommerce-checkout {
+		display: grid;
+		grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+		column-gap: 48px;
+		align-items: start;
+	}
+	.envo-checkout--two-columns form.woocommerce-checkout > * { grid-column: 1; }
+	.envo-checkout--two-columns form.woocommerce-checkout > #customer_details { grid-row: 1 / span 40; }
+	.envo-checkout--two-columns form.woocommerce-checkout > #order_review_heading { grid-column: 2; grid-row: 1; margin-top: 0; }
+	.envo-checkout--two-columns form.woocommerce-checkout > #order_review { grid-column: 2; grid-row: 2 / span 39; }
+	.envo-checkout--two-columns.is-sticky form.woocommerce-checkout > #order_review { position: sticky; top: calc(24px + var(--wp-admin--admin-bar--height, 0px)); }
+	/* PRO Checkout Steps shows one part at a time: no empty column then. */
+	.envo-checkout--two-columns form.woocommerce-checkout:has(> .ebp-cs-hidden) { display: block; }
+}
+.envo-checkout--summary-top form.woocommerce-checkout { display: flex; flex-direction: column; }
+.envo-checkout--summary-top form.woocommerce-checkout > #order_review_heading { order: -2; margin-top: 0; }
+.envo-checkout--summary-top form.woocommerce-checkout > #order_review { order: -1; margin-bottom: 32px; }
+
+/* The editor sketch of the checkout. */
+.envo-checkout-sketch { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.envo-checkout--one-column .envo-checkout-sketch,
+.envo-checkout--summary-top .envo-checkout-sketch { grid-template-columns: minmax(0, 1fr); }
+.envo-checkout--summary-top .envo-checkout-sketch__summary { order: -1; }
+.envo-checkout-sketch__main, .envo-checkout-sketch__summary { display: grid; gap: 10px; }
+.envo-checkout-sketch__summary { padding: 18px; border: 1px solid var(--envo-line, #ddd); border-radius: var(--envo-radius, 12px); background: var(--envo-surface, #fff); }
+.envo-checkout-sketch__title { margin: 8px 0 0 !important; font-weight: 700; }
+.envo-checkout-sketch__row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.envo-checkout-sketch__field { display: block; padding: 12px 14px; border: 1px solid var(--envo-line, #ccc); border-radius: 6px; background: var(--envo-surface, #fff); color: var(--envo-muted, #777); font-size: 0.85em; }
+.envo-checkout-sketch__button { display: block; padding: 14px; border-radius: 6px; background: var(--envo-accent, #111); color: var(--envo-on-accent, #fff); font-weight: 700; text-align: center; }
+.envo-checkout-sketch__item { display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center; font-size: 0.9em; }
+.envo-checkout-sketch__item img { width: 44px; height: 44px; object-fit: contain; border-radius: 6px; background: var(--envo-bg, #f5f5f5); }
+.envo-checkout-sketch__total { display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px solid var(--envo-line, #ddd); font-weight: 700; }
+.envo-checkout-sketch__note { margin: 12px 0 0 !important; color: var(--envo-muted, #777); font-size: 0.8em; }
+
+/* A distraction-free layout fills the window (no theme footer under it). */
+.envo-layout-bare .envo-layout > :first-child:last-child { min-height: 100vh; box-sizing: border-box; }
+.admin-bar.envo-layout-bare .envo-layout > :first-child:last-child { min-height: calc(100vh - var(--wp-admin--admin-bar--height, 32px)); }
+
+/* Envo Blocks PRO Checkout Steps take the palette (its own block colours, set inline, still win). */
+[class*="envo-pal-"] :is(.ebp-cs, .ebp-cs__nav, .ebp-cs__summary) {
+	--ebp-cs-active: var(--envo-accent);
+	--ebp-cs-btn-bg: var(--envo-accent);
+	--ebp-cs-btn-color: var(--envo-on-accent);
+	--ebp-cs-line: var(--envo-line);
+}

@@ -1,0 +1,1 @@
+{"schema":"envo-blocks/v1","title":"Default","blocks":[{"name":"envo-blocks/trust-badges","attributes":{"heading":"","showPayments":true,"payments":["visa","mastercard","paypal","applepay","googlepay"],"payStyle":"color","paySize":44,"showBadges":true,"contentAlign":"center","iconColor":"","textColor":"","background":"","borderColor":""},"innerBlocks":[]}]}

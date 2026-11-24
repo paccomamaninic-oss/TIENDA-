@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/my-account",
+	"title": "My Account",
+	"category": "envo-blocks",
+	"icon": "admin-users",
+	"description": "WooCommerce My account (dashboard, orders, downloads, addresses, account details and the login form) with the menu as a sidebar, tabs, tiles or a compact list.",
+	"keywords": [ "my account", "account", "login", "orders", "dashboard", "woocommerce", "layout" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"menuStyle": { "type": "string", "default": "sidebar" },
+		"accentColor": { "type": "string", "default": "" },
+		"surfaceColor": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true },
+		"color": { "text": true, "background": true }
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-layouts",
+	"render": "file:./render.php"
+}

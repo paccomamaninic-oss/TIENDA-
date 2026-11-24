@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkreddit_for_woocommerce||=[]).push([[207],{9484(e,t,r){r.r(t);var s=r(6476),a=r(3905),o=r(7952),u=r(3666);r.d(t,["default",0,()=>{const{data:{status:e}}=(0,o.A)(),t=(0,u.xP)(),r=(0,u.FN)(),l=a.WD.setupComplete||e===a.Dh.CONNECTED?r:t;return(0,s.getHistory)().replace(l),null}])}}]);

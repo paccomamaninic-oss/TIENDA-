@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "envo-blocks/cart-items",
+	"title": "Cart Items",
+	"category": "envo-blocks",
+	"icon": "list-view",
+	"description": "The products in the cart with images, quantities and remove buttons, for side cart layouts. Loaded in the browser, so cached pages stay right.",
+	"keywords": [ "cart", "side cart", "mini cart", "drawer", "items", "woocommerce", "layout" ],
+	"textdomain": "envo-blocks",
+	"attributes": {
+		"showHeading": { "type": "boolean", "default": true },
+		"heading": { "type": "string", "default": "" },
+		"showCount": { "type": "boolean", "default": true },
+		"itemStyle": { "type": "string", "default": "list" },
+		"showImages": { "type": "boolean", "default": true },
+		"showQuantity": { "type": "boolean", "default": true },
+		"showRemove": { "type": "boolean", "default": true },
+		"emptyText": { "type": "string", "default": "" },
+		"emptyButton": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"html": false,
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true },
+		"color": { "text": true, "background": true }
+	},
+	"editorScript": "envo-blocks-layouts-editor",
+	"style": "envo-blocks-side-cart",
+	"render": "file:./render.php"
+}

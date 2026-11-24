@@ -1,0 +1,104 @@
+/* Envo Blocks - product videos: video slides of the WooCommerce gallery and videos over product images in lists. */
+.woocommerce-product-gallery .eb-pv {
+	position: relative;
+}
+
+.eb-pv .eb-pv__play {
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+
+.eb-pv .eb-pv__poster {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.eb-pv__icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 68px;
+	height: 68px;
+	border-radius: 50%;
+	background: rgba(17, 17, 17, 0.72);
+	color: #fff;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+	transform: translate(-50%, -50%);
+	transition: transform 0.2s ease, background-color 0.2s ease;
+	pointer-events: none;
+}
+
+.eb-pv__icon svg {
+	margin-left: 3px;
+}
+
+.eb-pv .eb-pv__play:hover .eb-pv__icon,
+.eb-pv .eb-pv__play:focus-visible .eb-pv__icon {
+	background: rgba(17, 17, 17, 0.9);
+	transform: translate(-50%, -50%) scale(1.06);
+}
+
+.eb-pv .eb-pv__player {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background: #000;
+}
+
+.eb-pv.is-playing .eb-pv__icon {
+	display: none;
+}
+
+/* Thumbnail of a video slide. */
+.flex-control-thumbs li.eb-pv-thumb {
+	position: relative;
+}
+
+.flex-control-thumbs li.eb-pv-thumb::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: rgba(17, 17, 17, 0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l9-5.5z' fill='%23fff'/%3E%3C/svg%3E") center / 16px no-repeat;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+}
+
+/* Product lists: the video over the image. */
+video.eb-pv-card {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+	pointer-events: none;
+}
+
+video.eb-pv-card.is-on {
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	video.eb-pv-card {
+		display: none;
+	}
+}
+
+/* No zoom / lightbox button over a playing video. */
+.woocommerce-product-gallery:has(.eb-pv.is-playing.flex-active-slide) .woocommerce-product-gallery__trigger,
+.woocommerce-product-gallery:has(.eb-pv.is-playing):not(:has(.flex-active-slide)) .woocommerce-product-gallery__trigger {
+	display: none;
+}
